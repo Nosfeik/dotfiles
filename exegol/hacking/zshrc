@@ -43,3 +43,6 @@ alias burpsuite='/opt/my-resources/setup/zsh/hacking/burpsuite'
     bindkey -M "$keymap" '^[[3~' delete-char
   done
 }
+
+# Green Black palette for filenames, command input and fzf.
+source /opt/my-resources/setup/zsh/hacking/green-colors.zsh

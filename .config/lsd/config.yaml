@@ -7,10 +7,8 @@ color:
   when: always
   # How to colorize the output.
   # When "classic" is set, this is set to "no-color".
-  # Possible values: default, <theme-file-name>
-  # when specifying <theme-file-name>, lsd will look up theme file
-  # XDG Base Directory if relative, ~/.config/lsd/themes/<theme-file-name>.yaml,
-  # The file path if absolute
+  # Possible values: default, custom
+  # Custom colors are read from ~/.config/lsd/colors.yaml.
   theme: custom
 # == Icons ==
 icons:

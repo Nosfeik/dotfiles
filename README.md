@@ -4,7 +4,8 @@ Uso Arch con **Hyprland Lua + Ambxst**, Kitty, Zsh, Powerlevel10k y LSD.
 Este es mi respaldo y mi guía para reinstalar esta laptop. La referencia es
 Hyprland **0.56.2**, Ambxst **1.3.7** y axctl **v0.0.26**.
 
-La última sincronización de dotfiles es del **16 de octubre de 2026**;
+La sincronización de terminal y Spotify es del **26 de octubre de 2026**;
+el resto del snapshot base corresponde al **16 de octubre de 2026**;
 la auditoría base del sistema es del **21 de septiembre de 2026**. Distingo cuatro cosas:
 
 | Tipo de información | Qué significa aquí |
@@ -243,7 +244,9 @@ El geocoder de esta versión reconoce ese nombre; «Ciudad de México» sin idio
 explícito devolvía vacío. La ubicación fija evita que una VPN cambie la ciudad
 por GeoIP. Este archivo sigue privado/excluido del repo, como antes.
 
-Spotify usa `.config/spotify-flags.conf` con `--ozone-platform=wayland`.
+Spotify conserva `.config/spotify-flags.conf` con `--ozone-platform=wayland`.
+El wrapper y el acceso del menú usan el cliente local con Spicetify cuando está
+preparado; antes del bootstrap abren el cliente empaquetado. Véase la sección 9.
 El launcher del paquete instalado lee ese archivo; también está incluido en el
 manifest de restauración. Evita el reescalado borroso de XWayland con escala 1.6,
 sin cambiar escala global ni GPU. Después de cerrar y abrir Spotify,
@@ -600,15 +603,29 @@ apuntan al snapshot Colloid bajo `$HOME/.themes`.
 
 ## 9. Kitty, Zsh, Powerlevel10k, LSD y Neovim
 
-Conservo `kitty.conf`, `color.ini`, `.p10k.zsh` y los YAML de LSD. Kitty usa
-Hack Nerd Font a 23 y Zsh. Mantengo aliases `ls`, `l`, `ll`, `la`, `lla`, `cat`
-con bat y `catn` con `/usr/bin/cat`. No tenía alias `tree`; uso `lsd --tree`.
+Kitty usa negro sólido `#101010`, acento verde menta `#00e69a`, texto `#a8d5bf`
+y Hack Nerd Font a 12. La misma paleta cubre Powerlevel10k, carpetas y metadatos
+de LSD, resaltado de Zsh, sugerencias, fzf y Bat (tema ANSI). Conservo los aliases
+`ls`, `l`, `ll`, `la`, `lla`, `cat`, `catn` y las teclas de navegación.
 
-Kitty usa opacidad `0.90`, permite cambiarla en ejecución y cierra ventanas sin
-confirmación. Bat usa el tema ANSI y Neovim conserva el fondo transparente;
-`vim`, `EDITOR` y `VISUAL` apuntan a `nvim`. El restaurador incluye ambos
-archivos de configuración y `~/.local/bin/batcat`, un wrapper del `bat` de Arch.
-Neovim ya está seleccionado en `packages/utilities.txt`.
+Neovim usa **NvChad v2.5** con el tema `green_black` y fondo opaco. El repo incluye
+el starter completo, los módulos Lua y `lazy-lock.json`; `xerux_black` conserva
+la alternativa en grises. `vim`, `EDITOR` y `VISUAL` apuntan a `nvim`.
+El snapshot de plugins requiere Neovim ≥0.12 y tree-sitter-cli ≥0.26.1. Después
+de restaurar, abre Neovim y ejecuta `:Lazy restore`, `:MasonInstallAll` y
+`:TSInstallAll`. Los plugins y herramientas se descargan, no se guardan en Git.
+
+Spotify usa **GreenBlack** con los mismos colores. Los temas, el preset de
+Spicetify, el wrapper y el acceso del menú están en el manifest. Tras restaurar
+configs, instala `./scripts/manual-components.sh spicetify --apply`, abre una
+vez Spotify e inicia sesión y ciérralo. Ejecuta luego
+`./scripts/bootstrap-spotify.py --apply`. El bootstrap modifica una copia bajo
+`~/.local/share/spotify`; no requiere sudo. Las sesiones y los metadatos de
+backup no se versionan. El instalador fija Spicetify 2.46.2 y verifica SHA-256.
+
+La [guía GreenBlack](docs/terminal-green.md) detalla los archivos, requisitos,
+restauración, actualización de Spotify y validaciones. El cambio afecta a las
+terminales y Spotify; el escritorio conserva su tema propio.
 
 Zsh comparte el historial entre sesiones y conserva hasta 100000 entradas.
 El alias `xxx` abre `exegol start hacking`; la finalización de Exegol se carga
@@ -885,7 +902,13 @@ Ejecuta en este orden, revisando los planes antes de `--apply`:
 ./scripts/install.sh configs
 ./scripts/install.sh configs --apply
 ./scripts/install.sh services --apply
+./scripts/manual-components.sh spicetify --apply
 ```
+
+Después, abre una vez `/usr/bin/spotify`, inicia sesión y ciérralo. Revisa
+`./scripts/bootstrap-spotify.py` y ejecútalo con `--apply`. Abre `nvim` y completa
+`:Lazy restore`, `:MasonInstallAll` y `:TSInstallAll`, según la
+[guía GreenBlack](docs/terminal-green.md).
 
 Configura ASUS según sección 5. Aplica nwg-look desde GNOME si quieres alinear
 GSettings con las preferencias guardadas. Selecciona Zsh como shell si hace falta.

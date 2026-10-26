@@ -1,6 +1,6 @@
 # Zsh de Exegol `hacking`
 
-Powerlevel10k con caja verde ` hacking`, directorio azul, estado de Git y
+Powerlevel10k con caja verde ` hacking`, directorio verde menta, estado de Git y
 prompt compacto. Conserva los plugins de Exegol y su indicador de usuario,
 dominio y grabación. Kitty ya tiene configurada Hack Nerd Font.
 
@@ -25,15 +25,20 @@ antes una copia de los destinos existentes:
 |---|---|
 | `exegol/hacking/zshrc` | `hacking/zshrc` |
 | `exegol/hacking/p10k.zsh` | `hacking/p10k.zsh` |
+| `exegol/hacking/green-colors.zsh` | `hacking/green-colors.zsh` |
 | `exegol/hacking/burpsuite` | `hacking/burpsuite` (ejecutable) |
 | `exegol/hacking/install-burp-runtime.sh` | `hacking/install-burp-runtime.sh` (ejecutable) |
 | `.config/bat/config` | `hacking/config/bat/config` |
-| `.config/nvim/init.lua` | `hacking/config/nvim/init.lua` |
+| `exegol/hacking/config/nvim/init.lua` | `hacking/config/nvim/init.lua` |
 | `exegol/hacking/config/lsd/config.yaml` | `hacking/config/lsd/config.yaml` |
+| `exegol/hacking/config/lsd/colors.yaml` | `hacking/config/lsd/colors.yaml` |
 
-Los enlaces de Bat y Neovim bajo `exegol/hacking/config/` apuntan a las copias
-canónicas del repo. Al copiarlos fuera del checkout, usa `cp -L` o copia
-directamente los orígenes de la tabla para que los destinos sean archivos normales.
+El enlace de Bat apunta a la copia canónica del repo; usa `cp -L` o copia el
+origen de la tabla. Neovim tiene ahora un archivo propio: no lo enlaces al
+NvChad del host. La versión 0.7.2 del contenedor necesita esta configuración
+ligera, mientras que el snapshot de plugins del host requiere Neovim 0.12.
+LSD 0.23.1 usa una ruta absoluta al tema dentro del contenedor y un YAML sin
+`git-status`; no copies el YAML de LSD 1.2.0 del host.
 
 Copia también el checkout de Powerlevel10k de `~/.powerlevel10k` a
 `hacking/powerlevel10k`; se prepara con `scripts/manual-components.sh p10k`.
@@ -58,7 +63,7 @@ Para cambiar el estilo, edita `/root/.p10k.zsh` dentro del contenedor.
 Para desactivar este perfil, elimina del archivo compartido el bloque
 marcado `dotfiles: hacking` y abre una nueva sesión.
 
-## Herramientas y transparencia
+## Herramientas y colores
 
 `ls`, `l`, `ll`, `la` y `lla` usan `lsd`; `cat` y `bat` usan `batcat`.
 `catn` conserva el comando original. `vim`, `EDITOR` y `VISUAL` usan Neovim.
@@ -66,11 +71,13 @@ Los paquetes del contenedor se instalaron desde Debian Bookworm.
 
 Los directorios `/root/.config/nvim`, `/root/.config/bat` y `/root/.config/lsd`
 enlazan a `config/` dentro del perfil persistente `hacking`.
-Neovim y bat usan el fondo de la terminal. La configuración de Kitty del host
-usa opacidad `0.90`; abre una instancia nueva de Kitty para aplicarla.
+Kitty y Neovim usan negro sólido `#101010`, con acento `#00e69a` y texto
+`#a8d5bf`. `green-colors.zsh` configura LS_COLORS, syntax-highlighting,
+autosuggestions y fzf. Bat sigue la paleta ANSI de Kitty. Abre otra sesión de
+Zsh (o ejecuta `exec zsh`) y vuelve a abrir Neovim después de copiar el perfil.
 
 En Arch, `batcat` es un wrapper de `bat` en `~/.local/bin`.
-La configuración compartida de Neovim está en `.config/nvim/init.lua` del repo.
+La configuración independiente de Neovim está en `config/nvim/init.lua` de este perfil.
 
 ## Inicio sin contraseña y aplicaciones gráficas
 

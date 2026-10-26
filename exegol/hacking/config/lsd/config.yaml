@@ -1,6 +1,6 @@
 color:
   when: auto
-  theme: default
+  theme: /opt/my-resources/setup/zsh/hacking/config/lsd/colors
 icons:
   when: auto
   theme: fancy

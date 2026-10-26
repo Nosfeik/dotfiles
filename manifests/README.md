@@ -14,6 +14,11 @@ La lista de assets es grande porque el repo ya contiene el árbol completo de
 iconos Kora. Enumerarlo evita que una carpeta futura se copie implícitamente.
 No se ha duplicado el árbol de iconos ni comprimido en un segundo archivo.
 
-Bat, Neovim y el wrapper `batcat` tienen entradas explícitas en `configs.txt`
-y están autorizados en `scripts/restore.py`. El perfil bajo `exegol/` se copia
+Bat, NvChad (Lua, temas y lockfile), los wrappers `batcat`/`spotify`, el acceso
+del menú y los temas de Spicetify tienen entradas explícitas en `configs.txt`
+y están autorizados en `scripts/restore.py`. `green-black.ini` guarda únicamente
+preferencias declarativas: `scripts/bootstrap-spotify.py` configura las rutas
+del usuario y genera el estado de Spicetify por separado. No se restauran
+`config-xpui.ini`, metadatos de backups, sesiones, plugins descargados ni clientes
+binarios. El perfil bajo `exegol/` se copia
 por separado a los recursos de Exegol; no se instala en el HOME del host.

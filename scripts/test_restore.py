@@ -94,11 +94,26 @@ class RestoreSafety(unittest.TestCase):
         pairs = entries("configs")
         sources = {str(dst): src for src, dst in pairs}
         restore(self.home, pairs, True)
-        for name in (".config/bat/config", ".config/nvim/init.lua", ".local/bin/batcat"):
+        for name in (".config/bat/config", ".config/nvim/init.lua", ".local/bin/batcat",
+                     ".config/nvim/lua/chadrc.lua", ".config/nvim/lua/themes/green_black.lua",
+                     ".config/nvim/lazy-lock.json", ".config/spicetify/green-black.ini",
+                     ".config/spicetify/Themes/GreenBlack/user.css", ".local/bin/spotify",
+                     ".local/share/applications/spotify.desktop"):
             with self.subTest(name=name):
                 self.assertEqual((self.home / name).read_bytes(), sources[name].read_bytes())
         self.assertTrue((self.home / ".local/bin/batcat").stat().st_mode & 0o111)
+        self.assertTrue((self.home / ".local/bin/spotify").stat().st_mode & 0o111)
         self.assertIsNone(restore(self.home, pairs, True))
+
+    def test_spotify_runtime_cannot_enter_manifest(self):
+        repo = self.base / "repo"
+        (repo / "manifests").mkdir(parents=True)
+        for name in (".config/spicetify/config-xpui.ini", ".config/spotify/prefs",
+                     ".local/share/spotify/spotify"):
+            with self.subTest(name=name):
+                (repo / "manifests/configs.txt").write_text(name + "\n")
+                with patch("restore.REPO", repo), self.assertRaisesRegex(ValueError, "Unapproved"):
+                    entries("configs")
 
     def test_manifest_cannot_import_external_link(self):
         repo = self.base / "repo"

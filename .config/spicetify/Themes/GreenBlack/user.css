@@ -1,0 +1,99 @@
+/* GreenBlack: the same black and mint-green palette as Kitty. */
+:root,
+.encore-dark-theme,
+.encore-base-set {
+  --background-base: #101010 !important;
+  --background-highlight: #163a2c !important;
+  --background-press: #164b36 !important;
+  --background-elevated-base: #181818 !important;
+  --background-elevated-highlight: #163a2c !important;
+  --background-elevated-press: #164b36 !important;
+  --background-tinted-base: rgba(0, 230, 154, 0.06) !important;
+  --background-tinted-highlight: rgba(0, 230, 154, 0.1) !important;
+  --background-tinted-press: rgba(0, 230, 154, 0.14) !important;
+  --text-base: #a8d5bf !important;
+  --text-subdued: #6b9e87 !important;
+  --text-bright-accent: #00e69a !important;
+  --essential-base: #a8d5bf !important;
+  --essential-subdued: #80b599 !important;
+  --essential-bright-accent: #00e69a !important;
+  --decorative-base: #a8d5bf !important;
+  --decorative-subdued: #244536 !important;
+}
+
+body,
+.Root,
+.Root__top-container,
+.Root__globalNav,
+.Root__nav-bar,
+.Root__main-view,
+.Root__right-sidebar,
+.Root__now-playing-bar,
+.main-view-container,
+.main-view-container__scroll-node,
+.main-buddyFeed-buddyFeedRoot,
+.main-yourLibraryX-libraryContainer,
+.main-nowPlayingBar-nowPlayingBar,
+.main-trackList-trackListHeader,
+.main-trackList-trackListHeaderStuck,
+.main-home-homeHeader {
+  background-color: #101010 !important;
+}
+
+.main-entityHeader-backgroundColor,
+.main-entityHeader-background,
+.main-actionBarBackground-background,
+.main-home-homeHeader,
+.main-topBar-background,
+.main-topBar-overlay,
+.main-view-container__scroll-node-child {
+  background: #101010 !important;
+  background-image: none !important;
+}
+
+.Root__now-playing-bar {
+  border-top: 1px solid #164b36;
+}
+
+.main-trackList-trackListRow:hover,
+.main-trackList-trackListRow.main-trackList-selected {
+  background-color: #163a2c !important;
+}
+
+.progress-bar {
+  --fg-color: #00e69a !important;
+  --bg-color: #244536 !important;
+  --is-active-fg-color: #00e69a !important;
+}
+
+.encore-bright-accent-set {
+  --background-base: #00e69a !important;
+  --background-highlight: #52f5c5 !important;
+  --background-press: #6b9e87 !important;
+  --text-base: #101010 !important;
+  --essential-base: #101010 !important;
+}
+
+::selection {
+  background: #244536;
+  color: #52f5c5;
+}
+
+/* Keep secondary Encore accents in the terminal's green palette. */
+:root,
+.encore-dark-theme,
+.encore-base-set {
+  --text-positive: #00e69a !important;
+  --text-announcement: #65dfb3 !important;
+  --text-warning: #8bd5a9 !important;
+  --text-negative: #8bd5a9 !important;
+  --essential-positive: #00e69a !important;
+  --essential-announcement: #65dfb3 !important;
+  --essential-warning: #8bd5a9 !important;
+  --essential-negative: #8bd5a9 !important;
+  --background-positive: #00e69a !important;
+  --background-announcement: #65dfb3 !important;
+  --background-warning: #8bd5a9 !important;
+  --background-negative: #8bd5a9 !important;
+  --background-highlight-press: #164b36 !important;
+}

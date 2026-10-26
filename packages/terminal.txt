@@ -3,7 +3,10 @@ file
 fzf
 kitty
 lsd
+ripgrep
+tree-sitter-cli
 tmux
+unzip
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting

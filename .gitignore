@@ -58,3 +58,12 @@ backups/
 # Exegol runtimes and third-party checkouts are installed separately.
 exegol/hacking/jbr-21/
 exegol/hacking/powerlevel10k/
+# Spotify/NvChad runtime is rebuilt locally; only reviewed config and themes belong here.
+.config/spicetify/config-xpui.ini
+.config/spicetify/Backup/
+.config/spicetify/Extracted/
+.config/spotify/
+.local/share/spotify/
+.local/share/spicetify/
+.local/share/spicetify-cli/
+.local/share/nvim/

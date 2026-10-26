@@ -2,8 +2,8 @@
 # Instalación reanudable de los componentes manuales observados, sin actualizaciones implícitas.
 set -euo pipefail
 die() { printf '%s\n' "$*" >&2; exit 1; }
-[[ $# -ge 1 && $# -le 2 ]] || die "Uso: $0 ambxst|p10k|colloid [--apply]"
-case $1 in ambxst|p10k|colloid) ;; *) die 'Componente desconocido.' ;; esac
+[[ $# -ge 1 && $# -le 2 ]] || die "Uso: $0 ambxst|p10k|colloid|spicetify [--apply]"
+case $1 in ambxst|p10k|colloid|spicetify) ;; *) die 'Componente desconocido.' ;; esac
 [[ ${2:-} == '' || ${2:-} == --apply ]] || die 'Opción desconocida.'
 if [[ ${2:-} != --apply ]]; then
     echo "Plan: instalar/verificar $1 con versiones fijadas; conservar destinos existentes."
@@ -52,7 +52,34 @@ binary() {
     echo "Descarga verificada conservada en $downloads"
 }
 
-if [[ $1 == colloid ]]; then
+if [[ $1 == spicetify ]]; then
+    [[ $(uname -m) == x86_64 ]] || die 'Este artefacto de Spicetify es para x86_64.'
+    target=$HOME/.local/share/spicetify-cli
+    link=$HOME/.local/bin/spicetify
+    for parent in "$HOME/.local" "$HOME/.local/share" "$HOME/.local/bin"; do
+        [[ ! -L $parent ]] || die "Revisa el enlace: $parent"
+    done
+    if [[ -e $link || -L $link ]]; then
+        [[ -L $link && $(readlink -f -- "$link") == "$target/spicetify" ]] || die "Revisa $link; no se reemplaza."
+    fi
+    if [[ -e $target || -L $target ]]; then
+        [[ ! -L $target && -x $target/spicetify ]] || die "Revisa $target"
+        [[ $("$target/spicetify" --version) == 2.46.2 ]] || die 'Versión distinta de Spicetify; no se actualiza automáticamente.'
+    else
+        mkdir -p -- "$(dirname -- "$target")"
+        staging=$(mktemp -d "$(dirname -- "$target")/.spicetify-install.XXXXXXXX")
+        curl -fL --retry 3 https://github.com/spicetify/cli/releases/download/v2.46.2/spicetify-2.46.2-linux-amd64.tar.gz -o "$staging/release.tar.gz"
+        printf '%s  %s\n' 64970893565c2369031401de4d8df29bb799cfae2af2e641ddfad7e08608d4fb "$staging/release.tar.gz" | sha256sum -c -
+        tar -xzf "$staging/release.tar.gz" -C "$staging"
+        rm -- "$staging/release.tar.gz"
+        [[ $("$staging/spicetify" --version) == 2.46.2 ]] || die 'Versión inesperada en el archivo descargado.'
+        [[ ! -e $target && ! -L $target ]] || die "El destino apareció: $target"
+        mv -T -- "$staging" "$target"
+    fi
+    mkdir -p -- "$(dirname -- "$link")"
+    [[ -e $link || -L $link ]] || ln -s ../share/spicetify-cli/spicetify "$link"
+    echo 'Spicetify 2.46.2 preparado. Después de restaurar configs, usa scripts/bootstrap-spotify.py.'
+elif [[ $1 == colloid ]]; then
     checkout https://github.com/vinceliuice/Colloid-gtk-theme.git fe11342f37f124f1b29d44cf33e9a06053f4bba2 "$HOME/.local/src/Colloid-gtk-theme"
     echo 'Solo fuentes preparadas; no se reemplazó el tema activo.'
 elif [[ $1 == p10k ]]; then

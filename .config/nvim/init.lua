@@ -1,23 +1,37 @@
--- Use the terminal background, including Kitty's transparency.
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
-vim.opt.number = true
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
 
-local function transparent_background()
-  for _, group in ipairs({
-    "Normal", "NormalNC", "NormalFloat", "FloatBorder", "FloatTitle",
-    "SignColumn", "FoldColumn", "EndOfBuffer", "LineNr", "CursorLineNr",
-    "StatusLine", "StatusLineNC", "WinSeparator", "VertSplit",
-  }) do
-    vim.cmd("highlight " .. group .. " guibg=NONE ctermbg=NONE")
-  end
-  -- Older Neovim themes invert the status line, which would paint a background.
-  vim.cmd("highlight StatusLine gui=NONE cterm=NONE")
-  vim.cmd("highlight StatusLineNC gui=NONE cterm=NONE")
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
 
-vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
-  group = vim.api.nvim_create_augroup("TransparentBackground", { clear = true }),
-  callback = transparent_background,
-})
-transparent_background()
+vim.opt.rtp:prepend(lazypath)
+
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "options"
+require "autocmds"
+
+vim.schedule(function()
+  require "mappings"
+end)

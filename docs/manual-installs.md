@@ -84,6 +84,25 @@ el PATH heredado e incluye `~/.local/bin`. Se elimina la carga duplicada del
 tema y la búsqueda del tema de root. No se agrega un alias `tree` inventado:
 el archivo vivo no lo tiene; se puede ejecutar `lsd --tree`.
 
+## NvChad y Spicetify
+
+Las configuraciones y temas están incluidos en el manifest, mientras que los
+plugins y el cliente modificado se preparan localmente. Sigue
+[Terminal y Spotify GreenBlack](terminal-green.md) después de restaurar configs.
+Spicetify tiene instalador con versión y SHA-256 fijados:
+
+```bash
+./scripts/manual-components.sh spicetify
+./scripts/manual-components.sh spicetify --apply
+./scripts/bootstrap-spotify.py
+./scripts/bootstrap-spotify.py --apply
+```
+
+El último paso requiere haber iniciado sesión una vez en Spotify y cerrado el
+cliente. No necesita sudo: modifica una copia en `~/.local/share/spotify`.
+Neovim descarga sus plugins desde `init.lua`; el lockfile permite recuperar las
+revisiones revisadas con `:Lazy restore`. Exegol conserva su configuración propia.
+
 ## Plugin sudo de Zsh
 
 Ruta real: `/usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh`.

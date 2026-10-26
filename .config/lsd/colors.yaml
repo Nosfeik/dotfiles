@@ -1,26 +1,40 @@
-user: 75                                 # Light blue, similar to #51A4E7
-group: 254                               # Very light grey, almost white, for text
+# Green Black — RGB colors matching Kitty and NvChad.
+# Filename and folder colors are set with LS_COLORS in ~/.zshrc.
+user: [0, 230, 154]
+group: [132, 193, 163]
 permission:
-  read: 75                               # Light blue, consistent with user color for readability
-  write: 39                              # Dark blue, for writable files, offers a contrast
-  exec: 81                               # Pale blue, softer than #51A4E7 but still noticeable for executable files
-  exec-sticky: 81                        # Pale blue, same as exec, for sticky executables
-  no-access: 59                          # Darker blue, visible but not too jarring for no access
+  read: [132, 193, 163]
+  write: [0, 230, 154]
+  exec: [67, 227, 167]
+  exec-sticky: [139, 213, 169]
+  no-access: [80, 117, 98]
+  octal: [0, 230, 154]
+  acl: [82, 245, 197]
+  context: [107, 158, 135]
 date:
-  hour-old: 153                          # Pale blue, softer and lighter for recent hours
-  day-old: 111                           # Medium blue, distinguishable but still subtle for previous day
-  older: 33                              # Deeper blue, clear but elegant for older files
+  hour-old: [168, 213, 191]
+  day-old: [132, 193, 163]
+  older: [107, 158, 135]
 size:
-  none: 254                              # Very light grey, almost white, for nonexistent sizes
-  small: 153                             # Pale blue, light and clean for small files
-  medium: 81                             # Pale blue, consistent with exec for medium sizes
-  large: 39                              # Dark blue, strong for large files
+  none: [80, 117, 98]
+  small: [132, 193, 163]
+  medium: [0, 230, 154]
+  large: [139, 213, 169]
 inode:
-  valid: 254                             # Very light grey, matching group for valid inodes
-  invalid: 59                            # Darker blue, to indicate problems clearly
+  valid: [107, 158, 135]
+  invalid: [80, 117, 98]
 links:
-  valid: 38                              # #1F96AD, a beautiful teal blue for valid links, adding a fresh pop of color
-  invalid: 59                            # Darker blue, to clearly indicate invalid links
-tree-edge: 38                            # #1F96AD, used here as well for directory tree edges to maintain a coherent look
-
-
+  valid: [132, 193, 163]
+  invalid: [213, 255, 233]
+tree-edge: [80, 117, 98]
+git-status:
+  default: [107, 158, 135]
+  unmodified: [107, 158, 135]
+  ignored: [80, 117, 98]
+  new-in-index: [67, 227, 167]
+  new-in-workdir: [67, 227, 167]
+  typechange: [139, 213, 169]
+  deleted: [213, 255, 233]
+  renamed: [0, 230, 154]
+  modified: [139, 213, 169]
+  conflicted: [213, 255, 233]

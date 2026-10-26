@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# User-local Spotify with the GreenBlack Spicetify theme.
+set -e
+spotify_config="${XDG_CONFIG_HOME:-$HOME/.config}"
+spotify_flags=()
+if [[ -f "$spotify_config/spotify-flags.conf" ]]; then
+    mapfile -t spotify_flags < <(sed '/^[[:space:]]*#/d; /^[[:space:]]*$/d' "$spotify_config/spotify-flags.conf")
+fi
+spotify_binary="${XDG_DATA_HOME:-$HOME/.local/share}/spotify/spotify"
+# The packaged client remains usable before the separate theme bootstrap.
+[[ -x "$spotify_binary" ]] || spotify_binary=/opt/spotify/spotify
+exec "$spotify_binary" "${spotify_flags[@]}" "$@"

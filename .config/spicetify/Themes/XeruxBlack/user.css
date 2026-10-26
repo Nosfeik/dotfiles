@@ -1,0 +1,80 @@
+/* Xerux Black: flat black panels and warm grey controls. */
+:root,
+.encore-dark-theme,
+.encore-base-set {
+  --background-base: #101010 !important;
+  --background-highlight: #242424 !important;
+  --background-press: #292929 !important;
+  --background-elevated-base: #181818 !important;
+  --background-elevated-highlight: #242424 !important;
+  --background-elevated-press: #292929 !important;
+  --background-tinted-base: rgba(212, 208, 203, 0.06) !important;
+  --background-tinted-highlight: rgba(212, 208, 203, 0.1) !important;
+  --background-tinted-press: rgba(212, 208, 203, 0.14) !important;
+  --text-base: #d4d0cb !important;
+  --text-subdued: #a5a29e !important;
+  --text-bright-accent: #c6b7a6 !important;
+  --essential-base: #d4d0cb !important;
+  --essential-subdued: #92908d !important;
+  --essential-bright-accent: #c6b7a6 !important;
+  --decorative-base: #d4d0cb !important;
+  --decorative-subdued: #383838 !important;
+}
+
+body,
+.Root,
+.Root__top-container,
+.Root__globalNav,
+.Root__nav-bar,
+.Root__main-view,
+.Root__right-sidebar,
+.Root__now-playing-bar,
+.main-view-container,
+.main-view-container__scroll-node,
+.main-buddyFeed-buddyFeedRoot,
+.main-yourLibraryX-libraryContainer,
+.main-nowPlayingBar-nowPlayingBar,
+.main-trackList-trackListHeader,
+.main-trackList-trackListHeaderStuck,
+.main-home-homeHeader {
+  background-color: #101010 !important;
+}
+
+.main-entityHeader-backgroundColor,
+.main-entityHeader-background,
+.main-actionBarBackground-background,
+.main-home-homeHeader,
+.main-topBar-background,
+.main-topBar-overlay,
+.main-view-container__scroll-node-child {
+  background: #101010 !important;
+  background-image: none !important;
+}
+
+.Root__now-playing-bar {
+  border-top: 1px solid #292929;
+}
+
+.main-trackList-trackListRow:hover,
+.main-trackList-trackListRow.main-trackList-selected {
+  background-color: #242424 !important;
+}
+
+.progress-bar {
+  --fg-color: #d4d0cb !important;
+  --bg-color: #383838 !important;
+  --is-active-fg-color: #c6b7a6 !important;
+}
+
+.encore-bright-accent-set {
+  --background-base: #c6b7a6 !important;
+  --background-highlight: #e6e2dd !important;
+  --background-press: #a5a29e !important;
+  --text-base: #101010 !important;
+  --essential-base: #101010 !important;
+}
+
+::selection {
+  background: #383838;
+  color: #e6e2dd;
+}
