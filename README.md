@@ -2,7 +2,7 @@
 
 Uso Arch con **Hyprland Lua + Ambxst**, Kitty, Zsh, Powerlevel10k y LSD.
 Este es mi respaldo y mi guía para reinstalar esta laptop. La referencia es
-Hyprland **0.56.2**, Ambxst **1.3.7** y axctl **v0.0.26**.
+Hyprland **0.56.2**, Ambxst **1.3.14** y axctl **v0.0.26**.
 
 La sincronización de terminal y Spotify es del **26 de octubre de 2026**;
 el resto del snapshot base corresponde al **16 de octubre de 2026**;
@@ -21,7 +21,26 @@ actualizados, las pruebas y las incidencias observadas en la sesión actual.
 No uso el restaurador para particionar, cambiar firmware ni sustituir mis
 configuraciones por otro conjunto de dotfiles.
 
-## Pentest Mode
+## Ambxst + GreenBlack + Roadie
+
+El 27/10 volví al indicador de batería original y después instalé **Roadie 4.1.1**
+sobre Ambxst 1.3.14. Es el único mod instalado y activo. Pentest Mode y Battery
+Indicator quedan archivados en este repo, fuera de la instalación actual;
+el atajo de Pentest también se retiró de mis binds. Sus manifiestos siguen
+limitados a Ambxst 1.3.7: no se habilitan sobre la versión nueva sin revisión.
+
+La barra y los paneles usan el preset de usuario **GreenBlack**: fondo
+`#101010`, texto `#a8d5bf` y acento `#00e69a`, como Kitty y Spotify. El tema no
+necesita parches de QML. GTK usa los colores generados por Ambxst y Qt 5/6 una paleta
+equivalente mediante qt5ct/qt6ct. La [guía del tema](docs/ambxst-green-black.md)
+explica cómo activarlo, restaurarlo y volver atrás.
+
+Roadie se respalda por origen, versión y revisión en
+[manifests/ambxst-mods.json](manifests/ambxst-mods.json), con sus preferencias
+en `.config/ambxst/roadie.json`. La [guía de Roadie](docs/ambxst-roadie.md)
+explica cómo restaurarlo sin versionar generaciones ni copiar código de terceros.
+
+## Pentest Mode (opcional, deshabilitado)
 
 El mod local está en [mods/pentest-mode](mods/pentest-mode). Local IP, VPN y Target
 usan el bar nativo y un pequeño fuego Phosphor abre Pentest dentro del Notch.
@@ -214,6 +233,30 @@ No necesito reiniciar la máquina ni tocar GPU, energía o firewall.
 
 Dejo el [registro de validación y las pruebas manuales](docs/pentest-mode-validation.md)
 con los archivos, la integración y las limitaciones comprobadas.
+
+## Indicador de batería (mod opcional, deshabilitado)
+
+Actualmente uso el indicador original de Ambxst. Lo siguiente documenta la
+alternativa conservada en el repo; no se instala ni habilita al restaurar configs.
+
+El mod independiente [Battery Indicator](mods/battery-indicator/README.md)
+reemplaza el indicador circular por una batería gráfica, conservando sus 36×36.
+Usa Battery/UPower, tooltip nativo y colores del tema: verde >50%, amarillo
+>20–50%, rojo ≤20%. Mantiene los avisos nativos de 20%/10%; no tiene acciones de
+click. AC se lee por separado y el límite ASUS se observa por D-Bus con GJS;
+un check discreto aparece solo con evidencia de carga detenida en el límite.
+
+```sh
+ambxst mods install ./mods/battery-indicator
+ambxst mods enable local.battery-indicator
+ambxst reload
+```
+
+Para retirarlo: `ambxst mods disable local.battery-indicator` y `ambxst reload`.
+`ambxst mods rollback` restaura la generación anterior completa. El reemplazo
+está protegido por SHA-256: tras cambios upstream hay que revisar compatibilidad
+antes de actualizar el hash, como explica el README del mod. No edito el source
+de Ambxst ni sus generaciones.
 
 ## Ajustes de red, clima y Spotify
 
@@ -455,21 +498,52 @@ Mi principal lo carga primero y después importa, en este orden:
 | lid | Solo los eventos on/off que llaman a lid-power.sh |
 
 Tengo tap, tap-and-drag, disable-while-typing, natural-scroll y clickfinger;
-scroll factor 1.0. Conservo las reglas de ventanas existentes:
+scroll factor 1.0. Las reglas persistentes asignan estos workspaces:
 
 | Aplicación / clase | Workspace |
 |---|---|
 | Kitty | 1 |
 | Chromium, Brave, Firefox | 2 |
-| code, Burp | 3 |
+| code | 3 |
 | VMware, Obsidian | 4 |
 | Spotify | 5 |
-| discord | 6 |
+| Discord, Discord Canary y Discord PTB | 6 |
 | Telegram | 7 |
+| ElecWhat | 8, silencioso |
+| ROG Control Center | 9, silencioso |
 
-Elecwhat → 8 y ROG Control → 9 se asignan en startup. Discord Canary arranca
-silenciosamente en 6, pero la regla persistente solo coincide con `discord`.
+Las asignaciones excluyen diálogos modales, que permanecen con su aplicación.
+Burp ya no tiene una asignación fija de workspace en las reglas actuales.
+Startup también abre ElecWhat, ROG Control y Discord Canary silenciosamente.
 No doy por instalada una aplicación por tener una regla para ella.
+
+Los tamaños flotantes usan `monitor_w` y `monitor_h`, las dimensiones lógicas
+del monitor. Con 2560×1600 y escala 1.6, el espacio lógico es 1600×1000:
+los antiguos tamaños fijos de 1800×1200 y 2200×1400 dejaban ventanas fuera
+de pantalla. ElecWhat, Telegram y Discord ahora abren centrados al 78 % del
+ancho y 80 % del alto; en esa pantalla son 1248×800.
+
+Nautilus/Dolphin/Thunar, ajustes, ROG Control, audio, red, Bluetooth,
+Transmission y gestores de archivos comprimidos tienen tamaños proporcionales.
+Calculadoras, selectores de color y autenticación conservan su tamaño natural.
+Los diálogos modales y selectores de archivos abren flotantes y centrados;
+los selectores usan 65 % × 70 %. Picture-in-Picture de los navegadores abre
+flotante en la esquina inferior derecha. Las ventanas flotantes normales
+tienen un límite de 90 % × 86 %; se excluyen las ventanas en mosaico,
+maximizadas y a pantalla completa.
+
+Para validar cambios en estas reglas:
+
+```bash
+luac -p ~/.config/hypr/user/windowrules.lua
+Hyprland --verify-config -c ~/.config/hypr/hyprland.lua
+hyprctl reload
+hyprctl configerrors
+```
+
+Los tamaños iniciales se aplican al abrir una ventana. Validado con una
+reapertura de ElecWhat (1248×800 en `[176,120]`) y ventanas temporales para
+comprobar un diálogo modal, un selector de archivos y la regla de audio.
 
 Los atajos principales siguen siendo SUPER+Return, SUPER+E, SUPER+T, SUPER+Q,
 SUPER+F, flechas y workspaces 1–10. SHIFT mueve ventanas entre workspaces.

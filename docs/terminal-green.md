@@ -2,7 +2,8 @@
 
 Sincronización del 26/10/2026 de los ajustes realizados el 21–22/10. Fondo
 `#101010`, acento `#00e69a`, texto `#a8d5bf` y texto secundario `#6b9e87`.
-El escritorio, GTK y Ambxst conservan sus propios temas.
+Desde el 27/10, Ambxst nativo y las aplicaciones GTK/Qt compatibles comparten
+la paleta mediante [configuración de usuario](ambxst-green-black.md).
 
 | Componente | Configuración versionada |
 |---|---|

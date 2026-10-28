@@ -4,6 +4,7 @@ ddcutil
 easyeffects
 ffmpeg
 fuzzel
+gjs
 glib2
 gpu-screen-recorder
 gradia
@@ -28,6 +29,7 @@ qt6-svg
 qt6-tools
 qt6-wayland
 qt6ct
+qt5ct
 quickshell
 sqlite
 syntax-highlighting

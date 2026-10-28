@@ -31,7 +31,7 @@ def entries(group):
         allowed = ((".icons/", ".themes/", ".fonts/", "Pictures/Wallpapers/")
                    if group == "assets" else
                    tuple(f".config/{p}/" for p in ("hypr", "kitty", "lsd", "gtk-3.0",
-                         "gtk-4.0", "nwg-look", "xsettingsd", "ambxst")) +
+                         "gtk-4.0", "nwg-look", "xsettingsd", "ambxst", "qt5ct", "qt6ct")) +
                    (".config/nvim/lua/", ".config/spicetify/Themes/"))
         singles = {".config/spotify-flags.conf", ".config/bat/config", ".config/nvim/init.lua",
                    ".config/nvim/lazy-lock.json", ".config/spicetify/green-black.ini",

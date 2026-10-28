@@ -41,9 +41,6 @@ end
 -- Ambxst conserva la recarga de la shell en SUPER+SHIFT+R.
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("ambxst toggle bar"))
 
--- Pentest Mode: comprobado libre antes de instalar el mod local.
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("ambxst run pentest-toggle"))
-
 -- El generador de Ambxst usa exec_cmd("resizeactive ...") en estos cuatro
 -- atajos. Los sustituyo aquí sin editar su archivo generado.
 for _, key in ipairs({ "Down", "j" }) do

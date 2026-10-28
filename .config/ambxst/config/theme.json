@@ -1,5 +1,5 @@
 {
-  "oledMode": true,
+  "oledMode": false,
   "lightMode": false,
   "roundness": 16,
   "font": "Roboto Condensed",
@@ -7,6 +7,8 @@
   "monoFont": "Iosevka Nerd Font Mono",
   "monoFontSize": 14,
   "tintIcons": false,
+  "trueMatugenIcons": false,
+  "trueMonochromeTint": false,
   "enableCorners": true,
   "animDuration": 300,
   "shadowOpacity": 0.5,

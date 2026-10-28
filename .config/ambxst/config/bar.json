@@ -8,8 +8,8 @@
     ],
     "containBar": false,
     "enableFirefoxPlayer": false,
-    "frameEnabled": false,
-    "frameThickness": 8,
+    "frameEnabled": true,
+    "frameThickness": 7,
     "hoverRegionHeight": 8,
     "hoverToReveal": false,
     "keepBarBorder": false,
@@ -24,5 +24,8 @@
     "screenList": [
     ],
     "showPinButton": false,
-    "use12hFormat": true
+    "use12hFormat": true,
+    "systrayExclude": [
+        "blueman"
+    ]
 }

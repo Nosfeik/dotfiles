@@ -1,0 +1,52 @@
+{
+  "manifestVersion": 1,
+  "id": "local.battery-indicator",
+  "name": "Battery Indicator",
+  "version": "0.1.0",
+  "description": "Proportional native battery graphic with reactive charging and ASUS charge-limit observation.",
+  "author": "nosfeik",
+  "license": "UNLICENSED",
+  "compatibility": {
+    "api": 1,
+    "ambxst": ">=1.3.7 <1.3.8",
+    "testedBaseCommits": [
+      "9a9026a4e6ac5431a68fa6928fd1af32918b98e3"
+    ]
+  },
+  "commands": [
+    "gjs"
+  ],
+  "permissions": [
+    "Reads existing UPower battery state",
+    "Observes the ASUS charge-limit D-Bus property; reads sysfs only as fallback"
+  ],
+  "operations": [
+    {
+      "type": "overlay",
+      "source": "payload/modules/bar/BatteryChargeLimit.qml",
+      "target": "modules/bar/BatteryChargeLimit.qml"
+    },
+    {
+      "type": "overlay",
+      "source": "payload/modules/bar/BatteryGraphic.qml",
+      "target": "modules/bar/BatteryGraphic.qml"
+    },
+    {
+      "type": "overlay",
+      "source": "payload/modules/bar/BatteryIndicator.qml",
+      "target": "modules/bar/BatteryIndicator.qml",
+      "replace": true,
+      "expectedSha256": "a504f09580f427e428b35fe02a4c02f081ed77f7a745765075321fcb2b04a953"
+    },
+    {
+      "type": "overlay",
+      "source": "payload/modules/bar/BatteryState.js",
+      "target": "modules/bar/BatteryState.js"
+    },
+    {
+      "type": "overlay",
+      "source": "payload/scripts/battery-indicator/charge-limit.js",
+      "target": "scripts/battery-indicator/charge-limit.js"
+    }
+  ]
+}

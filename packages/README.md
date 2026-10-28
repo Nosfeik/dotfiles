@@ -46,6 +46,10 @@ pila de red. No ejecuto OpenVPN directamente.
 El comprobador de desarrollo usa Go, GJS y qmlformat, disponibles en esta máquina;
 Go y GJS no son dependencias de ejecución del mod.
 
+El mod independiente Battery Indicator sí usa `gjs` (oficial, ya instalado):
+un puente pequeño observa por D-Bus el límite de carga de ASUS. No ejecuta
+asusctl periódicamente ni modifica ese límite. Queda en ambxst.txt.
+
 En AUR se incluyen Brave Origin Nightly, Discord Canary, elecwhat, Spotify,
 VS Code, Murrine y las fuentes Phosphor/League Gothic que pidió Ambxst. `gtk2` es una
 dependencia externa instalada de Murrine; yay debe resolverla. No se incluye

@@ -1,0 +1,21 @@
+let count = 0;
+function check(value, message) { count++; if (!value) throw new Error(message); }
+check(percentage(-12, true) === 0 && percentage(125, true) === 100, "clamping");
+for (const value of [null, undefined, NaN, Infinity, "80"]) check(percentage(value, true) === null, "unknown must not be zero");
+check(percentage(0, true) === 0 && percentage(0, false) === null, "real zero versus missing");
+for (const [p,l] of [[0,"red"],[5,"red"],[15,"red"],[20,"red"],[20.1,"yellow"],[35,"yellow"],[50,"yellow"],[51,"green"],[65,"green"],[80,"green"],[100,"green"],[null,"neutral"]]) check(level(p) === l, "color " + p);
+for (const value of [null, undefined, "80", 0, 101, NaN]) check(threshold(value) === null, "invalid limit");
+check(limitReached(80,80,true,"pending-charge",0), "paused at limit");
+check(limitReached(79.5,80,true,"full",0), "rounding tolerance");
+check(limitReached(60,60,true,"pending-charge",0), "not hardcoded to 80");
+for (const state of ["charging","discharging","pending-discharge","unknown","empty"]) check(!limitReached(80,80,true,state,0), "conservative state " + state);
+check(!limitReached(80,80,false,"pending-charge",0), "AC disconnected");
+check(!limitReached(79,80,true,"pending-charge",0), "not yet at limit");
+check(!limitReached(80,80,true,"pending-charge",5), "still consuming/charging");
+check(!limitReached(100,80,true,"full",0), "100 is full");
+check(!limitReached(80,null,true,"full",0), "unknown limit");
+check(!limitReached(null,80,true,"full",0), "unknown percentage");
+check(tooltip(null,"Unknown") === "Battery unavailable", "no invented zero in tooltip");
+check(tooltip(61,status(61,"charging",true,false,80)) === "Battery: 61%\nCharging", "charging tooltip");
+check(tooltip(80,status(80,"pending-charge",true,true,80)) === "Battery: 80%\nCharge limit reached · 80%", "limit tooltip");
+print(count + " battery state assertions passed");

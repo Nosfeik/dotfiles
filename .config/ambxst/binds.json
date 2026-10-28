@@ -2488,6 +2488,62 @@
                 }
             ],
             "name": "Brave"
+        },
+        {
+            "name": "Toggle Fullscreen",
+            "keys": [
+                {
+                    "modifiers": [
+                        "SUPER"
+                    ],
+                    "key": "F"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "window.fullscreen",
+                    "args": {}
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "name": "Toggle Maximize",
+            "keys": [
+                {
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT"
+                    ],
+                    "key": "F"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "window.maximize",
+                    "args": {}
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "name": "Toggle Fake Fullscreen",
+            "keys": [
+                {
+                    "modifiers": [
+                        "SUPER",
+                        "CTRL"
+                    ],
+                    "key": "F"
+                }
+            ],
+            "actions": [
+                {
+                    "id": "window.fake-fullscreen",
+                    "args": {}
+                }
+            ],
+            "enabled": true
         }
     ],
     "defaultAmbxstBinds": {

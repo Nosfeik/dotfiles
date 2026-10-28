@@ -63,3 +63,10 @@
 .config/nvim/LICENSE
 .config/nvim/.stylua.toml
 .config/nvim/README.md
+.config/ambxst/colors/GreenBlack/dark.json
+.config/ambxst/colors/GreenBlack/light.json
+.config/qt5ct/qt5ct.conf
+.config/qt5ct/colors/GreenBlack.conf
+.config/qt6ct/qt6ct.conf
+.config/qt6ct/colors/GreenBlack.conf
+.config/ambxst/roadie.json
