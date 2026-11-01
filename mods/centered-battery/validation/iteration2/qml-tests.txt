@@ -1,0 +1,21 @@
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), arch unknown
+PASS   : qmltestrunner::CenteredBattery::initTestCase()
+PASS   : qmltestrunner::CenteredBattery::test_animation()
+PASS   : qmltestrunner::CenteredBattery::test_chargeDoesNotChangeGeometry()
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(empty)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(ten)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(quarter)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(half)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(three-quarters)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(full)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(fractional)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(subpixel)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(negative)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(overfull)
+PASS   : qmltestrunner::CenteredBattery::test_continuousFill(invalid)
+PASS   : qmltestrunner::CenteredBattery::test_themeWarning()
+PASS   : qmltestrunner::CenteredBattery::test_transparentHitArea()
+PASS   : qmltestrunner::CenteredBattery::cleanupTestCase()
+Totals: 17 passed, 0 failed, 0 skipped, 0 blacklisted, 269ms
+********* Finished testing of qmltestrunner *********

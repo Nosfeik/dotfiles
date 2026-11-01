@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "mods": [
+    {
+      "id": "drpezzer.roadie",
+      "enabled": true,
+      "order": 0,
+      "source": "https://github.com/drpezzer/ambxst-mods/tree/main/packages/roadie",
+      "sourceType": "git-subdir",
+      "revision": "70e90804200bebedc2ae8c59f330307d6431b166",
+      "installedAt": "2026-10-28T00:01:12Z"
+    },
+    {
+      "id": "local.centered-battery",
+      "enabled": true,
+      "order": 1,
+      "source": "/home/nosfeik/Dev/dotfiles/mods/centered-battery",
+      "sourceType": "local",
+      "installedAt": "2026-11-01T19:09:30Z"
+    }
+  ],
+  "activeGeneration": "20261101T192210Z-8baf370a",
+  "previousGeneration": "20261101T192150Z-0cc0156f"
+}
