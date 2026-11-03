@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-27",
+  "recordedAt": "2026-11-03",
   "ambxst": {
     "version": "1.3.14",
     "revision": "83e8462a6b03d4a7d428d5c7365e4ec03f3b63a9"
@@ -13,6 +13,29 @@
       "revision": "70e90804200bebedc2ae8c59f330307d6431b166",
       "manifestSha256": "109dc6017f571daa33fd6dbd7f4f57aa2f8ed36a89e93b09b446676257f3199e",
       "configuration": ".config/ambxst/roadie.json"
+    },
+    {
+      "id": "local.centered-battery",
+      "version": "1.3.1",
+      "enabled": true,
+      "source": "mods/centered-battery",
+      "manifestSha256": "db8868684fad568bed691b4dc9e8828632f0ac1dab794e1c48e8ef68361a147a"
+    },
+    {
+      "id": "local.notif-empty-actions",
+      "version": "1.1.0",
+      "enabled": true,
+      "source": "mods/notif-empty-actions",
+      "manifestSha256": "58a2c4ba8bd397e580ba21cc9f48cdb8404268d9239a9dc5375dc1f72d8646a4"
+    },
+    {
+      "id": "nosfeik.pentest",
+      "version": "1.1.0",
+      "enabled": true,
+      "source": "https://github.com/Nosfeik/ambxst-pentest",
+      "revision": "ff8b86dcc67d59b102fda374ccbe4ace657cf30c",
+      "manifestSha256": "020d88c267afc487629f6d89d71606a9d9a10fb1e657c032e1ce994b65a92a98",
+      "keybind": "Pentest Toggle (Super+Shift+P) en .config/ambxst/binds.json"
     }
   ]
 }

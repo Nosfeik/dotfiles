@@ -1,0 +1,14 @@
+diff --git a/modules/services/Notifications.qml b/modules/services/Notifications.qml
+index 9a8a8424bb92afc7a46878a59990d62a998c7b2e..836f8909d00a9cfa2d2ef6df17c9e9c78abd5982 100644
+--- a/modules/services/Notifications.qml
++++ b/modules/services/Notifications.qml
+@@ -14,7 +14,8 @@ Singleton {
+     component Notif: QtObject {
+         required property int id
+         property Notification notification
+-        property list<var> actions: notification?.actions.map(action => ({
++        // Skip actions without a label (e.g. kitty's "default" action) so they don't render as empty buttons
++        property list<var> actions: notification?.actions.filter(action => action.text && action.text.trim() !== "").map(action => ({
+                     "identifier": action.identifier,
+                     "text": action.text
+                 })) ?? []

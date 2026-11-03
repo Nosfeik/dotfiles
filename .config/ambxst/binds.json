@@ -2,11 +2,9 @@
     "ambxst": {
         "assistant": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.assistant",
-                "layouts": [
-                ]
+                "layouts": []
             },
             "key": "A",
             "modifiers": [
@@ -18,8 +16,7 @@
         },
         "clipboard": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.clipboard"
             },
             "key": "V",
@@ -29,11 +26,9 @@
         },
         "dashboard": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.dashboard",
-                "layouts": [
-                ]
+                "layouts": []
             },
             "key": "A",
             "modifiers": [
@@ -42,8 +37,7 @@
         },
         "emoji": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.emoji"
             },
             "key": "PERIOD",
@@ -53,11 +47,9 @@
         },
         "launcher": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.launcher",
-                "layouts": [
-                ]
+                "layouts": []
             },
             "key": "D",
             "modifiers": [
@@ -66,8 +58,7 @@
         },
         "notes": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.notes"
             },
             "key": "N",
@@ -78,8 +69,7 @@
         "system": {
             "bar": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.bar"
                 },
                 "key": "B",
@@ -90,8 +80,7 @@
             },
             "config": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.config"
                 },
                 "key": "C",
@@ -102,8 +91,7 @@
             },
             "lens": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.lens"
                 },
                 "key": "A",
@@ -114,8 +102,7 @@
             },
             "lockscreen": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.lock"
                 },
                 "key": "L",
@@ -125,8 +112,7 @@
             },
             "overview": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.overview"
                 },
                 "key": "TAB",
@@ -136,11 +122,9 @@
             },
             "powermenu": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.powermenu",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 },
                 "key": "Q",
                 "modifiers": [
@@ -150,8 +134,7 @@
             },
             "quit": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.quit"
                 },
                 "key": "B",
@@ -163,11 +146,9 @@
             },
             "reload": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.reload",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 },
                 "key": "R",
                 "modifiers": [
@@ -177,11 +158,9 @@
             },
             "screenrecord": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenrecord",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 },
                 "key": "G",
                 "modifiers": [
@@ -191,11 +170,9 @@
             },
             "screenshot": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenshot",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 },
                 "key": "S",
                 "modifiers": [
@@ -204,11 +181,9 @@
             },
             "tools": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.tools",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 },
                 "key": "S",
                 "modifiers": [
@@ -219,11 +194,9 @@
         },
         "tmux": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.tmux",
-                "layouts": [
-                ]
+                "layouts": []
             },
             "key": "T",
             "modifiers": [
@@ -235,8 +208,7 @@
         },
         "wallpapers": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.wallpapers"
             },
             "key": "COMMA",
@@ -249,11 +221,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "window.close",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -270,11 +240,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "window.toggle-float",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -295,8 +263,7 @@
                         "index": "1"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -317,8 +284,7 @@
                         "index": "2"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -339,8 +305,7 @@
                         "index": "3"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -361,8 +326,7 @@
                         "index": "4"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -383,8 +347,7 @@
                         "index": "5"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -405,8 +368,7 @@
                         "index": "6"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -427,8 +389,7 @@
                         "index": "7"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -449,8 +410,7 @@
                         "index": "8"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -471,8 +431,7 @@
                         "index": "9"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -493,8 +452,7 @@
                         "index": "10"
                     },
                     "id": "workspace.switch",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -515,8 +473,7 @@
                         "index": "1"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -538,8 +495,7 @@
                         "index": "2"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -561,8 +517,7 @@
                         "index": "3"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -584,8 +539,7 @@
                         "index": "4"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -607,8 +561,7 @@
                         "index": "5"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -630,8 +583,7 @@
                         "index": "6"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -653,8 +605,7 @@
                         "index": "7"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -676,8 +627,7 @@
                         "index": "8"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -699,8 +649,7 @@
                         "index": "9"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -722,8 +671,7 @@
                         "index": "10"
                     },
                     "id": "workspace.move-window",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -745,8 +693,7 @@
                         "index": "1"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -768,8 +715,7 @@
                         "index": "2"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -791,8 +737,7 @@
                         "index": "3"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -814,8 +759,7 @@
                         "index": "4"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -837,8 +781,7 @@
                         "index": "5"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -860,8 +803,7 @@
                         "index": "6"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -883,8 +825,7 @@
                         "index": "7"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -906,8 +847,7 @@
                         "index": "8"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -929,8 +869,7 @@
                         "index": "9"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -952,8 +891,7 @@
                         "index": "10"
                     },
                     "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -975,8 +913,7 @@
                         "offset": "-1"
                     },
                     "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -997,8 +934,7 @@
                         "offset": "+1"
                     },
                     "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1019,8 +955,7 @@
                         "offset": "-1"
                     },
                     "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1042,8 +977,7 @@
                         "offset": "+1"
                     },
                     "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1065,8 +999,7 @@
                         "offset": "-1"
                     },
                     "id": "workspace.switch-relative",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1087,8 +1020,7 @@
                         "offset": "+1"
                     },
                     "id": "workspace.switch-relative",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1105,11 +1037,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "window.drag",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1126,11 +1056,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "window.resize-drag",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1147,19 +1075,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "media.play-pause",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioPlay",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Media Play Pause"
@@ -1167,19 +1092,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "media.prev",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioPrev",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Media Previous"
@@ -1187,19 +1109,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "media.next",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioNext",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Media Next"
@@ -1207,19 +1126,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "media.play-pause-locked",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioMedia",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Media Play Pause"
@@ -1227,19 +1143,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "media.stop-locked",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioStop",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Media Stop"
@@ -1247,19 +1160,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "audio.volume-up",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioRaiseVolume",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Volume Up"
@@ -1267,19 +1177,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "audio.volume-down",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioLowerVolume",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Volume Down"
@@ -1287,19 +1194,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "audio.mute-toggle",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86AudioMute",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Mute Audio"
@@ -1311,16 +1215,14 @@
                         "command": "sh -c 'echo brightness-up > \"${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/ambxst_ipc.pipe\"'"
                     },
                     "id": "command.run",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86MonBrightnessUp",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Brightness Up"
@@ -1332,16 +1234,14 @@
                         "command": "sh -c 'echo brightness-down > \"${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/ambxst_ipc.pipe\"'"
                     },
                     "id": "command.run",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86MonBrightnessDown",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Brightness Down"
@@ -1349,19 +1249,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.calculator",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "XF86Calculator",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Calculator"
@@ -1369,11 +1266,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "workspace.toggle-special",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1391,11 +1286,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "workspace.move-window-special",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1413,19 +1306,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.lock-locked",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "switch:Lid Switch",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Lock Session on Lid Switch"
@@ -1433,19 +1323,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.dpms-off",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "switch:on:Lid Switch",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Display Off on Lid Close"
@@ -1453,19 +1340,16 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.dpms-on",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
             "keys": [
                 {
                     "key": "switch:off:Lid Switch",
-                    "modifiers": [
-                    ]
+                    "modifiers": []
                 }
             ],
             "name": "Display On on Lid Open"
@@ -1477,8 +1361,7 @@
                         "direction": "u"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1499,8 +1382,7 @@
                         "direction": "u"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1522,8 +1404,7 @@
                         "direction": "d"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1544,8 +1425,7 @@
                         "direction": "d"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1567,8 +1447,7 @@
                         "direction": "l"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1589,8 +1468,7 @@
                         "direction": "l"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1612,8 +1490,7 @@
                         "direction": "l"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1635,8 +1512,7 @@
                         "direction": "r"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1657,8 +1533,7 @@
                         "direction": "r"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1680,8 +1555,7 @@
                         "direction": "r"
                     },
                     "id": "window.focus",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1703,8 +1577,7 @@
                         "direction": "l"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1726,8 +1599,7 @@
                         "direction": "l"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1749,8 +1621,7 @@
                         "direction": "r"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1772,8 +1643,7 @@
                         "direction": "r"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1795,8 +1665,7 @@
                         "direction": "u"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1818,8 +1687,7 @@
                         "direction": "u"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1841,8 +1709,7 @@
                         "direction": "d"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1864,8 +1731,7 @@
                         "direction": "d"
                     },
                     "id": "window.move",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1887,8 +1753,7 @@
                         "delta": "+0.1"
                     },
                     "id": "scrolling.resize-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1910,8 +1775,7 @@
                         "delta": "+0.1"
                     },
                     "id": "scrolling.resize-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1933,8 +1797,7 @@
                         "delta": "-0.1"
                     },
                     "id": "scrolling.resize-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1956,8 +1819,7 @@
                         "delta": "-0.1"
                     },
                     "id": "scrolling.resize-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -1979,8 +1841,7 @@
                         "delta": "0 50"
                     },
                     "id": "window.resize",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2002,8 +1863,7 @@
                         "delta": "0 50"
                     },
                     "id": "window.resize",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2025,8 +1885,7 @@
                         "delta": "0 -50"
                     },
                     "id": "window.resize",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2048,8 +1907,7 @@
                         "delta": "0 -50"
                     },
                     "id": "window.resize",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2067,11 +1925,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "scrolling.promote",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2089,11 +1945,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "scrolling.toggle-fit",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2111,11 +1965,9 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "scrolling.toggle-full-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2137,8 +1989,7 @@
                         "direction": "l"
                     },
                     "id": "scrolling.swap-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2161,8 +2012,7 @@
                         "direction": "l"
                     },
                     "id": "scrolling.swap-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2185,8 +2035,7 @@
                         "direction": "r"
                     },
                     "id": "scrolling.swap-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2209,8 +2058,7 @@
                         "direction": "r"
                     },
                     "id": "scrolling.swap-column",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2233,8 +2081,7 @@
                         "index": "1"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2257,8 +2104,7 @@
                         "index": "2"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2281,8 +2127,7 @@
                         "index": "3"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2305,8 +2150,7 @@
                         "index": "4"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2329,8 +2173,7 @@
                         "index": "5"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2353,8 +2196,7 @@
                         "index": "6"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2377,8 +2219,7 @@
                         "index": "7"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2401,8 +2242,7 @@
                         "index": "8"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2425,8 +2265,7 @@
                         "index": "9"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2449,8 +2288,7 @@
                         "index": "10"
                     },
                     "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2473,8 +2311,7 @@
                         "command": "brave-origin-nightly"
                     },
                     "id": "command.run",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 }
             ],
             "enabled": true,
@@ -2491,8 +2328,7 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "window.fullscreen"
                 }
             ],
@@ -2510,8 +2346,7 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "window.maximize"
                 }
             ],
@@ -2530,8 +2365,7 @@
         {
             "actions": [
                 {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "window.fake-fullscreen"
                 }
             ],
@@ -2546,14 +2380,35 @@
                 }
             ],
             "name": "Toggle Fake Fullscreen"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "command": "sh -c 'echo toggle > \"${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/ambxst_pentest.pipe\"'"
+                    },
+                    "id": "command.run",
+                    "layouts": []
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "P",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT"
+                    ]
+                }
+            ],
+            "name": "Pentest Toggle"
         }
     ],
     "defaultAmbxstBinds": {
         "ambxst": {
             "assistant": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.assistant"
                 },
                 "key": "A",
@@ -2563,8 +2418,7 @@
             },
             "clipboard": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.clipboard"
                 },
                 "key": "V",
@@ -2574,8 +2428,7 @@
             },
             "dashboard": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.dashboard"
                 },
                 "key": "D",
@@ -2585,8 +2438,7 @@
             },
             "emoji": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.emoji"
                 },
                 "key": "PERIOD",
@@ -2596,8 +2448,7 @@
             },
             "launcher": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.launcher"
                 },
                 "key": "Super_L",
@@ -2607,8 +2458,7 @@
             },
             "notes": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.notes"
                 },
                 "key": "N",
@@ -2618,8 +2468,7 @@
             },
             "tmux": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.tmux"
                 },
                 "key": "T",
@@ -2629,8 +2478,7 @@
             },
             "wallpapers": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.wallpapers"
                 },
                 "key": "COMMA",
@@ -2642,8 +2490,7 @@
         "system": {
             "bar": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.bar"
                 },
                 "key": "B",
@@ -2654,8 +2501,7 @@
             },
             "config": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.config"
                 },
                 "key": "C",
@@ -2666,8 +2512,7 @@
             },
             "lens": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.lens"
                 },
                 "key": "A",
@@ -2678,8 +2523,7 @@
             },
             "lockscreen": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.lock"
                 },
                 "key": "L",
@@ -2689,8 +2533,7 @@
             },
             "overview": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.overview"
                 },
                 "key": "TAB",
@@ -2700,8 +2543,7 @@
             },
             "powermenu": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.powermenu"
                 },
                 "key": "ESCAPE",
@@ -2711,8 +2553,7 @@
             },
             "quit": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.quit"
                 },
                 "key": "B",
@@ -2724,8 +2565,7 @@
             },
             "reload": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.reload"
                 },
                 "key": "B",
@@ -2736,8 +2576,7 @@
             },
             "screenrecord": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenrecord"
                 },
                 "key": "R",
@@ -2748,8 +2587,7 @@
             },
             "screenshot": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenshot"
                 },
                 "key": "S",
@@ -2760,8 +2598,7 @@
             },
             "tools": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.tools"
                 },
                 "key": "S",

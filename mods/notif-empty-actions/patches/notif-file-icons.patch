@@ -1,0 +1,63 @@
+diff --git a/modules/notifications/NotificationAppIcon.qml b/modules/notifications/NotificationAppIcon.qml
+index 3515379df221559247dcadcfffb9900c11f122c4..5c91c18db4c8980c3d9c0d881b04fa337423f2f5 100644
+--- a/modules/notifications/NotificationAppIcon.qml
++++ b/modules/notifications/NotificationAppIcon.qml
+@@ -23,6 +23,18 @@ Item {
+     property real smallAppIconSize: size * smallAppIconScale
+     property bool usingAppIconFallback: false
+ 
++    // appIcon can be a theme icon name or a path/URL (e.g. kitty sends /usr/lib/kitty/logo/kitty.png)
++    function iconSource(icon) {
++        if (!icon)
++            return "";
++        const s = icon.toString();
++        if (s.startsWith("/"))
++            return "file://" + s;
++        if (/^(file|data|https?|image|qrc):/.test(s))
++            return s;
++        return "image://icon/" + s;
++    }
++
+     implicitWidth: size
+     implicitHeight: size
+     property real radius: Styling.radius(-8)
+@@ -84,7 +96,7 @@ Item {
+                 id: appIconImage
+                 anchors.fill: parent
+                 radius: root.radius
+-                source: root.appIcon ? "image://icon/" + root.appIcon : ""
++                source: root.iconSource(root.appIcon)
+             }
+         }
+ 
+@@ -116,7 +128,7 @@ Item {
+                 source: root.image
+                 onStatusChanged: {
+                     if (status === Image.Error && root.appIcon) {
+-                        source = "image://icon/" + root.appIcon;
++                        source = root.iconSource(root.appIcon);
+                         root.usingAppIconFallback = true;
+                     }
+                 }
+@@ -137,7 +149,7 @@ Item {
+             Image {
+                 mipmap: true
+                 anchors.fill: parent
+-                source: root.appIcon ? "image://icon/" + root.appIcon : ""
++                source: root.iconSource(root.appIcon)
+                 fillMode: Image.PreserveAspectCrop
+                 smooth: true
+             }
+diff --git a/modules/notifications/NotificationGroup.qml b/modules/notifications/NotificationGroup.qml
+index e59be6ddd83b92717aefcbdef42dcc3d75e999f9..e951d38e86d76424ab4ad51da7edf766279cf4b6 100644
+--- a/modules/notifications/NotificationGroup.qml
++++ b/modules/notifications/NotificationGroup.qml
+@@ -207,7 +207,7 @@ Item {
+                             id: groupSmallAppIcon
+                             Layout.preferredWidth: 16
+                             Layout.preferredHeight: 16
+-                            source: (notificationGroup && notificationGroup.appIcon !== "") ? "image://icon/" + notificationGroup.appIcon : ""
++                            source: (notificationGroup && notificationGroup.appIcon !== "") ? (notificationGroup.appIcon.startsWith("/") ? "file://" + notificationGroup.appIcon : (/^(file|data|https?|image|qrc):/.test(notificationGroup.appIcon) ? notificationGroup.appIcon : "image://icon/" + notificationGroup.appIcon)) : ""
+                             fillMode: Image.PreserveAspectFit
+                             smooth: true
+                             visible: notificationGroup && notificationGroup.appIcon !== "" && root.validNotifications.some(n => n.image !== "")
