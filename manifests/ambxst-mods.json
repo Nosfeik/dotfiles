@@ -36,6 +36,13 @@
       "revision": "ff8b86dcc67d59b102fda374ccbe4ace657cf30c",
       "manifestSha256": "020d88c267afc487629f6d89d71606a9d9a10fb1e657c032e1ce994b65a92a98",
       "keybind": "Pentest Toggle (Super+Shift+P) en .config/ambxst/binds.json"
+    },
+    {
+      "id": "local.osd-fix",
+      "version": "1.1.0",
+      "enabled": true,
+      "source": "mods/osd-fix",
+      "manifestSha256": "84c15c8b6e199ce780f768a0a73040617df5e9653be2a7d13f562c4b0dbf71a4"
     }
   ]
 }

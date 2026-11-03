@@ -1,0 +1,86 @@
+diff --git a/modules/shell/osd/OSD.qml b/modules/shell/osd/OSD.qml
+index f8bb863223bd09885bd1d8b02779109bd2843a7b..f4c42af6a389fd979bdcb8fb6a61213094eef9d7 100644
+--- a/modules/shell/osd/OSD.qml
++++ b/modules/shell/osd/OSD.qml
+@@ -28,6 +28,10 @@ PanelWindow {
+ 
+     color: "transparent"
+ 
++    // Only the pill takes input; the rest of the full-width strip lets
++    // clicks and hover through to the windows below.
++    mask: Region { item: osdRect }
++
+     visible: GlobalStates.osdVisible
+ 
+     // Internal state for responsiveness
+@@ -62,11 +66,14 @@ PanelWindow {
+                             return Audio.volumeIcon(root.osdValue, root.osdMuted);
+                         } else if (GlobalStates.osdIndicator === "mic") {
+                             return root.osdMuted ? Icons.micSlash : Icons.mic;
++                        } else if (GlobalStates.osdIndicator === "profile") {
++                            // Nerd Font fan-speed-1/2/3 (Phosphor has no fan)
++                            return ["\u{F0210}", "\u{F1472}", "\u{F1473}", "\u{F1474}"][Math.round(root.osdValue * 3)];
+                         } else {
+                             return Icons.sun;
+                         }
+                     }
+-                    font.family: Icons.font
++                    font.family: GlobalStates.osdIndicator === "profile" ? "Symbols Nerd Font" : Icons.font
+                     font.pixelSize: 22
+                     color: Colors.overBackground
+                     Layout.alignment: Qt.AlignVCenter
+@@ -108,6 +115,8 @@ PanelWindow {
+                                     return I18n.t("osd.mic");
+                                 if (GlobalStates.osdIndicator === "brightness")
+                                     return I18n.t("osd.brightness");
++                                if (GlobalStates.osdIndicator === "profile")
++                                    return "Fan";
+                                 return "";
+                             }
+                             font.family: Config.theme.font
+@@ -122,7 +131,7 @@ PanelWindow {
+                         }
+ 
+                         Text {
+-                            text: Math.round(root.osdValue * 100)
++                            text: GlobalStates.osdIndicator === "profile" ? RogProfile.profile : Math.round(root.osdValue * 100)
+                             font.family: Config.theme.font
+                             font.pixelSize: 15
+                             font.bold: false
+@@ -147,9 +156,14 @@ PanelWindow {
+         }
+     }
+ 
+-    // Close on click or hover
++    // Close on click or hover, over the pill only. Covering the whole strip
++    // closed the OSD 14 ms after it showed whenever the cursor was resting
++    // anywhere along the bottom of the screen.
+     MouseArea {
+-        anchors.fill: parent
++        x: osdRect.x
++        y: osdRect.y
++        width: osdRect.width
++        height: osdRect.height
+         onEntered: {
+             hideTimer.stop();
+             hideTimer.triggered();
+@@ -163,6 +177,19 @@ PanelWindow {
+         onTriggered: GlobalStates.osdVisible = false
+     }
+ 
++    // Fan key: the bind changes the asusd profile and asks RogProfile to
++    // announce it (qs ipc call rog announce).
++    Connections {
++        target: RogProfile
++        function onAnnounced() {
++            root.osdValue = RogProfile.value;
++            root.osdMuted = false;
++            GlobalStates.osdIndicator = "profile";
++            GlobalStates.osdVisible = true;
++            hideTimer.restart();
++        }
++    }
++
+     Connections {
+         target: GlobalStates
+         function onOsdVisibleChanged() {

@@ -4,7 +4,8 @@
 
 local telegram = [[^(org\.telegram\.desktop|telegram-desktop|TelegramDesktop)$]]
 local discord = [[^(discord|discord-canary|discord-ptb|Discord)$]]
-local rog = [[^(rog-control-center|RogControlCenter)$]]
+-- Desde 2026 ROG Control Center usa la clase org.opengamingcollective.rog-control-center
+local rog = [[^(rog-control-center|RogControlCenter|org\.opengamingcollective\.rog-control-center)$]]
 
 local no_focus_classes = {
     telegram,

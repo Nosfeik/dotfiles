@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Axenide/Ambxst/main/docs/mods/manifest.schema.json",
+  "manifestVersion": 1,
+  "id": "local.osd-fix",
+  "name": "OSD Fix",
+  "version": "1.1.0",
+  "description": "El OSD de volumen y brillo se cerraba en cuanto aparecía si el cursor estaba en la parte de abajo de la pantalla; ahora solo el pill detecta el hover. También agrega un OSD del perfil del ventilador (Quiet / Balanced / Performance) para la tecla Fn+F5 de la Zephyrus.",
+  "author": "nosfeik",
+  "license": "UNLICENSED",
+  "compatibility": {
+    "api": 1,
+    "ambxst": ">=1.3.14 <1.3.15",
+    "testedBaseCommits": [
+      "83e8462a6b03d4a7d428d5c7365e4ec03f3b63a9"
+    ]
+  },
+  "localization": {
+    "mode": "none"
+  },
+  "dependencies": [],
+  "conflicts": [],
+  "commands": [
+    "asusctl"
+  ],
+  "permissions": [
+    "Lee el perfil activo con `asusctl profile get` cuando la tecla del ventilador lo pide por IPC (`qs ipc call rog announce`)"
+  ],
+  "operations": [
+    {
+      "type": "overlay",
+      "source": "payload/modules/services/RogProfile.qml",
+      "target": "modules/services/RogProfile.qml"
+    },
+    {
+      "type": "patch",
+      "source": "patches/osd.patch"
+    }
+  ]
+}

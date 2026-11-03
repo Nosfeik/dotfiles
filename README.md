@@ -17,7 +17,7 @@ Esto es mi respaldo y la guía que sigo cuando reinstalo la laptop, no está pen
 | `scripts/` | Instalador, restaurador, firewall y bootstraps |
 | `system/etc/` | Drop-in de logind para la tapa y config de zram |
 | `exegol/` | Mi perfil de Exegol (prompt, aliases, Burp en Wayland) |
-| `mods/` | Mods de Ambxst que hice: Centered Battery y Notification Fixes activos, Pentest Mode y Battery Indicator archivados |
+| `mods/` | Mods de Ambxst que hice: Centered Battery, Notification Fixes y OSD Fix activos, Pentest Mode y Battery Indicator archivados |
 | `docs/` | Notas más a detalle de cada cosa |
 
 ## Versiones
@@ -116,13 +116,14 @@ El restaurador hace backup de lo que reemplaza en `~/.local/state/dotfiles-backu
 
 ## Mods de Ambxst
 
-Tengo cuatro activos, la lista con versiones y hashes está en [manifests/ambxst-mods.json](manifests/ambxst-mods.json):
+Tengo cinco activos, la lista con versiones y hashes está en [manifests/ambxst-mods.json](manifests/ambxst-mods.json):
 
 | Mod | De dónde sale |
 |---|---|
 | Roadie 4.1.1 | [drpezzer/ambxst-mods](https://github.com/drpezzer/ambxst-mods/tree/main/packages/roadie), config en `.config/ambxst/roadie.json` |
 | Centered Battery 1.3.1 | [mods/centered-battery](mods/centered-battery) |
 | Notification Fixes 1.1.0 | [mods/notif-empty-actions](mods/notif-empty-actions), oculta las acciones vacías de las notificaciones (la de kitty) y muestra los íconos que llegan como ruta. Necesita Roadie |
+| OSD Fix 1.1.0 | [mods/osd-fix](mods/osd-fix), el OSD de volumen y brillo se cerraba solo si el cursor estaba abajo de la pantalla porque el hover cubría toda la franja, ahora solo cuenta el pill. También agrega el OSD del perfil del ventilador para Fn+F5 |
 | Pentest 1.1.0 | [Nosfeik/ambxst-pentest](https://github.com/Nosfeik/ambxst-pentest), repo aparte. Super+Shift+P lo oculta y lo muestra, el bind ya va en `binds.json` |
 
 Después de restaurar los configs y con Ambxst corriendo, los instalo en este orden porque Notification Fixes depende de Roadie:
@@ -131,9 +132,10 @@ Después de restaurar los configs y con Ambxst corriendo, los instalo en este or
 ambxst mods install https://github.com/drpezzer/ambxst-mods/tree/main/packages/roadie
 ambxst mods install ./mods/centered-battery
 ambxst mods install ./mods/notif-empty-actions
+ambxst mods install ./mods/osd-fix
 git clone https://github.com/Nosfeik/ambxst-pentest ~/Dev/ambxst-pentest
 ambxst mods install ~/Dev/ambxst-pentest
-for m in drpezzer.roadie local.centered-battery local.notif-empty-actions nosfeik.pentest; do
+for m in drpezzer.roadie local.centered-battery local.notif-empty-actions local.osd-fix nosfeik.pentest; do
     ambxst mods enable "$m"
 done
 ambxst reload
