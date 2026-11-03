@@ -7,7 +7,7 @@
     "surface"
   ],
   "inactiveBorderAngle": 45,
-  "borderSize": 2,
+  "borderSize": 0,
   "rounding": 16,
   "syncRoundness": true,
   "syncBorderWidth": false,

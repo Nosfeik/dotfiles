@@ -38,7 +38,7 @@ for _, bind in ipairs(custom_binds) do
 end
 
 -- Ambxst asignaba dos acciones a esta combinación. Dejo solo la barra.
--- Ambxst conserva la recarga de la shell en SUPER+SHIFT+R.
+-- Para reiniciar la shell ejecuto `ambxst reload` explícitamente.
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("ambxst toggle bar"))
 
 -- El generador de Ambxst usa exec_cmd("resizeactive ...") en estos cuatro

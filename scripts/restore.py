@@ -9,6 +9,15 @@ import subprocess
 import tempfile
 
 REPO = Path(__file__).resolve().parent.parent
+SYSTEM_THEMES = Path("/usr/share/themes")
+
+
+def system_theme_link(src):
+    """GTK4 links to the packaged adw-gtk3 theme: read-only and owned by pacman."""
+    if not src.is_symlink():
+        return False
+    link = Path(os.readlink(src))
+    return link.is_absolute() and ".." not in link.parts and link.is_relative_to(SYSTEM_THEMES)
 
 
 def entries(group):
@@ -28,7 +37,7 @@ def entries(group):
                 or (group == "configs" and ("history" in relative.name.lower()
                     or relative.name.lower().startswith(("credentials", "secrets", "cookies", ".env"))))):
             raise ValueError(f"Forbidden manifest path: {relative}")
-        allowed = ((".icons/", ".themes/", ".fonts/", "Pictures/Wallpapers/")
+        allowed = ((".icons/", ".themes/", ".fonts/", "Pictures/Wallpapers/", "Pictures/Icon/")
                    if group == "assets" else
                    tuple(f".config/{p}/" for p in ("hypr", "kitty", "lsd", "gtk-3.0",
                          "gtk-4.0", "nwg-look", "xsettingsd", "ambxst", "qt5ct", "qt6ct")) +
@@ -45,7 +54,7 @@ def entries(group):
             raise ValueError(f"Duplicate manifest path: {relative}")
         seen.add(name)
         src = REPO / relative
-        if not src.resolve().is_relative_to(REPO):
+        if not system_theme_link(src) and not src.resolve().is_relative_to(REPO):
             raise ValueError(f"Source escapes repository: {relative}")
         if src.is_dir() and not src.is_symlink():
             raise ValueError(f"Manifest must list files, not trees: {relative}")
@@ -136,7 +145,7 @@ def restore(home, pairs, apply=False, retire=()):
         if src.is_symlink():
             link = Path(os.readlink(src))
             resolved = (home / relative.parent / link).resolve()
-            if link.is_absolute() or not resolved.is_relative_to(home):
+            if not system_theme_link(src) and (link.is_absolute() or not resolved.is_relative_to(home)):
                 raise ValueError(f"Source link escapes HOME: {src}")
         dst = home / relative
         if dst.is_dir() and not dst.is_symlink():

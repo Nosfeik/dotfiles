@@ -35,10 +35,9 @@
                 "layouts": [
                 ]
             },
-            "key": "D",
+            "key": "A",
             "modifiers": [
-                "SUPER",
-                "SHIFT"
+                "SUPER"
             ]
         },
         "emoji": {
@@ -281,7 +280,7 @@
             "enabled": true,
             "keys": [
                 {
-                    "key": "SPACE",
+                    "key": "T",
                     "modifiers": [
                         "SUPER"
                     ]
@@ -2490,60 +2489,63 @@
             "name": "Brave"
         },
         {
-            "name": "Toggle Fullscreen",
-            "keys": [
-                {
-                    "modifiers": [
-                        "SUPER"
-                    ],
-                    "key": "F"
-                }
-            ],
             "actions": [
                 {
-                    "id": "window.fullscreen",
-                    "args": {}
+                    "args": {
+                    },
+                    "id": "window.fullscreen"
                 }
             ],
-            "enabled": true
-        },
-        {
-            "name": "Toggle Maximize",
+            "enabled": true,
             "keys": [
                 {
+                    "key": "F",
+                    "modifiers": [
+                        "SUPER"
+                    ]
+                }
+            ],
+            "name": "Toggle Fullscreen"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                    },
+                    "id": "window.maximize"
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "F",
                     "modifiers": [
                         "SUPER",
                         "SHIFT"
-                    ],
-                    "key": "F"
+                    ]
                 }
             ],
-            "actions": [
-                {
-                    "id": "window.maximize",
-                    "args": {}
-                }
-            ],
-            "enabled": true
+            "name": "Toggle Maximize"
         },
         {
-            "name": "Toggle Fake Fullscreen",
+            "actions": [
+                {
+                    "args": {
+                    },
+                    "id": "window.fake-fullscreen"
+                }
+            ],
+            "enabled": true,
             "keys": [
                 {
+                    "key": "F",
                     "modifiers": [
                         "SUPER",
                         "CTRL"
-                    ],
-                    "key": "F"
+                    ]
                 }
             ],
-            "actions": [
-                {
-                    "id": "window.fake-fullscreen",
-                    "args": {}
-                }
-            ],
-            "enabled": true
+            "name": "Toggle Fake Fullscreen"
         }
     ],
     "defaultAmbxstBinds": {

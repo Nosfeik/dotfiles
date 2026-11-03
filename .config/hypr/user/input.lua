@@ -5,7 +5,7 @@
 hl.config({
     input = {
         -- Teclado
-        kb_layout = "us,es",
+        kb_layout = "us,latam",
         kb_options = "grp:win_space_toggle",
         repeat_rate = 30,
         repeat_delay = 400,

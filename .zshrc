@@ -1,29 +1,23 @@
 
-# Powerlevel10k is loaded below after plugins and keybindings.
-
-# Match the live shell's history limits and sharing between sessions.
-HISTFILE=${HISTFILE:-$HOME/.zsh_history}
-HISTSIZE=100000
-SAVEHIST=100000
+# Source Powerlevel10k theme for both users
+if [[ -r /root/.powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source /root/.powerlevel10k/powerlevel10k.zsh-theme
+elif [[ -r /home/nosfeik/.powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source /home/nosfeik/.powerlevel10k/powerlevel10k.zsh-theme
+fi
+# Maximum lines kept in memory
+export HISTSIZE=100000
+# Maximum lines saved to $HISTFILE
+export SAVEHIST=100000
+# Like INC_APPEND_HISTORY + re-read history whenever accessing it
 setopt SHARE_HISTORY
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Manual configuration
-typeset -U path PATH
-path=("$HOME/.local/bin" $path)
-# Conservo estas rutas históricas como opcionales: no está documentado si
-# volveré a usar esas herramientas. No añado directorios inexistentes al PATH.
-for dotfiles_optional_bin in "$HOME/.local/bin/ctgen" "$HOME/go/bin" \
-                             "$HOME/.cargo/bin" /opt/android-studio/bin; do
-    [[ -d $dotfiles_optional_bin ]] && path+=("$dotfiles_optional_bin")
-done
-unset dotfiles_optional_bin
-export PATH
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/nosfeik/.local/bin/ctgen:/home/nosfeik/go/bin:/home/nosfeik/.cargo/bin:/opt/android-studio/bin:/usr/local/bin/platform-tools
 
 # Manual aliases
-alias exegol="$HOME/.local/bin/exegol"
 alias xxx='exegol start hacking'
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
@@ -32,21 +26,11 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='bat'
 alias catn='/usr/bin/cat'
-alias vim='nvim'
-export EDITOR=nvim
-export VISUAL=nvim
-
-# Optional completion for the pipx installation of Exegol.
-if [[ -x "$HOME/.local/bin/exegol" ]] && (( $+commands[register-python-argcomplete] )); then
-    autoload -Uz compinit
-    compinit
-    eval "$(register-python-argcomplete --no-defaults exegol)"
-fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 
 # Green Black: mint green folder/file colors for lsd and GNU ls.
@@ -106,3 +90,14 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# Created by `pipx` on 2026-09-21 21:45:27
+export PATH="/home/nosfeik/.local/bin:$PATH"
+alias exegol="$HOME/.local/bin/exegol"
+autoload -U compinit && compinit
+eval "$(register-python-argcomplete --no-defaults exegol)"
+
+# Neovim as the default editor.
+alias vim='nvim'
+export EDITOR=nvim
+export VISUAL=nvim

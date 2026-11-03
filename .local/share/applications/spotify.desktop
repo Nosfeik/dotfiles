@@ -3,8 +3,8 @@ Type=Application
 Name=Spotify
 GenericName=Music Player
 Icon=spotify-client
-TryExec=sh
-Exec=sh -c "exec \\"\\$HOME/.local/bin/spotify\\" \\"\\$@\\"" spotify %U
+TryExec=/home/nosfeik/.local/bin/spotify
+Exec=/home/nosfeik/.local/bin/spotify --uri=%u
 Terminal=false
 MimeType=x-scheme-handler/spotify;
 Categories=Audio;Music;Player;AudioVideo;
