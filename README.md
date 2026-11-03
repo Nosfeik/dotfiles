@@ -28,10 +28,8 @@ Hyprland 0.56.2, Ambxst 1.3.14, axctl v0.0.26, Spicetify 2.46.2, NvChad v2.5 (ne
 
 - Ryzen AI 7 350 con Radeon 860M. La RTX 5070 la dejo apagada con **GPU Mode = Integrated** en ROG Control Center, no uso PRIME.
 - OLED 2560×1600 a 240 Hz con escala 1.6.
-- Charge limit al 80 %, Quiet en batería y Balanced en AC con `power-profiles-daemon`. Dejo las curvas de ASUS, nada de undervolt ni TDP manual.
+- Charge limit al 80 %, Quiet en batería y Balanced en AC, eso lo cambia asusd solo (`asusctl profile get` enseña los dos). Dejo las curvas de ASUS, nada de undervolt ni TDP manual.
 - No uso TLP.
-- Teclado `us` y `latam`, cambio entre los dos con SUPER+Espacio.
-- GTK con **adw-gtk3** y los colores que genera Ambxst. Qt usa la misma paleta con qt5ct/qt6ct.
 - Teclado `us` y `latam`, cambio entre los dos con SUPER+Espacio.
 - GTK con **adw-gtk3** y los colores que genera Ambxst. Qt usa la misma paleta con qt5ct/qt6ct.
 
@@ -55,6 +53,34 @@ Hyprland --verify-config -c ~/.config/hypr/hyprland.lua
 hyprctl reload
 hyprctl configerrors
 ```
+
+### Teclas de la laptop (ROG Zephyrus G16 GA605KP)
+
+Esto es específico de la **ROG Zephyrus G16 GA605KP** (2025, Ryzen AI 7 350 + RTX 5070). Otros modelos de ASUS, incluso otras Zephyrus, pueden mandar códigos distintos en las teclas Fn o no tener Aura RGB, entonces en otra laptop hay que volver a revisar qué manda cada tecla antes de copiar estos binds.
+
+Lo que manda cada tecla lo saqué leyendo `/dev/input` mientras las presionaba, casi todas salen del teclado `ITE Tech. Inc. ITE Device(8910)` como `KEY_*` normales. El nombre del touchpad (`asuf1209:00-2808:0219-touchpad`) también es de este modelo. Los binds están al final de `user/binds.lua`:
+
+| Tecla | Llega como | Qué hace |
+|---|---|---|
+| Fn+F1 | `XF86AudioMute` | Mute |
+| Fn+F2 / F3 | nada, lo hace el firmware | Luz del teclado (`asus::kbd_backlight`) |
+| Fn+F4 | `XF86Launch3` | Siguiente efecto de Aura (`asusctl aura effect --next-mode`) |
+| Fn+F5 | `XF86Launch4` | Siguiente perfil Quiet / Balanced / Performance y lo enseña en el OSD |
+| Fn+F6 | Super+Shift+S | Screenshot, igual que Super+S |
+| Fn+F7 / F8 | `XF86MonBrightnessDown/Up` | Brillo con OSD |
+| Fn+F9 | Super+P | Proyectar pantalla, sin bind porque nada más uso la de la laptop |
+| Fn+F10 | `XF86TouchpadToggle` | Apaga y prende el touchpad, con `hyprctl reload` vuelve a prender |
+| Tecla ROG | `XF86Launch1` | Abre ROG Control Center, si ya está en el tray solo enseña la ventana |
+| Mic, volumen, media | `XF86Audio*` | Lo normal con `wpctl` y `playerctl` |
+
+Algunas cosas que no son obvias:
+
+- **Brillo:** uso `brightnessctl -e4` por la curva, pero Ambxst no se entera de esos cambios y no sacaba el OSD. Por eso el bind llama después a `qs ipc ... call brightness pull ""` para que vuelva a leer el brillo.
+- **Perfil del ventilador:** el OSD lo agrega el mod [osd-fix](mods/osd-fix) y lee el perfil directo de `asusctl`, porque `power-profiles-daemon` a veces dice otro perfil que asusd. El bind llama a `qs ipc ... call rog announce` (no `show`, que `qs ipc` lo toma como su propio comando).
+- **Super+Shift+S:** Ambxst lo usa para abrir sus herramientas, pero Fn+F6 manda justo esa combinación y Hyprland no distingue el Shift derecho del izquierdo. Lo cambié a screenshot y las herramientas siguen en el botón de la barra.
+- Los `qs ipc` usan `--pid` con `$XDG_RUNTIME_DIR/ambxst-qs.pid`, que lo escribe Ambxst, así no dependen de la ruta de la generación de mods.
+
+En `user/windowrules.lua` ROG Control Center abre en floating. Ojo que cambió su clase a `org.opengamingcollective.rog-control-center`, si una actualización la vuelve a cambiar deja de agarrar la regla.
 
 ## Idle y tapa
 
