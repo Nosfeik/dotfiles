@@ -1,3 +1,17 @@
+# 1.3.1
+
+- Rayo más ancho, con relleno claro y dentro del área interior; ya no corta el borde de la batería y se lee sobre el relleno y la pista vacía.
+- Quita el warning `Unable to assign [undefined] to double` del hover (`radius: buttonBg.radius`).
+- Tests nuevos para `CenteredBatteryPill` en `tests/tst_pill.qml`; se quita `tst_graphic.qml`, que apuntaba al componente viejo.
+
+# 1.3.0
+
+- Nuevo diseño: batería compacta con porcentaje al lado.
+- Colores del tema en lugar de colores fijos (primario, amarillo abajo de 20%, rojo abajo de 10%).
+- Parpadeo en nivel crítico, rayo y brillo al cargar.
+- La cápsula se pone del color primario con el popup abierto y se ilumina con hover.
+- Ancho fijo calculado para "100%" para que la barra no se mueva.
+
 # 1.2.3
 
 - Altura del cuerpo de 19 píxeles; núcleo de 11, terminal y rayo recentrados.

@@ -3,8 +3,8 @@
   "manifestVersion": 1,
   "id": "local.centered-battery",
   "name": "Centered Battery",
-  "version": "1.2.3",
-  "description": "Batería horizontal gruesa con núcleo continuo en una cápsula temática; conserva el popup y los perfiles originales.",
+  "version": "1.3.1",
+  "description": "Batería compacta con porcentaje, colores del tema y estados de carga; conserva el popup y los perfiles originales.",
   "author": "nosfeik (implementación asistida por Codex)",
   "license": "UNLICENSED",
   "compatibility": {
@@ -28,8 +28,8 @@
   "operations": [
     {
       "type": "overlay",
-      "source": "payload/modules/bar/CenteredBatteryGraphic.qml",
-      "target": "modules/bar/CenteredBatteryGraphic.qml"
+      "source": "payload/modules/bar/CenteredBatteryPill.qml",
+      "target": "modules/bar/CenteredBatteryPill.qml"
     },
     {
       "type": "patch",
