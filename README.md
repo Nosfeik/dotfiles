@@ -11,7 +11,7 @@ Esto es mi respaldo y la guía que sigo cuando reinstalo la laptop, no está pen
 | `.config/` | Hyprland, Ambxst, Kitty, GTK/Qt, NvChad, LSD, bat, Spicetify |
 | `.zshrc`, `.p10k.zsh` | Shell y prompt |
 | `.local/bin/` | `lid-power.sh`, wrapper de Spotify y `batcat` |
-| `.fonts/`, `.icons/`, `.themes/`, `Pictures/` | Hack Nerd Font, Meslo, Montserrat, iconos Kora, cursor GoogleDot, Colloid (ya no lo uso, lo dejo de respaldo), wallpapers e ícono del launcher |
+| `.fonts/`, `.icons/`, `.themes/`, `Pictures/` | Hack Nerd Font, Meslo, Montserrat, iconos Kora, cursor Bibata Modern Ice, GoogleDot y Colloid (ya no los uso, los dejo de respaldo), wallpapers e ícono del launcher |
 | `packages/` | Listas de pacman/AUR sacadas de esta máquina |
 | `manifests/` | Lista explícita de lo que copia el restaurador |
 | `scripts/` | Instalador, restaurador, firewall y bootstraps |

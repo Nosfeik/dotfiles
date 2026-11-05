@@ -60,7 +60,7 @@ a las aplicaciones y dependencias AUR utilizadas aquí.
 
 Ambxst/axctl y Powerlevel10k **no son paquetes pacman**. El plugin sudo tampoco
 tiene propietario pacman. Véase [instalaciones manuales](../docs/manual-installs.md).
-Colloid-Dark, Kora, GoogleDot-Black, Hack, MesloLGS y Montserrat se restauran desde
+Colloid-Dark, Kora, Bibata-Modern-Ice, GoogleDot-Black, Hack, MesloLGS y Montserrat se restauran desde
 los assets revisados; no hace falta instalar otros dotfiles.
 
 No se incluyen NVIDIA, PRIME, TLP ni utilidades para alterar voltajes/TDP.

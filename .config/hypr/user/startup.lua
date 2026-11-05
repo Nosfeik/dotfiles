@@ -59,7 +59,7 @@ do [ -x "$agent" ] && exec "$agent"; done; exit 0']]
     -- Cursor
     -- =========================
 
-    hl.exec_cmd("hyprctl setcursor GoogleDot-Black 24")
+    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
 
 
     -- =========================
