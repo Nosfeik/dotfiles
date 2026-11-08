@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Burp Suite Community Edition
+Exec=burpsuite
+Icon=burpsuite
+Comment=Burp Suite is an integrated platform for attacking web applications (free edition)
+Categories=Development;Security;
+Terminal=false
+MimeType=application/x-extension-iml;
+# Burp's Java window class; Ambxst matches window classes against Keywords.
+Keywords=burp-StartBurp;burp;
+StartupWMClass=burp-StartBurp

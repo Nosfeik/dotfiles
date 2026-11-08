@@ -41,6 +41,7 @@ local app_rules = {
     { class = [[^(blueman-manager|blueman-adapters|blueberry\.py)$]], width = 0.42, height = 0.48 },
     { class = [[^(transmission-gtk|com\.transmissionbt\.Transmission)$]], width = 0.68, height = 0.72 },
     { class = [[^(org\.gnome\.FileRoller|file-roller|org\.kde\.ark)$]], width = 0.62, height = 0.68 },
+    { class = [[^(be\.alexandervanhee\.gradia)$]], width = 0.70, height = 0.75 },
 }
 
 for _, rule in ipairs(app_rules) do

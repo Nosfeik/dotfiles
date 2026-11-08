@@ -64,6 +64,7 @@
 .config/spicetify/blazepwn.ini
 .local/bin/spotify
 .local/share/applications/spotify.desktop
+.local/share/applications/burpsuite.desktop
 .config/nvim/LICENSE
 .config/nvim/.stylua.toml
 .config/nvim/README.md

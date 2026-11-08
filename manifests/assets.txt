@@ -117913,6 +117913,7 @@
 .themes/Colloid-Dark/xfwm4/top-right-inactive.svg
 .themes/Colloid-Dark/xfwm4/top-right-inactive.xpm
 Pictures/Icon/Arch-launcher.png
+Pictures/Icon/Arch-launcher-blazepwn.png
 Pictures/Wallpapers/1315631.png
 Pictures/Wallpapers/1348334.jpg
 Pictures/Wallpapers/1395554.png

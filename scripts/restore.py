@@ -46,6 +46,7 @@ def entries(group):
                    ".config/nvim/lazy-lock.json", ".config/spicetify/blazepwn.ini", ".config/elecwhat/config.json",
                    ".config/nvim/LICENSE", ".config/nvim/README.md", ".config/nvim/.stylua.toml",
                    ".local/bin/spotify", ".local/share/applications/spotify.desktop",
+                   ".local/share/applications/burpsuite.desktop",
                    ".zshrc", ".p10k.zsh", ".local/bin/lid-power.sh", ".local/bin/batcat",
                    ".local/share/nwg-look/gsettings"}
         if not name.startswith(allowed) and not (group == "configs" and name in singles):

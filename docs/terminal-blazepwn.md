@@ -17,6 +17,7 @@ regresar.
 | NvChad | `.config/nvim/`: starter, módulos Lua, `blazepwn`, alternativas `green_black` y `xerux_black`, y lockfile |
 | Spotify | `.config/spicetify/Themes/`, `blazepwn.ini`, `.local/bin/spotify` y acceso del menú |
 | WhatsApp | `.config/elecwhat/config.json` y `themes/blazepwn.css` |
+| Barra | `Pictures/Icon/Arch-launcher-blazepwn.png` como ícono del launcher (el verde queda de respaldo) |
 | Exegol | `exegol/hacking/`: prompt y herramientas con la misma paleta; Neovim independiente |
 
 ## Restauración del host
@@ -177,3 +178,9 @@ Lo que comprobé:
 - Pasan las 15 pruebas del restaurador. En `test_spotify.py` falla
   `test_desktop_launcher_expands_home_and_preserves_uris`, pero también falla en
   el commit anterior, así que no viene de este cambio.
+
+Burp abre con la clase `burp-StartBurp` y Ambxst busca el ícono comparando la
+clase con el ejecutable, el nombre o los `Keywords` del `.desktop`, no con
+`StartupWMClass`. Por eso en la barra salía sin logo. El override
+`.local/share/applications/burpsuite.desktop` agrega la clase en `Keywords` y en
+`StartupWMClass`, sin parchear Ambxst.

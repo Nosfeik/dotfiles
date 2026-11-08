@@ -99,7 +99,8 @@ class RestoreSafety(unittest.TestCase):
                      ".config/nvim/lazy-lock.json", ".config/spicetify/blazepwn.ini",
                      ".config/spicetify/Themes/Blazepwn/user.css", ".config/elecwhat/config.json",
                      ".config/elecwhat/themes/blazepwn.css", ".local/bin/spotify",
-                     ".local/share/applications/spotify.desktop"):
+                     ".local/share/applications/spotify.desktop",
+                     ".local/share/applications/burpsuite.desktop"):
             with self.subTest(name=name):
                 self.assertEqual((self.home / name).read_bytes(), sources[name].read_bytes())
         self.assertTrue((self.home / ".local/bin/batcat").stat().st_mode & 0o111)
