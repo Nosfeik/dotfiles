@@ -1,6 +1,6 @@
 # dotfiles
 
-Mi configuración de Arch en la **ROG Zephyrus G16 (GA605KP)**. Uso Hyprland con config en Lua, Ambxst como shell, Kitty, Zsh con Powerlevel10k, LSD y NvChad. Todo va con el tema **GreenBlack** (`#101010` de fondo, `#a8d5bf` de texto y `#00e69a` de acento), igual en la terminal, Neovim, Spotify y la barra.
+Mi configuración de Arch en la **ROG Zephyrus G16 (GA605KP)**. Uso Hyprland con config en Lua, Ambxst como shell, Kitty, Zsh con Powerlevel10k, LSD y NvChad. Todo va con el tema **Blazepwn**, la misma paleta azul de mi Obsidian y mi blog (`#16181d` de fondo, `#dce2ec` de texto y `#60a5fa` de acento), igual en la terminal, Neovim, Spotify y la barra. Antes usaba GreenBlack, lo dejé de respaldo.
 
 Esto es mi respaldo y la guía que sigo cuando reinstalo la laptop, no está pensado para usarse tal cual en otra máquina.
 
@@ -179,8 +179,8 @@ VPNs (`~/.vpn/`, `.ovpn`, certificados), llaves, historial, `weather.json`, `ass
 
 ## Docs
 
-- [Tema GreenBlack](docs/terminal-green.md)
-- [GreenBlack en Ambxst](docs/ambxst-green-black.md) y [Roadie](docs/ambxst-roadie.md)
+- [Tema Blazepwn](docs/terminal-blazepwn.md)
+- [Blazepwn en Ambxst](docs/ambxst-blazepwn.md) y [Roadie](docs/ambxst-roadie.md)
 - [Instalaciones manuales](docs/manual-installs.md)
 - [Firewall](docs/firewall.md)
 - [Auditoría del sistema](docs/audit.md)

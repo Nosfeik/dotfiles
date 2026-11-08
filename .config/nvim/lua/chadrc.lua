@@ -1,22 +1,22 @@
 -- Custom theme; kept outside NvChad's built-in theme-name type list.
 local M = {}
 M.base46 = {
-  theme = "green_black",
+  theme = "blazepwn",
   transparency = false,
-  theme_toggle = { "green_black", "xerux_black" },
+  theme_toggle = { "blazepwn", "xerux_black" },
   hl_override = {
-    Normal = { bg = "#101010", fg = "#a8d5bf" },
-    NormalNC = { bg = "#101010" },
-    NormalFloat = { bg = "#181818" },
-    CursorLine = { bg = "#202020" },
-    Comment = { fg = "#6b9e87", italic = true },
-    ["@comment"] = { fg = "#6b9e87", italic = true },
-    LineNr = { fg = "#58856e", bg = "#101010" },
-    CursorLineNr = { fg = "#a8d5bf", bg = "#101010" },
-    Visual = { bg = "#164b36" },
-    FloatBorder = { fg = "#58856e", bg = "#181818" },
-    NvDashAscii = { fg = "#a8d5bf", bg = "#101010" },
-    NvDashButtons = { fg = "#00e69a", bg = "#101010" },
+    Normal = { bg = "#16181d", fg = "#dce2ec" },
+    NormalNC = { bg = "#16181d" },
+    NormalFloat = { bg = "#1c1f26" },
+    CursorLine = { bg = "#21252e" },
+    Comment = { fg = "#8792a8", italic = true },
+    ["@comment"] = { fg = "#8792a8", italic = true },
+    LineNr = { fg = "#5f6f94", bg = "#16181d" },
+    CursorLineNr = { fg = "#dce2ec", bg = "#16181d" },
+    Visual = { bg = "#23365a" },
+    FloatBorder = { fg = "#5f6f94", bg = "#1c1f26" },
+    NvDashAscii = { fg = "#dce2ec", bg = "#16181d" },
+    NvDashButtons = { fg = "#60a5fa", bg = "#16181d" },
   },
 }
 M.ui = {

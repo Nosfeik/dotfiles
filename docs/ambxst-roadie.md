@@ -15,8 +15,8 @@ del gestor. No copio `~/.local/share/ambxst/mods`, generaciones, PIDs ni caches 
 - `.config/ambxst/roadie.json`: `modUpdatesHandedOver=true`; el resto usa los
   defaults de Roadie 4.1.1. Se ajustan desde **Settings → Roadie**.
 - Barra: frame activo de 7 px y `systrayExclude: ["blueman"]`.
-- Theme: `trueMatugenIcons=false`, `trueMonochromeTint=false`; GreenBlack sigue
-  siendo la paleta de usuario. No está instalado el mod de batería personalizado.
+- Theme: `trueMatugenIcons=false`, `trueMonochromeTint=false`; Blazepwn (antes
+  GreenBlack) es la paleta de usuario. No está instalado el mod de batería personalizado.
 - Los binds nativos incorporan fullscreen, maximize y fake fullscreen.
 
 Roadie añade transiciones, ajustes de barra/Notch, audio y Bluetooth, entre

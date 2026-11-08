@@ -23,7 +23,7 @@ def setup(home, source=Path("/opt/spotify"), apply=False, refresh=False):
     cli = home / ".local/share/spicetify-cli/spicetify"
     prefs = home / ".config/spotify/prefs"
     config = home / ".config/spicetify/config-xpui.ini"
-    preset = home / ".config/spicetify/green-black.ini"
+    preset = home / ".config/spicetify/blazepwn.ini"
     for relative in (".local/share/spotify/placeholder", ".local/share/spicetify-cli/spicetify",
                      ".config/spicetify/config-xpui.ini", ".config/spotify/prefs",
                      ".local/state/dotfiles-backups/placeholder"):
@@ -40,7 +40,7 @@ def setup(home, source=Path("/opt/spotify"), apply=False, refresh=False):
     if not prefs.is_file():
         raise ValueError("Open the packaged Spotify once, log in and close it before setup")
     if not preset.is_file():
-        raise ValueError("Restore configs first: green-black.ini is missing")
+        raise ValueError("Restore configs first: blazepwn.ini is missing")
     if config.is_symlink():
         raise ValueError(f"Review the runtime config symlink: {config}")
     if not cli.is_file() or not os.access(cli, os.X_OK):
@@ -85,7 +85,7 @@ def setup(home, source=Path("/opt/spotify"), apply=False, refresh=False):
     # A pristine copy has .spa files; an applied copy has extracted Apps/xpui.
     commands = ["backup", "apply"] if (target / "Apps/xpui.spa").exists() else ["apply"]
     subprocess.run([str(cli), "-n", *commands], check=True)
-    print("GreenBlack prepared. Launch Spotify from ~/.local/bin/spotify or the application menu.")
+    print("Blazepwn prepared. Launch Spotify from ~/.local/bin/spotify or the application menu.")
 
 
 def main():

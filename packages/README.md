@@ -28,7 +28,7 @@ Mason. No se presentan como parte del inventario instalado en septiembre.
 El snapshot requiere Neovim ≥0.12 y tree-sitter-cli ≥0.26.1; GCC y Make ya los
 aporta base-devel. Spicetify 2.46.2 se prepara con el componente manual de
 versión/SHA-256 fijados; no se agrega su binario a Git ni a la lista AUR.
-Véase [la guía GreenBlack](../docs/terminal-green.md).
+Véase [la guía del tema](../docs/terminal-blazepwn.md).
 
 `asusctl` y `rog-control-center` son **oficiales** en esta máquina (6.5.0-1).
 `quickshell`, `awww` y `matugen` también están empaquetados; awww está instalado

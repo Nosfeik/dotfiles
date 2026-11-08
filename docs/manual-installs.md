@@ -88,7 +88,7 @@ el archivo vivo no lo tiene; se puede ejecutar `lsd --tree`.
 
 Las configuraciones y temas están incluidos en el manifest, mientras que los
 plugins y el cliente modificado se preparan localmente. Sigue
-[Terminal y Spotify GreenBlack](terminal-green.md) después de restaurar configs.
+[Terminal y Spotify Blazepwn](terminal-blazepwn.md) después de restaurar configs.
 Spicetify tiene instalador con versión y SHA-256 fijados:
 
 ```bash

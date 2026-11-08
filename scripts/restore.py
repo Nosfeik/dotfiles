@@ -41,9 +41,9 @@ def entries(group):
                    if group == "assets" else
                    tuple(f".config/{p}/" for p in ("hypr", "kitty", "lsd", "gtk-3.0",
                          "gtk-4.0", "nwg-look", "xsettingsd", "ambxst", "qt5ct", "qt6ct")) +
-                   (".config/nvim/lua/", ".config/spicetify/Themes/"))
+                   (".config/nvim/lua/", ".config/spicetify/Themes/", ".config/elecwhat/themes/"))
         singles = {".config/spotify-flags.conf", ".config/bat/config", ".config/nvim/init.lua",
-                   ".config/nvim/lazy-lock.json", ".config/spicetify/green-black.ini",
+                   ".config/nvim/lazy-lock.json", ".config/spicetify/blazepwn.ini", ".config/elecwhat/config.json",
                    ".config/nvim/LICENSE", ".config/nvim/README.md", ".config/nvim/.stylua.toml",
                    ".local/bin/spotify", ".local/share/applications/spotify.desktop",
                    ".zshrc", ".p10k.zsh", ".local/bin/lid-power.sh", ".local/bin/batcat",

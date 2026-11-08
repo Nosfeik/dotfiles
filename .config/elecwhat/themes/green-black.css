@@ -1,0 +1,232 @@
+/* GreenBlack — matches Spotify GreenBlack and the terminal palette.
+ * Loaded by ElecWhat's native config.json CSS support.
+ * Semantic WhatsApp tokens keep photos, stickers and videos unchanged.
+ */
+:root,
+html body,
+body #app,
+.dark,
+[data-theme="dark"],
+[data-theme="light"] {
+  color-scheme: dark;
+
+  /* Main surfaces and navigation. */
+  --WDS-app-wash: #101010 !important;
+  --WDS-background-wash-plain: #101010 !important;
+  --WDS-background-wash-inset: #101010 !important;
+  --WDS-background-elevated-wash-plain: #181818 !important;
+  --WDS-background-elevated-wash-inset: #181818 !important;
+  --WDS-surface-default: #101010 !important;
+  --WDS-surface-emphasized: #181818 !important;
+  --WDS-surface-elevated-default: #181818 !important;
+  --WDS-surface-elevated-emphasized: #202420 !important;
+  --WDS-surface-highlight: #163a2c !important;
+  --WDS-surface-pressed: #164b36 !important;
+  --WDS-surface-inverse: #a8d5bf !important;
+  --WDS-components-surface-nav-bar: #101010 !important;
+  --WDS-components-active-list-row: #163a2c !important;
+  --WDS-components-filter-surface-selected: #163a2c !important;
+
+  /* Text, buttons, links and read receipts. */
+  --WDS-content-default: #a8d5bf !important;
+  --WDS-content-deemphasized: #80b599 !important;
+  --WDS-content-disabled: #507561 !important;
+  --WDS-content-action-default: #a8d5bf !important;
+  --WDS-content-action-emphasized: #00e69a !important;
+  --WDS-content-external-link: #52f5c5 !important;
+  --WDS-content-read: #00e69a !important;
+  --WDS-content-on-accent: #101010 !important;
+  --WDS-content-inverse: #101010 !important;
+  --WDS-accent: #00e69a !important;
+  --WDS-accent-emphasized: #d5ffe9 !important;
+  --WDS-accent-deemphasized: #163a2c !important;
+  --WDS-persistent-always-branded: #00e69a !important;
+  --WDS-secondary-positive: #52f5c5 !important;
+  --WDS-secondary-positive-deemphasized: #163a2c !important;
+
+  /* Conversation bubbles and composer. */
+  --WDS-systems-chat-background-wallpaper: #101010 !important;
+  --WDS-systems-chat-foreground-wallpaper: rgba(168, 213, 191, 0.025) !important;
+  --WDS-systems-chat-surface-composer: #181818 !important;
+  --WDS-systems-chat-surface-tray: #101010 !important;
+  --WDS-systems-bubble-surface-incoming: #202420 !important;
+  --WDS-systems-bubble-surface-outgoing: #163a2c !important;
+  --WDS-systems-bubble-surface-system: #181818 !important;
+  --WDS-systems-bubble-surface-business: #181818 !important;
+  --WDS-systems-bubble-surface-e2e: #181818 !important;
+  --WDS-systems-bubble-content-deemphasized: #80b599 !important;
+  --WDS-systems-bubble-content-business: #00e69a !important;
+  --WDS-systems-bubble-content-e2e: #a8d5bf !important;
+  --WDS-systems-status-seen: #507561 !important;
+  --WDS-lines-divider: rgba(168, 213, 191, 0.12) !important;
+  --WDS-lines-outline-deemphasized: rgba(168, 213, 191, 0.12) !important;
+  --WDS-lines-outline-default: #365646 !important;
+
+  /* RGB companions used by translucent controls. */
+  --WDS-background-wash-plain-RGB: 16, 16, 16 !important;
+  --WDS-background-wash-inset-RGB: 16, 16, 16 !important;
+  --WDS-background-elevated-wash-plain-RGB: 24, 24, 24 !important;
+  --WDS-background-elevated-wash-inset-RGB: 24, 24, 24 !important;
+  --WDS-surface-default-RGB: 16, 16, 16 !important;
+  --WDS-surface-emphasized-RGB: 24, 24, 24 !important;
+  --WDS-surface-elevated-default-RGB: 24, 24, 24 !important;
+  --WDS-surface-elevated-emphasized-RGB: 32, 36, 32 !important;
+  --WDS-surface-highlight-RGB: 22, 58, 44 !important;
+  --WDS-surface-pressed-RGB: 22, 75, 54 !important;
+  --WDS-surface-inverse-RGB: 168, 213, 191 !important;
+  --WDS-components-surface-nav-bar-RGB: 16, 16, 16 !important;
+  --WDS-components-active-list-row-RGB: 22, 58, 44 !important;
+  --WDS-components-filter-surface-selected-RGB: 22, 58, 44 !important;
+  --WDS-content-default-RGB: 168, 213, 191 !important;
+  --WDS-content-deemphasized-RGB: 128, 181, 153 !important;
+  --WDS-content-disabled-RGB: 80, 117, 97 !important;
+  --WDS-content-action-default-RGB: 168, 213, 191 !important;
+  --WDS-content-action-emphasized-RGB: 0, 230, 154 !important;
+  --WDS-content-external-link-RGB: 82, 245, 197 !important;
+  --WDS-content-read-RGB: 0, 230, 154 !important;
+  --WDS-content-on-accent-RGB: 16, 16, 16 !important;
+  --WDS-content-inverse-RGB: 16, 16, 16 !important;
+  --WDS-accent-RGB: 0, 230, 154 !important;
+  --WDS-accent-emphasized-RGB: 213, 255, 233 !important;
+  --WDS-accent-deemphasized-RGB: 22, 58, 44 !important;
+  --WDS-persistent-always-branded-RGB: 0, 230, 154 !important;
+  --WDS-secondary-positive-RGB: 82, 245, 197 !important;
+  --WDS-secondary-positive-deemphasized-RGB: 22, 58, 44 !important;
+  --WDS-systems-chat-background-wallpaper-RGB: 16, 16, 16 !important;
+  --WDS-systems-chat-foreground-wallpaper-RGB: 168, 213, 191 !important;
+  --WDS-systems-chat-surface-composer-RGB: 24, 24, 24 !important;
+  --WDS-systems-chat-surface-tray-RGB: 16, 16, 16 !important;
+  --WDS-systems-bubble-surface-incoming-RGB: 32, 36, 32 !important;
+  --WDS-systems-bubble-surface-outgoing-RGB: 22, 58, 44 !important;
+  --WDS-systems-bubble-surface-system-RGB: 24, 24, 24 !important;
+  --WDS-systems-bubble-surface-business-RGB: 24, 24, 24 !important;
+  --WDS-systems-bubble-surface-e2e-RGB: 24, 24, 24 !important;
+  --WDS-systems-bubble-content-deemphasized-RGB: 128, 181, 153 !important;
+  --WDS-systems-bubble-content-business-RGB: 0, 230, 154 !important;
+  --WDS-systems-bubble-content-e2e-RGB: 168, 213, 191 !important;
+  --WDS-systems-status-seen-RGB: 80, 117, 97 !important;
+  --WDS-lines-divider-RGB: 168, 213, 191 !important;
+  --WDS-lines-outline-deemphasized-RGB: 168, 213, 191 !important;
+  --WDS-lines-outline-default-RGB: 54, 86, 70 !important;
+
+  /* Legacy WhatsApp panels, menus and audio controls. */
+  --app-background: #101010 !important;
+  --app-background-deeper: #101010 !important;
+  --background-default: #101010 !important;
+  --background-default-rgb: 16, 16, 16 !important;
+  --background-default-hover: #181818 !important;
+  --background-default-active: #163a2c !important;
+  --panel-background: #101010 !important;
+  --panel-background-deep: #101010 !important;
+  --panel-background-lighter: #181818 !important;
+  --panel-header-background: #101010 !important;
+  --panel-input-background: #181818 !important;
+  --navbar-background: #101010 !important;
+  --drawer-background: #101010 !important;
+  --drawer-section-background: #181818 !important;
+  --dropdown-background: #181818 !important;
+  --dropdown-background-hover: #163a2c !important;
+  --modal-background: #181818 !important;
+  --picker-background: #181818 !important;
+  --search-container-background: #101010 !important;
+  --search-input-background: #181818 !important;
+  --compose-panel-background: #101010 !important;
+  --compose-panel-background-hover: #181818 !important;
+  --compose-input-background: #181818 !important;
+  --conversation-panel-background: #101010 !important;
+  --intro-background: #101010 !important;
+  --intro-secondary: #80b599 !important;
+  --empty-state-background: #101010 !important;
+  --incoming-background: #202420 !important;
+  --incoming-background-rgb: 32, 36, 32 !important;
+  --outgoing-background: #163a2c !important;
+  --outgoing-background-rgb: 22, 58, 44 !important;
+  --primary: #a8d5bf !important;
+  --primary-strong: #a8d5bf !important;
+  --primary-stronger: #d5ffe9 !important;
+  --primary-rgb: 168, 213, 191 !important;
+  --primary-strong-rgb: 168, 213, 191 !important;
+  --primary-stronger-rgb: 213, 255, 233 !important;
+  --message-primary: #a8d5bf !important;
+  --message-primary-rgb: 168, 213, 191 !important;
+  --text-primary-strong: #a8d5bf !important;
+  --secondary: #80b599 !important;
+  --secondary-lighter: #80b599 !important;
+  --secondary-stronger: #80b599 !important;
+  --secondary-rgb: 128, 181, 153 !important;
+  --text-muted: #6b9e87 !important;
+  --text-disabled: #507561 !important;
+  --input-placeholder: #80b599 !important;
+  --input-border: #365646 !important;
+  --input-border-active: #00e69a !important;
+  --icon: #80b599 !important;
+  --icon-primary: #00e69a !important;
+  --icon-high-emphasis: #00e69a !important;
+  --icon-ack: #00e69a !important;
+  --icon-disabled: #507561 !important;
+  --bubble-meta-icon: #80b599 !important;
+  --text-action: #00e69a !important;
+  --link: #52f5c5 !important;
+  --link-alt: #00e69a !important;
+  --link-rgb: 82, 245, 197 !important;
+  --button-primary: #00e69a !important;
+  --button-primary-hover: #52f5c5 !important;
+  --button-primary-background: #00e69a !important;
+  --button-primary-background-hover: #52f5c5 !important;
+  --button-primary-label: #101010 !important;
+  --button-alternative: #00e69a !important;
+  --unread-marker-background: #00e69a !important;
+  --unread-marker-text: #101010 !important;
+  --active-tab-marker: #00e69a !important;
+  --checkbox-color: #00e69a !important;
+  --progress-primary: #00e69a !important;
+  --progress-background: #163a2c !important;
+  --audio-progress-incoming: #00e69a !important;
+  --audio-progress-outgoing: #00e69a !important;
+  --audio-progress-played-incoming: #52f5c5 !important;
+  --audio-progress-played-outgoing: #52f5c5 !important;
+  --ptt-blue: #52f5c5 !important;
+  --ptt-thumb-incoming-played: #52f5c5 !important;
+  --ptt-thumb-outgoing-played: #52f5c5 !important;
+  --ptt-thumb-incoming-unplayed: #00e69a !important;
+  --ptt-thumb-outgoing-unplayed: #a8d5bf !important;
+  --border-bubble: rgba(168, 213, 191, 0.12) !important;
+  --border-deeper: rgba(168, 213, 191, 0.12) !important;
+  --border-default: rgba(168, 213, 191, 0.12) !important;
+  --avatar-background: #181818 !important;
+  --avatar-placeholder-primary: #80b599 !important;
+  --avatar-placeholder-background: #163a2c !important;
+  --modal-title: #a8d5bf !important;
+  --splashscreen-startup-background: #101010 !important;
+  --splashscreen-startup-background-plain: #101010 !important;
+  --splashscreen-startup-background-rgb: 16, 16, 16 !important;
+  --splashscreen-primary-title: #a8d5bf !important;
+  --splashscreen-secondary-lighter: #80b599 !important;
+  --splashscreen-progress-primary: #00e69a !important;
+}
+
+html,
+body,
+#app {
+  background-color: #101010 !important;
+  color: #a8d5bf !important;
+}
+
+::selection {
+  background-color: #164b36 !important;
+  color: #d5ffe9 !important;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  caret-color: #00e69a !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #365646 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #507561 !important;
+}

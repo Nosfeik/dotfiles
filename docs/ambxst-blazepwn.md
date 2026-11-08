@@ -1,12 +1,13 @@
-# Ambxst nativo + GreenBlack
+# Ambxst nativo + Blazepwn
 
 La aplicación inicial se validó en Ambxst 1.3.7 sin mods activos, con la batería
 original. Posteriormente actualicé a Ambxst 1.3.14 e instalé [Roadie 4.1.1](ambxst-roadie.md).
-GreenBlack sigue siendo un preset nativo. Los mods locales Pentest y Battery
+El tema es un preset nativo: antes GreenBlack y, desde el 07/11/2026, Blazepwn. Los mods locales Pentest y Battery
 Indicator quedan archivados en el repo; el restore normal no los instala.
 
-El preset vive en `.config/ambxst/colors/GreenBlack/{dark,light}.json`. En oscuro
-comparte fondo `#101010`, texto `#a8d5bf` y acento `#00e69a` con Kitty y Spotify.
+El preset vive en `.config/ambxst/colors/Blazepwn/{dark,light}.json`. En oscuro
+comparte fondo `#16181d`, texto `#dce2ec` y acento `#60a5fa` con Kitty, Spotify
+y mi tema de Obsidian. GreenBlack sigue en `colors/GreenBlack/` de respaldo.
 OLED está desactivado para que el fondo no se convierta en negro puro. Mantengo
 los colores semánticos rojo/amarillo del preset nativo Catppuccin para avisos y
 errores. La variante clara adapta fondos y texto para conservar contraste.
@@ -19,7 +20,7 @@ El restaurador copia los archivos explícitos del manifiesto; no lo ejecuto con
 1. Si estaban activos: `ambxst mods disable local.battery-indicator` y
    `ambxst mods disable local.pentest-mode`.
 2. Ejecuto `ambxst reload` y abro `ambxst run wallpapers`.
-3. En el selector de esquema elijo **GreenBlack**, modo oscuro y OLED apagado.
+3. En el selector de esquema elijo **Blazepwn**, modo oscuro y OLED apagado.
 4. Si los bordes muestran el error de color del live reload de esta versión,
    ejecuto `hyprctl reload` y compruebo `hyprctl configerrors`.
 
@@ -39,12 +40,12 @@ wallpaper. Los JSON del preset son configuración, no un mod.
   nwg-look también usa adw-gtk3 para que su `-a` al iniciar no restaure Colloid.
   En `nwg-look/config`, `export-gtk4-symlinks=false` impide que vuelva a sustituir
   el CSS de Ambxst por un enlace al tema GTK.
-- Qt: `.config/qt{5,6}ct/`, estilo Fusion y paleta GreenBlack. La variable
+- Qt: `.config/qt{5,6}ct/`, estilo Fusion y paleta Blazepwn. La variable
   `QT_QPA_PLATFORMTHEME=qt5ct:qt6ct` se establece en el entorno de Hyprland.
   Los paquetes ya estaban instalados; las rutas del esquema usan `~` y no mi
   usuario. Se configura solo el tema, sin forzar X11/Wayland. La paleta Qt es
   estática: si cambio a otro tema, la selecciono también en qt5ct/qt6ct.
-- Kitty, Neovim y Spotify conservan sus configuraciones GreenBlack anteriores.
+- Kitty, Neovim y Spotify tienen su propia configuración Blazepwn ([guía](terminal-blazepwn.md)).
   Las aplicaciones abiertas pueden necesitar reiniciarse. Las lanzadas desde
   procesos que conservan el entorno anterior recibirán el nuevo entorno en la
   siguiente sesión. No cierro aplicaciones ni la sesión automáticamente.
@@ -73,7 +74,7 @@ No uso `mods rollback` para cambiar colores: podría reactivar los mods anterior
 Para recuperar un mod, lo habilito expresamente y recargo; Pentest también
 necesitaría restaurar su atajo si lo quiero usar.
 
-## Comprobación del 27/10/2026
+## Comprobación del 27/10/2026 (GreenBlack)
 
 - Ambos mods deshabilitados; generación `base`, una instancia cargando el
   `shell.qml` original. Recarga estable durante más de la ventana de salud.

@@ -1,4 +1,4 @@
-# Green Black: match the host terminal's mint palette.
+# Blazepwn: match the host terminal's mint palette.
 () {
   emulate -L zsh -o extended_glob
   unset -m '(POWERLEVEL9K_*|DEFAULT_USER)~POWERLEVEL9K_GITSTATUS_DIR'
@@ -16,13 +16,13 @@
   typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=true
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='#00e69a'
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='#60a5fa'
   typeset -g POWERLEVEL9K_OS_ICON_VISUAL_IDENTIFIER_EXPANSION=''
   typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='hacking'
 
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#00e69a'
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#6b9e87'
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#43e3a7'
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#60a5fa'
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#8792a8'
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#4fb3f9'
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=false
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
@@ -30,12 +30,12 @@
   typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=80
   typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS=40
   typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT=50
-  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='#00e69a'
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='#8bd5a9'
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='#65dfb3'
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='#60a5fa'
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='#a3c4f3'
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='#93c5fd'
 
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#00e69a'
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#d5ffe9'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#60a5fa'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#dbeafe'
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='V'
@@ -52,7 +52,7 @@
     local context=${USER:-}
     [[ -z $context || -z ${DOMAIN:-} ]] || context+="@${DOMAIN}"
     [[ -z ${LOGGING:-} ]] || context="${LOGGING} ${context}"
-    [[ -z $context ]] || p10k segment -f '#6b9e87' -t "${context//\%/%%}"
+    [[ -z $context ]] || p10k segment -f '#8792a8' -t "${context//\%/%%}"
     return 0
   }
 

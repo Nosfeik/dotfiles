@@ -71,8 +71,8 @@ Los paquetes del contenedor se instalaron desde Debian Bookworm.
 
 Los directorios `/root/.config/nvim`, `/root/.config/bat` y `/root/.config/lsd`
 enlazan a `config/` dentro del perfil persistente `hacking`.
-Kitty y Neovim usan negro sólido `#101010`, con acento `#00e69a` y texto
-`#a8d5bf`. `green-colors.zsh` configura LS_COLORS, syntax-highlighting,
+Kitty y Neovim usan la paleta Blazepwn: fondo `#16181d`, acento `#60a5fa` y texto
+`#dce2ec`. `green-colors.zsh` (conserva el nombre de GreenBlack) configura LS_COLORS, syntax-highlighting,
 autosuggestions y fzf. Bat sigue la paleta ANSI de Kitty. Abre otra sesión de
 Zsh (o ejecuta `exec zsh`) y vuelve a abrir Neovim después de copiar el perfil.
 

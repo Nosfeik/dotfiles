@@ -95,9 +95,10 @@ class RestoreSafety(unittest.TestCase):
         sources = {str(dst): src for src, dst in pairs}
         restore(self.home, pairs, True)
         for name in (".config/bat/config", ".config/nvim/init.lua", ".local/bin/batcat",
-                     ".config/nvim/lua/chadrc.lua", ".config/nvim/lua/themes/green_black.lua",
-                     ".config/nvim/lazy-lock.json", ".config/spicetify/green-black.ini",
-                     ".config/spicetify/Themes/GreenBlack/user.css", ".local/bin/spotify",
+                     ".config/nvim/lua/chadrc.lua", ".config/nvim/lua/themes/blazepwn.lua",
+                     ".config/nvim/lazy-lock.json", ".config/spicetify/blazepwn.ini",
+                     ".config/spicetify/Themes/Blazepwn/user.css", ".config/elecwhat/config.json",
+                     ".config/elecwhat/themes/blazepwn.css", ".local/bin/spotify",
                      ".local/share/applications/spotify.desktop"):
             with self.subTest(name=name):
                 self.assertEqual((self.home / name).read_bytes(), sources[name].read_bytes())

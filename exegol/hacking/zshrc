@@ -44,5 +44,5 @@ alias burpsuite='/opt/my-resources/setup/zsh/hacking/burpsuite'
   done
 }
 
-# Green Black palette for filenames, command input and fzf.
+# Blazepwn palette for filenames, command input and fzf.
 source /opt/my-resources/setup/zsh/hacking/green-colors.zsh

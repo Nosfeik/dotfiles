@@ -16,7 +16,7 @@ No se ha duplicado el árbol de iconos ni comprimido en un segundo archivo.
 
 Bat, NvChad (Lua, temas y lockfile), los wrappers `batcat`/`spotify`, el acceso
 del menú y los temas de Spicetify tienen entradas explícitas en `configs.txt`
-y están autorizados en `scripts/restore.py`. `green-black.ini` guarda únicamente
+y están autorizados en `scripts/restore.py`. `blazepwn.ini` guarda únicamente
 preferencias declarativas: `scripts/bootstrap-spotify.py` configura las rutas
 del usuario y genera el estado de Spicetify por separado. No se restauran
 `config-xpui.ini`, metadatos de backups, sesiones, plugins descargados ni clientes
