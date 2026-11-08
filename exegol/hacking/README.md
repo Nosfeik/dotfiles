@@ -1,6 +1,6 @@
 # Exegol `hacking`
 
-Mi perfil para el contenedor `hacking` de Exegol: Powerlevel10k con la caja ` hacking`, la paleta Blazepwn, Git en el prompt y los plugins de Exegol con su indicador de usuario, dominio y grabación. Adentro `ls` usa lsd, `cat` usa bat y `vim` abre Neovim.
+Mi perfil para el contenedor `hacking` de Exegol: Powerlevel10k con la caja ` hacking`, la paleta Nosfeik, Git en el prompt y los plugins de Exegol con su indicador de usuario, dominio y grabación. Adentro `ls` usa lsd, `cat` usa bat y `vim` abre Neovim.
 
 ## Instalarlo
 

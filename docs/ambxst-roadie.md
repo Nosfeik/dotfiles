@@ -8,7 +8,7 @@ En `manifests/ambxst-mods.json` guardo de dónde sale, la revisión y el SHA-256
 
 - `.config/ambxst/roadie.json` tiene `modUpdatesHandedOver=true`, lo demás está como viene. Se cambia desde **Settings → Roadie**.
 - Barra con frame de 7 px y `systrayExclude: ["blueman"]`.
-- En Theme tengo `trueMatugenIcons=false` y `trueMonochromeTint=false`, la paleta es Blazepwn.
+- En Theme tengo `trueMatugenIcons=false` y `trueMonochromeTint=false`, la paleta es Nosfeik.
 
 ## Instalar
 

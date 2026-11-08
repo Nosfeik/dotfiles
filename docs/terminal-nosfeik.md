@@ -1,6 +1,6 @@
-# Terminal y Spotify con Blazepwn
+# Terminal y Spotify con Nosfeik
 
-Blazepwn es la misma paleta de mi Obsidian y de mi blog:
+Nosfeik es la misma paleta de mi Obsidian y de mi blog:
 
 | Rol | Color |
 |---|---|
@@ -10,17 +10,17 @@ Blazepwn es la misma paleta de mi Obsidian y de mi blog:
 | Acento | `#60a5fa` |
 | Bordes | `#475a8b` |
 
-Antes usaba GreenBlack (`#101010`, `#a8d5bf`, `#00e69a`). Para pasar a Blazepwn cambié cada color verde por su equivalente azul, entonces cada uno sigue cumpliendo su función (acento, texto, secundario, selección). GreenBlack lo dejé de respaldo, abajo explico cómo regresar.
+Antes usaba GreenBlack (`#101010`, `#a8d5bf`, `#00e69a`). Para pasar a Nosfeik cambié cada color verde por su equivalente azul, entonces cada uno sigue cumpliendo su función (acento, texto, secundario, selección). GreenBlack lo dejé de respaldo, abajo explico cómo regresar.
 
 | Qué | Dónde |
 |---|---|
 | Kitty | `.config/kitty/{kitty.conf,color.ini}`, Hack Nerd Font 12 y paleta ANSI azul |
 | Zsh/P10k | `.zshrc` y `.p10k.zsh`: prompt, carpetas, resaltado, sugerencias y fzf |
 | LSD/Bat | `.config/lsd/` y `.config/bat/config` |
-| NvChad | `.config/nvim/` con el tema `blazepwn` (y `green_black` y `xerux_black` de respaldo) |
-| Spotify | `.config/spicetify/Themes/`, `blazepwn.ini`, `.local/bin/spotify` y el acceso del menú |
-| WhatsApp | `.config/elecwhat/config.json` y `themes/blazepwn.css` |
-| Barra | `Pictures/Icon/Arch-launcher-blazepwn.png` como ícono del launcher |
+| NvChad | `.config/nvim/` con el tema `nosfeik` (y `green_black` y `xerux_black` de respaldo) |
+| Spotify | `.config/spicetify/Themes/`, `nosfeik.ini`, `.local/bin/spotify` y el acceso del menú |
+| WhatsApp | `.config/elecwhat/config.json` y `themes/nosfeik.css` |
+| Barra | `Pictures/Icon/Arch-launcher-nosfeik.png` como ícono del launcher |
 | Exegol | `exegol/hacking/`, la misma paleta dentro del contenedor |
 
 ## NvChad
@@ -48,7 +48,7 @@ Lo tengo con Spotify `1.2.96.518` y Spicetify `2.46.2`.
 
 El bootstrap hace una copia de `/opt/spotify` en `~/.local/share/spotify` y le aplica Spicetify a esa copia, así no necesita sudo. Antes respalda la config anterior en `~/.local/state/dotfiles-backups/spotify-*`. El wrapper siempre lee `spotify-flags.conf` para que corra en Wayland.
 
-En `blazepwn.ini` hay que dejar `expose_apis=1` y `experimental_features=1`, porque en la 2.46.2 así se carga el tema. El tema nada más trae CSS y colores, nada de extensiones.
+En `nosfeik.ini` hay que dejar `expose_apis=1` y `experimental_features=1`, porque en la 2.46.2 así se carga el tema. El tema nada más trae CSS y colores, nada de extensiones.
 
 Si cambio colores:
 
@@ -68,7 +68,7 @@ Cuando se actualiza el paquete de Spotify lo abro y cierro una vez, reviso que S
 
 ## WhatsApp
 
-Uso elecwhat, que carga `.config/elecwhat/themes/blazepwn.css` desde `config.json`. `green-black.css` se queda de respaldo. El perfil de Electron (cookies, sesión) no va en el repo. Después de restaurar hay que reiniciar elecwhat.
+Uso elecwhat, que carga `.config/elecwhat/themes/nosfeik.css` desde `config.json`. `green-black.css` se queda de respaldo. El perfil de Electron (cookies, sesión) no va en el repo. Después de restaurar hay que reiniciar elecwhat.
 
 ## Burp en la barra
 

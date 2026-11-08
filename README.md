@@ -1,6 +1,6 @@
 # dotfiles
 
-Mi configuración de Arch en la **ROG Zephyrus G16 (GA605KP)**. Uso Hyprland con config en Lua, Ambxst como shell, Kitty, Zsh con Powerlevel10k, LSD y NvChad. Todo va con el tema **Blazepwn**, la misma paleta azul de mi Obsidian y mi blog (`#16181d` de fondo, `#dce2ec` de texto y `#60a5fa` de acento), igual en la terminal, Neovim, Spotify y la barra. Antes usaba GreenBlack, lo dejé de respaldo.
+Mi configuración de Arch en la **ROG Zephyrus G16 (GA605KP)**. Uso Hyprland con config en Lua, Ambxst como shell, Kitty, Zsh con Powerlevel10k, LSD y NvChad. Todo va con el tema **Nosfeik**, la misma paleta azul de mi Obsidian y mi blog (`#16181d` de fondo, `#dce2ec` de texto y `#60a5fa` de acento), igual en la terminal, Neovim, Spotify y la barra. Antes usaba GreenBlack, lo dejé de respaldo.
 
 Esto es mi respaldo y la guía que sigo cuando reinstalo la laptop, no está pensado para usarse tal cual en otra máquina.
 
@@ -180,8 +180,8 @@ VPNs (`~/.vpn/`, `.ovpn`, certificados), llaves, historial, `weather.json`, `ass
 
 ## Docs
 
-- [Terminal y Spotify con Blazepwn](docs/terminal-blazepwn.md)
-- [Ambxst con Blazepwn](docs/ambxst-blazepwn.md) y [Roadie](docs/ambxst-roadie.md)
+- [Terminal y Spotify con Nosfeik](docs/terminal-nosfeik.md)
+- [Ambxst con Nosfeik](docs/ambxst-nosfeik.md) y [Roadie](docs/ambxst-roadie.md)
 - [Lo que se instala a mano](docs/manual-installs.md)
 - [Firewall](docs/firewall.md)
 - [Perfil de Exegol](exegol/hacking/README.md)

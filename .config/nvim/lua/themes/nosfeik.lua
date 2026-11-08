@@ -50,4 +50,4 @@ M.base_16 = {
   base0F = "#c7dcfc",
 }
 M.type = "dark"
-return require("base46").override_theme(M, "blazepwn")
+return require("base46").override_theme(M, "nosfeik")

@@ -1,9 +1,9 @@
--- Blazepwn: match Kitty and the Exegol prompt.
+-- Nosfeik: match Kitty and the Exegol prompt.
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.number = true
 
-local function blazepwn()
+local function nosfeik()
   local groups = {
     Normal = { fg = "#dce2ec", bg = "#16181d" },
     NormalNC = { fg = "#dce2ec", bg = "#16181d" },
@@ -52,7 +52,7 @@ local function blazepwn()
   end
 end
 vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
-  group = vim.api.nvim_create_augroup("Blazepwn", { clear = true }),
-  callback = blazepwn,
+  group = vim.api.nvim_create_augroup("Nosfeik", { clear = true }),
+  callback = nosfeik,
 })
-blazepwn()
+nosfeik()

@@ -1,4 +1,4 @@
-# Blazepwn
+# Nosfeik
 
 Fondo `#16181d`, acento `#60a5fa` y texto `#dce2ec`, igual que Kitty. Los textos secundarios van en `#8792a8`.
 

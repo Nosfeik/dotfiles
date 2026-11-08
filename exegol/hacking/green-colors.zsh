@@ -1,5 +1,5 @@
-# Blazepwn: same palette as the host terminal.
-# Blazepwn: mint green folder/file colors for lsd and GNU ls.
+# Nosfeik: same palette as the host terminal.
+# Nosfeik: mint green folder/file colors for lsd and GNU ls.
 # Bright mint folders and executables; softer green text and metadata.
 export LS_COLORS='rs=0:fi=38;2;220;226;236:di=38;2;96;165;250:ln=38;2;125;211;252:or=38;2;219;234;254:mi=38;2;219;234;254:ex=38;2;79;179;249:pi=38;2;147;197;253:so=38;2;147;197;253:bd=38;2;163;196;243:cd=38;2;163;196;243:su=38;2;219;234;254:sg=38;2;163;196;243:tw=38;2;96;165;250:ow=38;2;96;165;250:st=38;2;96;165;250:mh=38;2;220;226;236:*.zip=38;2;163;196;243:*.tar=38;2;163;196;243:*.gz=38;2;163;196;243:*.7z=38;2;163;196;243:*.rar=38;2;163;196;243:*.xz=38;2;163;196;243:*.zst=38;2;163;196;243'
 

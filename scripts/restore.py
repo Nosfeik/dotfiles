@@ -43,7 +43,7 @@ def entries(group):
                          "gtk-4.0", "nwg-look", "xsettingsd", "ambxst", "qt5ct", "qt6ct")) +
                    (".config/nvim/lua/", ".config/spicetify/Themes/", ".config/elecwhat/themes/"))
         singles = {".config/spotify-flags.conf", ".config/bat/config", ".config/nvim/init.lua",
-                   ".config/nvim/lazy-lock.json", ".config/spicetify/blazepwn.ini", ".config/elecwhat/config.json",
+                   ".config/nvim/lazy-lock.json", ".config/spicetify/nosfeik.ini", ".config/elecwhat/config.json",
                    ".config/nvim/LICENSE", ".config/nvim/README.md", ".config/nvim/.stylua.toml",
                    ".local/bin/spotify", ".local/share/applications/spotify.desktop",
                    ".local/share/applications/burpsuite.desktop",

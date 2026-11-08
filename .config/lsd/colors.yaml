@@ -1,4 +1,4 @@
-# Blazepwn — RGB colors matching Kitty and NvChad.
+# Nosfeik — RGB colors matching Kitty and NvChad.
 # Filename and folder colors are set with LS_COLORS in ~/.zshrc.
 user: [96, 165, 250]
 group: [175, 185, 202]

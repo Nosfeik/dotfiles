@@ -1,4 +1,4 @@
-# Blazepwn: match the host terminal's mint palette.
+# Nosfeik: match the host terminal's mint palette.
 () {
   emulate -L zsh -o extended_glob
   unset -m '(POWERLEVEL9K_*|DEFAULT_USER)~POWERLEVEL9K_GITSTATUS_DIR'

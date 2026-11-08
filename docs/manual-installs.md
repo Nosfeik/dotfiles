@@ -45,7 +45,7 @@ Lo tengo clonado en `~/.powerlevel10k`:
 
 ## NvChad y Spicetify
 
-Las configs vienen en el repo, pero los plugins y el Spotify modificado se preparan en cada máquina. Los pasos están en [terminal-blazepwn.md](terminal-blazepwn.md). Spicetify también va con versión y SHA-256 fijos:
+Las configs vienen en el repo, pero los plugins y el Spotify modificado se preparan en cada máquina. Los pasos están en [terminal-nosfeik.md](terminal-nosfeik.md). Spicetify también va con versión y SHA-256 fijos:
 
 ```bash
 ./scripts/manual-components.sh spicetify --apply

@@ -1,9 +1,9 @@
 -- Custom theme; kept outside NvChad's built-in theme-name type list.
 local M = {}
 M.base46 = {
-  theme = "blazepwn",
+  theme = "nosfeik",
   transparency = false,
-  theme_toggle = { "blazepwn", "xerux_black" },
+  theme_toggle = { "nosfeik", "xerux_black" },
   hl_override = {
     Normal = { bg = "#16181d", fg = "#dce2ec" },
     NormalNC = { bg = "#16181d" },
