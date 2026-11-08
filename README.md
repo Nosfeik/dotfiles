@@ -17,8 +17,9 @@ Esto es mi respaldo y la guía que sigo cuando reinstalo la laptop, no está pen
 | `scripts/` | Instalador, restaurador, firewall y bootstraps |
 | `system/etc/` | Drop-in de logind para la tapa y config de zram |
 | `exegol/` | Mi perfil de Exegol (prompt, aliases, Burp en Wayland) |
-| `mods/` | Mods de Ambxst que hice: Centered Battery, Notification Fixes y OSD Fix activos, Pentest Mode y Battery Indicator archivados |
+| `mods/` | Mods de Ambxst que hice: Centered Battery, Notification Fixes y OSD Fix |
 | `docs/` | Notas más a detalle de cada cosa |
+| `legacy/` | Configs viejas que ya no restauro |
 
 ## Versiones
 
@@ -179,12 +180,11 @@ VPNs (`~/.vpn/`, `.ovpn`, certificados), llaves, historial, `weather.json`, `ass
 
 ## Docs
 
-- [Tema Blazepwn](docs/terminal-blazepwn.md)
-- [Blazepwn en Ambxst](docs/ambxst-blazepwn.md) y [Roadie](docs/ambxst-roadie.md)
-- [Instalaciones manuales](docs/manual-installs.md)
+- [Terminal y Spotify con Blazepwn](docs/terminal-blazepwn.md)
+- [Ambxst con Blazepwn](docs/ambxst-blazepwn.md) y [Roadie](docs/ambxst-roadie.md)
+- [Lo que se instala a mano](docs/manual-installs.md)
 - [Firewall](docs/firewall.md)
-- [Auditoría del sistema](docs/audit.md)
-- [Pentest Mode](mods/pentest-mode) y [Battery Indicator](mods/battery-indicator/README.md), archivados
+- [Perfil de Exegol](exegol/hacking/README.md)
 
 ## Créditos
 

@@ -1,3 +1,0 @@
-Before: s "balanced"
-Power saver click: s "power-saver"
-Balanced click / restored: s "balanced"

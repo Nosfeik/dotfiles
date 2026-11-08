@@ -1,24 +1,11 @@
-# Archivos que restaura el repo
+# Manifests
 
-`configs.txt` y `assets.txt` enumeran archivos/enlaces concretos revisados.
-El restaurador NO descubre nuevos archivos mediante un recorrido de directorios.
-Un archivo añadido al checkout no se restaura hasta que se revise y se añada
-explícitamente a la lista correspondiente. Gitignore no sustituye esa revisión.
+`configs.txt` y `assets.txt` son la lista exacta de lo que copia el restaurador. No recorre carpetas, entonces si agrego un archivo nuevo al repo no se restaura hasta que lo pongo aquí. Así no se cuela nada que no revisé.
 
-La ruta de origen es relativa al repo. El destino es la misma ruta bajo `$HOME`,
-salvo `.fonts/*`, que se copia a `~/.local/share/fonts/dotfiles/*`.
-No incluyas caches, credenciales, histories, sockets ni bases de clipboard.
-Los scripts rechazan escapes de ruta y enlaces de origen que salen del repo.
+Las rutas son relativas al repo y se copian a la misma ruta en `$HOME`. La excepción es `.fonts/*`, que va a `~/.local/share/fonts/dotfiles/*`. El script rechaza rutas que se salgan del repo.
 
-La lista de assets es grande porque el repo ya contiene el árbol completo de
-iconos Kora. Enumerarlo evita que una carpeta futura se copie implícitamente.
-No se ha duplicado el árbol de iconos ni comprimido en un segundo archivo.
+`assets.txt` está largo porque trae todo el árbol de iconos Kora.
 
-Bat, NvChad (Lua, temas y lockfile), los wrappers `batcat`/`spotify`, el acceso
-del menú y los temas de Spicetify tienen entradas explícitas en `configs.txt`
-y están autorizados en `scripts/restore.py`. `blazepwn.ini` guarda únicamente
-preferencias declarativas: `scripts/bootstrap-spotify.py` configura las rutas
-del usuario y genera el estado de Spicetify por separado. No se restauran
-`config-xpui.ini`, metadatos de backups, sesiones, plugins descargados ni clientes
-binarios. El perfil bajo `exegol/` se copia
-por separado a los recursos de Exegol; no se instala en el HOME del host.
+`ambxst-mods.json` tiene los mods que uso con su versión, de dónde salen y el hash del manifest.
+
+Lo que nunca va aquí: caches, credenciales, historial, sockets, la sesión de Spotify ni `config-xpui.ini`. El perfil de `exegol/` tampoco, ese se copia aparte al contenedor.

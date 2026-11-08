@@ -1,20 +1,12 @@
-# Archivos históricos que no se restauran
+# Legacy
 
-- `take_edit_copy.sh`: script de captura revisado, ausente del HOME actual.
-  Conserva su comportamiento y firma gráfica histórica; usa grim, slurp,
-  wl-clipboard y opcionalmente ImageMagick. Ambxst gestiona las capturas actuales.
-- `.p10k.zsh.root`: configuración histórica de root. No representa el usuario
-  actual y no se copia a `/root`.
+Cosas viejas que ya no restauro pero quise guardar:
 
-Se retiraron del árbol activo `hyprland.conf` y los diez módulos `conf/*.conf`
-después de comparar con el sistema Lua. Incluían NVIDIA, rutas de otro usuario,
-un monitor HDMI que no está conectado, arranque duplicado de Ambxst, temas
-obsoletos y llamadas a eww ausente. No se convirtieron ni mezclaron con Lua.
+- `take_edit_copy.sh`: mi script de screenshots de antes, con grim, slurp y wl-clipboard. Ahora las capturas las hace Ambxst.
+- `.p10k.zsh.root`: el prompt que usaba para root.
 
-La versión completa anterior sigue en el historial, referencia de auditoría
-`80d0a91`. Consultarla sin restaurarla al HOME:
+La config vieja de Hyprland (`hyprland.conf` con sus módulos en `conf/`) la quité cuando me cambié a Lua, porque tenía cosas de NVIDIA, rutas de otro usuario y un monitor que ya no uso. Sigue en el historial:
 
 ```bash
 git show 80d0a91:.config/hypr/hyprland.conf
-git show 80d0a91:.config/hypr/conf/binds.conf
 ```

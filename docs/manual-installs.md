@@ -1,147 +1,72 @@
-# Componentes instalados manualmente
+# Lo que se instala a mano
 
-Instala primero los paquetes. Uso `scripts/manual-components.sh` para preparar
-Ambxst/axctl y P10k con versiones fijadas. Sin `--apply` muestra el plan.
-Al repetir, verifica y conserva cada componente ya completo. Un binario o
-checkout distinto detiene la operación: no hace reset, pull ni sobrescritura.
-Una descarga fallida no obliga a borrar un checkout válido ni el otro binario.
-Los clones incompletos quedan en un staging `.dotfiles-checkout.*` identificado
-por el script; revisa ese directorio antes de retirarlo manualmente.
+Hay cosas que no vienen de pacman ni del AUR. Para esas uso `scripts/manual-components.sh` con versiones fijas. Sin `--apply` nada más enseña lo que va a hacer, y si algo ya está instalado con otra versión se detiene en lugar de sobrescribirlo.
 
 ## Ambxst y axctl
 
-Inspección local: `/usr/local/bin/ambxst` (1.3.7), `/usr/local/bin/axctl`
-(v0.0.26), shell en `~/.local/src/ambxst`, Quickshell `/usr/bin/qs`.
-Ninguno de los dos binarios pertenece a pacman. El checkout de shell estaba
-limpio en `9a9026a4e6ac5431a68fa6928fd1af32918b98e3`.
-
-El [instalador de Ambxst](https://github.com/Axenide/Ambxst/blob/9a9026a4e6ac5431a68fa6928fd1af32918b98e3/install.sh)
-explica las rutas observadas: instala dependencias, descarga binarios,
-instala axctl, clona la shell y configura servicios. También actualiza el
-checkout y utiliza releases `latest`; por eso no se ejecuta automáticamente
-desde el restaurador. La siguiente instalación usa los artefactos exactos
-comprobados contra los binarios locales. Es específica de x86_64.
+Los binarios van en `/usr/local/bin/ambxst` y `/usr/local/bin/axctl`, y la shell en `~/.local/src/ambxst`. No los instalo con el `install.sh` de Ambxst porque ese siempre baja `latest` y actualiza el checkout, prefiero versiones fijas. El script baja Ambxst [1.3.7](https://github.com/Axenide/Ambxst/releases/tag/1.3.7) y axctl [v0.0.26](https://github.com/Axenide/axctl/releases/tag/v0.0.26) y revisa sus hashes. Solo funciona en x86_64. El tag de Ambxst no lleva `v`.
 
 ```bash
-./scripts/manual-components.sh ambxst
 ./scripts/manual-components.sh ambxst --apply
-```
-
-Los hashes se verificaron con el [release 1.3.7](https://github.com/Axenide/Ambxst/releases/tag/1.3.7)
-y el [release axctl v0.0.26](https://github.com/Axenide/axctl/releases/tag/v0.0.26).
-El tag de Ambxst **no** lleva prefijo `v`. No se guardan binarios en Git.
-
-Comprueba los binarios desde GNOME/TTY:
-
-```bash
 ambxst version
 axctl --version
 ```
 
-`ambxst install hyprland` solo añade el import al principal; NO genera el Lua
-que ese import necesita. El principal ya lo restaura este repo: no hace falta
-ejecutar ese subcomando encima. Primero restaura assets, system y configs.
+Después hay que actualizar Ambxst a la 1.3.14, que es la que pide Roadie.
 
-Si falta `~/.local/share/ambxst/hyprland.lua`, cierra GNOME y ejecuta desde una
-TTY local `./scripts/bootstrap-ambxst.sh --apply`. Abre una sesión temporal
-de Hyprland con Kitty y una instancia de Ambxst. No carga el principal normal
-ni importa un generado que todavía no existe. Ambxst arranca axctl y la shell
-escribe la configuración que axctl convierte a Lua.
+### El Lua que genera Ambxst
 
-En el Kitty temporal, espera a que aparezca el archivo y compruébalo:
+Mi `hyprland.lua` carga `~/.local/share/ambxst/hyprland.lua`, pero ese archivo lo genera Ambxst la primera vez que corre. `ambxst install hyprland` no lo genera, nada más agrega el import. En una instalación nueva, con assets, system y configs ya restaurados, salgo de GNOME y desde una TTY corro:
 
 ```bash
-test -s "$HOME/.local/share/ambxst/hyprland.lua"
-luac -p "$HOME/.local/share/ambxst/hyprland.lua"
+./scripts/bootstrap-ambxst.sh --apply
 ```
 
-Cuando ambas comprobaciones pasen, sal de esa sesión temporal:
+Eso abre un Hyprland temporal con Kitty y Ambxst. Cuando aparece el archivo lo reviso y salgo:
 
 ```bash
+test -s ~/.local/share/ambxst/hyprland.lua
+luac -p ~/.local/share/ambxst/hyprland.lua
 ambxst quit
 hyprctl dispatch 'hl.dsp.exit()'
 ```
 
-Entra en Hyprland normalmente desde GDM. El principal carga Ambxst y después
-mis overrides. El bootstrap no escribe el archivo generado; tampoco lo guardo
-en Git. Si falla su generación, revisa Ambxst/axctl antes de entrar a la sesión
-normal. La secuencia se dedujo del código local; la reinstalación gráfica
-completa en un HOME vacío sigue pendiente de una prueba separada.
+Luego ya entro normal a Hyprland desde GDM.
 
 ## Powerlevel10k
 
-Se usa un checkout manual en `~/.powerlevel10k`, sin cambios locales conocidos
-en los archivos del prompt respaldados. Instalar como usuario:
+Lo tengo clonado en `~/.powerlevel10k`:
 
 ```bash
-./scripts/manual-components.sh p10k
 ./scripts/manual-components.sh p10k --apply
 ```
 
-`.p10k.zsh` conserva exactamente el prompt actual. `.zshrc` mantiene aliases,
-plugins, fzf-lovely y teclas; adapta las rutas de usuario a `$HOME`, conserva
-el PATH heredado e incluye `~/.local/bin`. Se elimina la carga duplicada del
-tema y la búsqueda del tema de root. No se agrega un alias `tree` inventado:
-el archivo vivo no lo tiene; se puede ejecutar `lsd --tree`.
+`.p10k.zsh` es mi prompt tal cual. En `.zshrc` las rutas usan `$HOME` y `~/.local/bin` va en el PATH.
 
 ## NvChad y Spicetify
 
-Las configuraciones y temas están incluidos en el manifest, mientras que los
-plugins y el cliente modificado se preparan localmente. Sigue
-[Terminal y Spotify Blazepwn](terminal-blazepwn.md) después de restaurar configs.
-Spicetify tiene instalador con versión y SHA-256 fijados:
+Las configs vienen en el repo, pero los plugins y el Spotify modificado se preparan en cada máquina. Los pasos están en [terminal-blazepwn.md](terminal-blazepwn.md). Spicetify también va con versión y SHA-256 fijos:
 
 ```bash
-./scripts/manual-components.sh spicetify
 ./scripts/manual-components.sh spicetify --apply
-./scripts/bootstrap-spotify.py
 ./scripts/bootstrap-spotify.py --apply
 ```
 
-El último paso requiere haber iniciado sesión una vez en Spotify y cerrado el
-cliente. No necesita sudo: modifica una copia en `~/.local/share/spotify`.
-Neovim descarga sus plugins desde `init.lua`; el lockfile permite recuperar las
-revisiones revisadas con `:Lazy restore`. Exegol conserva su configuración propia.
+Antes del último paso hay que abrir Spotify una vez, iniciar sesión y cerrarlo. No usa sudo, trabaja sobre una copia en `~/.local/share/spotify`.
 
 ## Plugin sudo de Zsh
 
-Ruta real: `/usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh`.
-Es una instalación manual del plugin de Oh My Zsh (Esc, Esc antepone `sudo`).
-La copia en `vendor/zsh-sudo` coincide byte a byte con
-[upstream](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh)
-consultado durante la auditoría. Se incluye su licencia MIT.
-La acción `scripts/install.sh system --apply` lo instala con confirmación y
-backup. No hace falta instalar todo Oh My Zsh.
+Es el plugin `sudo` de Oh My Zsh (Esc, Esc te pone `sudo` al inicio del comando), pero solo el plugin, sin todo Oh My Zsh. La copia está en `vendor/zsh-sudo` con su licencia MIT, y `./scripts/install.sh system --apply` la pone en `/usr/share/zsh/plugins/zsh-sudo/`.
 
 ## Colloid
 
-El checkout encontrado en `~/Downloads/Colloid-gtk-theme` estaba limpio en
-`fe11342f37f124f1b29d44cf33e9a06053f4bba2`. Tiene las dependencias GTK >= 3.20,
-gnome-themes-extra, Murrine y sassc descritas por
-[Colloid](https://github.com/vinceliuice/Colloid-gtk-theme).
-También se comprobaron gtk3, gtk4, libadwaita y fontconfig instalados.
-
-La restauración normal copia el **tema instalado** en `.themes/Colloid-Dark`,
-con su paleta actual, y evita recompilar. Si se quiere reconstruir desde fuente,
-en una instalación nueva y antes de restaurar los assets/configs:
+Ya no lo uso, pero lo dejé de respaldo. El restore copia el tema ya instalado de `.themes/Colloid-Dark` y no lo recompila. Si lo quiero reconstruir desde el código:
 
 ```bash
-sudo pacman -Syu --needed sassc
+sudo pacman -S --needed sassc
 ./scripts/manual-components.sh colloid --apply
-(
-    set -eu
-    build_output=$(mktemp -d)
-    cd "$HOME/.local/src/Colloid-gtk-theme"
-    ./install.sh -d "$build_output" -c dark
-    printf 'Tema reconstruido para comparar, sin sustituir el activo: %s\n' "$build_output"
-)
+cd ~/.local/src/Colloid-gtk-theme
+./install.sh -d "$(mktemp -d)" -c dark
 ```
 
-`-l` es la opción upstream para integrar GTK4/libadwaita. No la ejecuto en
-ese bloque de comparación porque enlazaría archivos del HOME activo: el restore
-ya recupera la integración mediante sus enlaces GTK4 revisados. No afirmo que
-conozca los argumentos exactos usados originalmente (no leí el historial privado). El CSS activo ya fue recoloreado por Ambxst: reinstalar
-Colloid desde fuente puede cambiarlo, de ahí el snapshot del tema funcional.
-La licencia GPL-3.0 está en `vendor/Colloid-LICENSE`; copyright de los autores
-de Colloid. Los iconos/fuentes/wallpapers históricos conservan su autoría y
-no se relicencian por estar en este repositorio.
+La licencia GPL-3.0 está en `vendor/Colloid-LICENSE`.

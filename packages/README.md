@@ -1,98 +1,33 @@
-# Dependencias auditadas
+# Paquetes
 
-Fuente: base local de pacman el 2026-09-21, `pacman -Q`, `-Qqe`,
-`-Qqn`, `-Qqm`, `-Qqen` y `-Qqem`. Las listas contienen únicamente paquetes
-instalados. No son un volcado de las más de mil dependencias del sistema.
+Listas sacadas de esta laptop con `pacman -Qqe` y compañía. Nada más va lo que instalé yo, no las más de mil dependencias.
 
-| Lista | Propósito |
+| Lista | Qué tiene |
 |---|---|
-| base.txt | Kernel, firmware, AMD, arranque, Btrfs/LVM, red y herramientas de instalación |
-| desktop.txt | GNOME/GDM fallback, Nautilus, Bluetooth y audio |
-| hyprland.txt | Hyprland Lua, hypridle, Mesa, portales y agente polkit |
-| asus.txt | asusctl, rog-control-center, power-profiles-daemon |
-| terminal.txt | Kitty, Zsh, LSD y plugins empaquetados |
-| fonts-theme.txt | GTK y fuentes del sistema |
-| utilities.txt | Diagnóstico, editores y herramientas de administración instaladas |
-| ambxst.txt | Dependencias del instalador local de Ambxst, sin repetir las anteriores |
-| apps.txt | Firefox y Obsidian instalados; VS Code está en aur.txt |
-| optional/ocr-extra.txt | Idiomas OCR instalados pero desactivados; no se instalan por defecto |
-| optional/theme-build.txt | sassc para reconstruir Colloid; no hace falta para copiar el snapshot |
-| optional/exegol.txt | Docker, pipx, argcomplete y xhost del host; revisión del 2026-10-16, fuera de la instalación base |
-| aur.txt | Ocho paquetes externos seleccionados; instalar con yay como usuario |
-| versions.tsv | Versiones y razón de instalación observadas; referencia, no un lockfile |
-
-
-La sincronización GreenBlack del 26/10 añade `tree-sitter-cli`, `ripgrep` y
-`unzip` a terminal.txt como requisitos de restauración de NvChad, Telescope y
-Mason. No se presentan como parte del inventario instalado en septiembre.
-El snapshot requiere Neovim ≥0.12 y tree-sitter-cli ≥0.26.1; GCC y Make ya los
-aporta base-devel. Spicetify 2.46.2 se prepara con el componente manual de
-versión/SHA-256 fijados; no se agrega su binario a Git ni a la lista AUR.
-Véase [la guía del tema](../docs/terminal-blazepwn.md).
-
-`asusctl` y `rog-control-center` son **oficiales** en esta máquina (6.5.0-1).
-`quickshell`, `awww` y `matugen` también están empaquetados; awww está instalado
-pero no se necesita para restaurar el wallpaper de Ambxst y se omite.
-El agente que corre realmente es `/usr/lib/hyprpolkitagent/hyprpolkitagent`.
-`pactl`, utilizado en startup, viene de `libpulse`.
-
-Pentest Mode usa `iproute2`, `wl-clipboard` y `python`, todos oficiales
-y ya instalados en la máquina auditada. `iproute2` queda explícito en ambxst.txt;
-Python sigue en utilities.txt y wl-clipboard ya estaba en ambxst.txt. No requiere
-paquetes AUR adicionales, jq ni un helper privilegiado. La fase 4 añade
-`networkmanager-vpn-plugin-openvpn` y `python-gobject` a ambxst.txt. El plugin
-oficial trae OpenVPN como dependencia; NetworkManager/libnm ya pertenecen a la
-pila de red. No ejecuto OpenVPN directamente.
-El comprobador de desarrollo usa Go, GJS y qmlformat, disponibles en esta máquina;
-Go y GJS no son dependencias de ejecución del mod.
-
-El mod independiente Battery Indicator sí usa `gjs` (oficial, ya instalado):
-un puente pequeño observa por D-Bus el límite de carga de ASUS. No ejecuta
-asusctl periódicamente ni modifica ese límite. Queda en ambxst.txt.
-
-En AUR se incluyen Brave Origin Nightly, Discord Canary, elecwhat, Spotify,
-VS Code, Murrine y las fuentes Phosphor/League Gothic que pidió Ambxst. `gtk2` es una
-dependencia externa instalada de Murrine; yay debe resolverla. No se incluye
-ningún paquete `-debug`. `yay` está instalado (13.0.1-1); su bootstrap es manual.
-`pacman -Qm` solo significa «ajeno a las bases sync locales», no demuestra por
-sí mismo que un paquete proceda de AUR. Los nombres seleccionados corresponden
-a las aplicaciones y dependencias AUR utilizadas aquí.
-
-Ambxst/axctl y Powerlevel10k **no son paquetes pacman**. El plugin sudo tampoco
-tiene propietario pacman. Véase [instalaciones manuales](../docs/manual-installs.md).
-Colloid-Dark, Kora, Bibata-Modern-Ice, GoogleDot-Black, Hack, MesloLGS y Montserrat se restauran desde
-los assets revisados; no hace falta instalar otros dotfiles.
-
-No se incluyen NVIDIA, PRIME, TLP ni utilidades para alterar voltajes/TDP.
-La máquina aún tiene `nvidia-open`, `nvidia-utils`, `libva-nvidia-driver` y
-`switcheroo-control`; no se desinstalaron durante esta auditoría. GNOME se
-conserva y no se realiza ninguna limpieza de paquetes.
-
-Telegram no tiene ejecutable `Telegram` en PATH ni paquete `telegram-desktop`.
-Startup comprueba el ejecutable antes de lanzarlo: no instalo Telegram por una
-línea histórica. VS Code sí está instalado actualmente (`visual-studio-code-bin`)
-y queda incluido en AUR; se añadió después del inventario inicial. Chromium,
-Burp y VMware no se deducen de sus reglas de ventanas.
-
-`qt6ct` reproduce el platform theme que Ambxst exporta a Quickshell. Los paquetes
-OCR de idiomas desactivados y `sassc` se separan bajo `optional/`; no se eliminan
-del sistema actual. Para reconstruir Colloid, instala `sassc` además de los
-requisitos GTK/Murrine ya documentados.
-
-Arch es rolling: instalar estas listas obtiene las versiones disponibles en ese
-momento y sus dependencias. Evitar actualizaciones parciales. No forzar únicamente
-Hyprland 0.56.2 sobre bibliotecas más recientes. Las versiones sirven para comparar
-y, si fuese necesario, reconstruir un conjunto coherente desde Arch Linux Archive.
+| `base.txt` | Kernel, firmware, AMD, arranque, Btrfs/LVM, red |
+| `desktop.txt` | GNOME y GDM de fallback, Nautilus, Bluetooth y audio |
+| `hyprland.txt` | Hyprland, hypridle, Mesa, portales y el agente de polkit |
+| `asus.txt` | asusctl, rog-control-center y power-profiles-daemon |
+| `terminal.txt` | Kitty, Zsh, LSD, plugins, y tree-sitter-cli, ripgrep y unzip para NvChad |
+| `fonts-theme.txt` | GTK y fuentes del sistema |
+| `utilities.txt` | Herramientas de diagnóstico y editores |
+| `ambxst.txt` | Lo que pide Ambxst que no está en las otras listas |
+| `apps.txt` | Firefox y Obsidian |
+| `aur.txt` | Brave Origin Nightly, Discord Canary, elecwhat, Spotify, VS Code, Murrine y las fuentes que pide Ambxst |
+| `optional/` | Lo que no instalo por defecto: idiomas de OCR, `sassc` para reconstruir Colloid y lo de Exegol (Docker, pipx, xhost) |
+| `versions.tsv` | Las versiones que tenía, como referencia. No es un lockfile |
 
 ```bash
-./scripts/install.sh packages           # ver selección oficial
-./scripts/install.sh packages --apply   # confirmación + pacman -Syu --needed
-./scripts/install.sh aur                # ver selección AUR
-./scripts/install.sh aur --apply        # comprobar yay, revisar PKGBUILDs
+./scripts/install.sh packages           # enseña la lista
+./scripts/install.sh packages --apply   # pacman -Syu --needed
+./scripts/install.sh aur                # enseña la lista del AUR
+./scripts/install.sh aur --apply        # necesita yay
 ```
 
-Las aplicaciones GNOME adicionales que no hacen falta para entrar al fallback
-(Maps, Music, Weather, Tour, etc.) permanecen instaladas en el sistema actual;
-no se exige reinstalar todo el grupo `gnome` para reproducir esta sesión.
-El grupo completo es una elección válida en archinstall si se quiere recuperar
-también esas aplicaciones.
+Algunas notas:
+
+- Arch es rolling, entonces estas listas instalan lo que esté disponible ese día. No hagas actualizaciones parciales ni fuerces nada más Hyprland 0.56.2 sobre librerías nuevas.
+- `asusctl` y `rog-control-center` ya están en los repos oficiales.
+- Ambxst, axctl y Powerlevel10k no son paquetes, van en [lo que se instala a mano](../docs/manual-installs.md). Los temas, iconos y fuentes se restauran desde el repo.
+- No hay nada de NVIDIA, PRIME, TLP ni undervolt. La dGPU la apago desde ROG Control Center.
+- `yay` lo instalo a mano antes de la lista del AUR.

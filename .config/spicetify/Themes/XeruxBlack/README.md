@@ -1,7 +1,7 @@
 # XeruxBlack
 
-Fondo #101010 y grises cálidos, inspirado en la referencia.
+Fondo `#101010` con grises cálidos.
 
-Con Spicetify 2.46.2, conserva `expose_apis = 1` y `experimental_features = 1`: el cargador de módulos corregidos se inserta por esa ruta. No se ha activado ninguna función experimental de Spotify. El tema solo añade CSS y colores.
+Para usarlo: `spicetify config current_theme XeruxBlack && spicetify apply`.
 
-Para reaplicar: `spicetify apply`.
+Con Spicetify 2.46.2 hay que dejar `expose_apis = 1` y `experimental_features = 1` para que cargue. El tema nada más cambia CSS y colores.

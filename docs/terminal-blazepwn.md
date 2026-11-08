@@ -1,48 +1,33 @@
-# Terminal y Spotify Blazepwn
+# Terminal y Spotify con Blazepwn
 
-Desde el 07/11/2026 uso **Blazepwn**, la misma paleta del tema de Obsidian y de
-mi blog: fondo `#16181d`, texto `#dce2ec`, texto secundario `#8792a8`, acento
-`#60a5fa` y bordes `#475a8b`. Ambxst nativo y las aplicaciones GTK/Qt
-compatibles la comparten mediante [configuración de usuario](ambxst-blazepwn.md).
+Blazepwn es la misma paleta de mi Obsidian y de mi blog:
 
-Antes usaba GreenBlack (`#101010`, `#a8d5bf`, `#00e69a`), sincronizado el
-26/10/2026. Sus archivos siguen en el repo como respaldo; abajo explico cómo
-regresar.
-
-| Componente | Configuración versionada |
+| Rol | Color |
 |---|---|
-| Kitty | `.config/kitty/{kitty.conf,color.ini}`: fondo opaco, Hack Nerd Font 12, paleta ANSI azul |
-| Zsh/P10k | `.zshrc`, `.p10k.zsh`: prompt, carpetas, resaltado, sugerencias y fzf azules |
-| LSD/Bat | `.config/lsd/`, `.config/bat/config`: metadatos RGB y Bat ANSI |
-| NvChad | `.config/nvim/`: starter, módulos Lua, `blazepwn`, alternativas `green_black` y `xerux_black`, y lockfile |
-| Spotify | `.config/spicetify/Themes/`, `blazepwn.ini`, `.local/bin/spotify` y acceso del menú |
+| Fondo | `#16181d` |
+| Texto | `#dce2ec` |
+| Secundario | `#8792a8` |
+| Acento | `#60a5fa` |
+| Bordes | `#475a8b` |
+
+Antes usaba GreenBlack (`#101010`, `#a8d5bf`, `#00e69a`). Para pasar a Blazepwn cambié cada color verde por su equivalente azul, entonces cada uno sigue cumpliendo su función (acento, texto, secundario, selección). GreenBlack lo dejé de respaldo, abajo explico cómo regresar.
+
+| Qué | Dónde |
+|---|---|
+| Kitty | `.config/kitty/{kitty.conf,color.ini}`, Hack Nerd Font 12 y paleta ANSI azul |
+| Zsh/P10k | `.zshrc` y `.p10k.zsh`: prompt, carpetas, resaltado, sugerencias y fzf |
+| LSD/Bat | `.config/lsd/` y `.config/bat/config` |
+| NvChad | `.config/nvim/` con el tema `blazepwn` (y `green_black` y `xerux_black` de respaldo) |
+| Spotify | `.config/spicetify/Themes/`, `blazepwn.ini`, `.local/bin/spotify` y el acceso del menú |
 | WhatsApp | `.config/elecwhat/config.json` y `themes/blazepwn.css` |
-| Barra | `Pictures/Icon/Arch-launcher-blazepwn.png` como ícono del launcher (el verde queda de respaldo) |
-| Exegol | `exegol/hacking/`: prompt y herramientas con la misma paleta; Neovim independiente |
+| Barra | `Pictures/Icon/Arch-launcher-blazepwn.png` como ícono del launcher |
+| Exegol | `exegol/hacking/`, la misma paleta dentro del contenedor |
 
-## Restauración del host
+## NvChad
 
-Sigue el orden general del README. El restaurador copia solo las rutas explícitas
-de `manifests/configs.txt`, hace respaldo y exige una sesión sin Hyprland activo.
-No ejecutes `configs --apply` desde el escritorio en uso solo para cambiar colores.
-Después de restaurar, abre Kitty y ejecuta `exec zsh` en las shells antiguas.
+Uso NvChad v2.5 con Neovim 0.12.5. El `nvim-treesitter` del lockfile pide Neovim ≥0.12 y `tree-sitter-cli` ≥0.26.1, por eso en `packages/terminal.txt` van tree-sitter-cli, ripgrep (para Telescope) y unzip (para Mason).
 
-`.zshrc` incorpora los colores actuales manteniendo el PATH heredado, las rutas
-basadas en `$HOME` y la carga única de Powerlevel10k del repo. No copia el PATH
-absoluto ni la carga duplicada del archivo vivo.
-
-### NvChad
-
-El snapshot usa NvChad v2.5 y se comprobó con Neovim 0.12.5. Aunque NvChad admite
-versiones anteriores, el `nvim-treesitter` fijado en este lockfile requiere
-Neovim ≥0.12 y `tree-sitter-cli` ≥0.26.1. La lista `packages/terminal.txt` añade
-tree-sitter-cli, ripgrep (búsquedas de Telescope) y unzip (Mason). Son requisitos
-de restauración; no representan una afirmación de que todos estuvieran instalados
-en la auditoría de septiembre. GCC/Make ya pertenecen a base-devel.
-
-Tras restaurar `.config/nvim`, abre `nvim`. El starter instala lazy.nvim y los
-plugins en el directorio de datos del usuario. Para recuperar las revisiones
-del snapshot, ejecuta dentro de Neovim:
+Después de restaurar `.config/nvim` abro `nvim`, se instala lazy.nvim con los plugins y luego corro:
 
 ```vim
 :Lazy restore
@@ -50,137 +35,45 @@ del snapshot, ejecuta dentro de Neovim:
 :TSInstallAll
 ```
 
-Las descargas necesitan red. Mason prepara `lua-language-server` y `stylua`;
-Tree-sitter instala los lenguajes definidos en `lua/plugins/init.lua`. El tema
-se elige en `lua/chadrc.lua`. No se incluyen caches, parsers compilados, servidores
-LSP ni plugins de terceros en Git. No uses `:Lazy update` si quieres conservar
-exactamente el lockfile del respaldo.
+`:Lazy restore` deja los plugins en las versiones del lockfile, si quiero quedarme ahí no uso `:Lazy update`. El tema se cambia en `lua/chadrc.lua`.
 
-Fuentes: [NvChad](https://nvchad.com/docs/quickstart/install/),
-[requisitos del Tree-sitter fijado](https://github.com/nvim-treesitter/nvim-treesitter/blob/29212d826054bb2948fa9d3a99eca9bf6a050eb2/README.md).
+## Spotify
 
-### Spotify
+Lo tengo con Spotify `1.2.96.518` y Spicetify `2.46.2`.
 
-Combinación comprobada: Spotify `1.2.96.518` y Spicetify `2.46.2`. El paquete AUR
-`spotify` ya está en `packages/aur.txt`; los paquetes de Arch se instalan en sus
-versiones disponibles, así que comprueba compatibilidad si esa versión cambia.
+1. Restaurar configs y correr `./scripts/manual-components.sh spicetify --apply`, que baja Spicetify 2.46.2 y revisa su SHA-256.
+2. Abrir `/usr/bin/spotify`, iniciar sesión y cerrarlo.
+3. `./scripts/bootstrap-spotify.py --apply`.
+4. Abrir Spotify desde el menú o con `~/.local/bin/spotify`.
 
-1. Restaura configs y prepara Spicetify con
-   `./scripts/manual-components.sh spicetify --apply`. Descarga el artefacto
-   oficial v2.46.2, verifica SHA-256 e instala en `~/.local/share/spicetify-cli`,
-   con enlace en `~/.local/bin`. Una instalación de versión distinta se conserva
-   y requiere revisión; no se actualiza implícitamente.
-2. Abre `/usr/bin/spotify`, inicia sesión y ciérralo para crear `prefs`.
-3. Revisa `./scripts/bootstrap-spotify.py` y ejecuta
-   `./scripts/bootstrap-spotify.py --apply`.
-4. Abre Spotify desde el menú o `~/.local/bin/spotify`.
+El bootstrap hace una copia de `/opt/spotify` en `~/.local/share/spotify` y le aplica Spicetify a esa copia, así no necesita sudo. Antes respalda la config anterior en `~/.local/state/dotfiles-backups/spotify-*`. El wrapper siempre lee `spotify-flags.conf` para que corra en Wayland.
 
-El bootstrap crea una copia escribible de `/opt/spotify` en
-`~/.local/share/spotify`; aplica las preferencias del preset con la CLI y ejecuta
-`backup apply` en una copia nueva, o `apply` en una ya modificada. Conserva una
-copia de la configuración previa bajo `~/.local/state/dotfiles-backups/spotify-*`.
-No inicia Spotify ni interrumpe la reproducción: exige cerrar el cliente primero.
-El wrapper tiene fallback a `/opt/spotify/spotify` antes del bootstrap y siempre
-lee `spotify-flags.conf` para mantener Wayland. El acceso del menú expande `$HOME`
-y conserva los argumentos; no depende del PATH de una terminal interactiva.
+En `blazepwn.ini` hay que dejar `expose_apis=1` y `experimental_features=1`, porque en la 2.46.2 así se carga el tema. El tema nada más trae CSS y colores, nada de extensiones.
 
-`blazepwn.ini` no contiene rutas personales ni sección `[Backup]`.
-`config-xpui.ini`, `prefs`, estado de sesión y archivos binarios quedan locales.
-Conserva `expose_apis=1` y `experimental_features=1`: en Spicetify 2.46.2 esa ruta
-inserta el cargador de módulos necesario para este cliente. El tema aporta CSS y
-colores; no incluye extensiones ni aplicaciones personalizadas.
-
-Para reaplicar después de editar únicamente los colores:
+Si cambio colores:
 
 ```bash
 spicetify -n refresh
-# En Spotify: Ctrl+Shift+R.
+# y en Spotify Ctrl+Shift+R
 ```
 
-Para volver a los grises: `spicetify config current_theme XeruxBlack` y
-`spicetify -n refresh`, después recarga la interfaz. Actualiza también
-`blazepwn.ini` si quieres que el siguiente bootstrap conserve esa elección.
-Para regresar al verde es lo mismo con `GreenBlack`.
+Para regresar a GreenBlack o a los grises de XeruxBlack:
 
-Tras actualizar el paquete Spotify, abre una vez `/usr/bin/spotify` y ciérralo.
-Comprueba primero la compatibilidad de Spicetify. Luego revisa
-`./scripts/bootstrap-spotify.py --refresh-client` y aplícalo con `--apply`.
-El cliente local anterior se archiva antes de sustituirlo por una copia del nuevo
-paquete. No se borra `/opt/spotify` ni se cambian sus permisos.
+```bash
+spicetify config current_theme GreenBlack   # o XeruxBlack
+spicetify -n refresh
+```
 
-Referencias: [release fijada](https://github.com/spicetify/cli/releases/tag/v2.46.2),
-[comandos de Spicetify](https://spicetify.app/docs/cli/commands).
+Cuando se actualiza el paquete de Spotify lo abro y cierro una vez, reviso que Spicetify sea compatible y corro `./scripts/bootstrap-spotify.py --refresh-client --apply`. La copia anterior queda archivada y `/opt/spotify` no se toca.
+
+## WhatsApp
+
+Uso elecwhat, que carga `.config/elecwhat/themes/blazepwn.css` desde `config.json`. `green-black.css` se queda de respaldo. El perfil de Electron (cookies, sesión) no va en el repo. Después de restaurar hay que reiniciar elecwhat.
+
+## Burp en la barra
+
+Burp abre con la clase `burp-StartBurp`, y Ambxst busca el ícono comparando la clase con el ejecutable, el nombre o los `Keywords` del `.desktop`, no con `StartupWMClass`. Por eso en la barra salía sin logo. Lo arreglé con un override en `.local/share/applications/burpsuite.desktop` que agrega la clase en `Keywords` y en `StartupWMClass`, sin parchear Ambxst.
 
 ## Exegol
 
-Sigue la tabla de [restauración del perfil hacking](../exegol/hacking/README.md).
-Se mantiene el punto de personalización compartido, y el perfil específico carga
-`green-colors.zsh`. El tema de LSD usa la ruta del contenedor y su formato 0.23.1.
-Neovim 0.7.2 usa un archivo normal propio; ya no es un enlace al NvChad del host.
-El restore general no inicia contenedores ni modifica sus recursos persistentes.
-
-## Comprobaciones
-
-```bash
-python -B -m unittest discover -s scripts -p 'test_restore.py'
-python -B -m unittest discover -s scripts -p 'test_spotify.py'
-python -B scripts/restore.py configs       # plan; sin --apply
-./scripts/bootstrap-spotify.py            # plan; sin --apply
-desktop-file-validate .local/share/applications/spotify.desktop
-git diff --check
-```
-
-Las pruebas de restauración y Spotify trabajan con directorios temporales. No
-reinstalan el escritorio ni usan tu sesión de Spotify. La instalación de plugins
-y las actualizaciones del cliente siguen requiriendo comprobar sus versiones.
-
-Validación de GreenBlack realizada el 26/10/2026 (no la repetí completa con Blazepwn):
-
-- 15 pruebas del restaurador y 6 del bootstrap/acceso de Spotify aprobadas.
-- Sintaxis de Zsh, Bash y Lua, entrada `.desktop` y `git diff --check` correctos.
-- NvChad cargado en XDG temporal con copia de los plugins instalados: tema
-  `green_black`, fondo `#101010` y texto `#a8d5bf`; también se cargó el Lua de Exegol.
-- Instalador de Spicetify ejecutado en un HOME temporal: descarga oficial,
-  SHA-256, enlace relativo y segunda ejecución correctos.
-- Bootstrap real de Spicetify sobre copia temporal del paquete Spotify y prefs
-  sintéticas: primera aplicación, CSS verde, cargador de módulos y reaplicación
-  correctos. No se abrió una sesión gráfica ni se reinstaló el sistema real.
-
-## Cambio a Blazepwn (07/11/2026)
-
-Convertí cada color de GreenBlack a su equivalente en azul con un mapeo fijo, así
-que se conservan los mismos roles (acento, texto, secundario, contenedores y
-selección). Los rojos y amarillos de Catppuccin para errores y avisos no cambian.
-Antes de aplicarlo en vivo hice un respaldo en
-`~/.local/state/dotfiles-backups/blazepwn-20261107-203457/`.
-
-| Componente | Blazepwn |
-|---|---|
-| Ambxst | preset `.config/ambxst/colors/Blazepwn/{dark,light}.json` |
-| Qt | `.config/qt{5,6}ct/colors/Blazepwn.conf`, activo en `qt{5,6}ct.conf` |
-| NvChad | `lua/themes/blazepwn.lua`, seleccionado en `chadrc.lua` |
-| Spotify | `Themes/Blazepwn/` y `blazepwn.ini` (antes `green-black.ini`) |
-| Kitty, Zsh/P10k, LSD | mismos archivos de siempre, con la paleta azul |
-| Exegol | `green-colors.zsh`, `p10k.zsh`, `config/nvim/init.lua` y `config/lsd/colors.yaml` |
-
-WhatsApp (elecwhat) carga `.config/elecwhat/themes/blazepwn.css` desde
-`config.json`. `green-black.css` queda de respaldo. Solo versiono esos archivos;
-el perfil de Electron (cookies, sesión y caches) se queda local. Después de
-restaurar hay que reiniciar elecwhat.
-
-Lo que comprobé:
-
-- Ambxst regeneró `colors.json`, GTK 3/4 y el tema de Ghostty con `#60a5fa`.
-  `hyprctl configerrors` quedó vacío después de `hyprctl reload`.
-- NvChad carga `Normal` con `#dce2ec`. La sintaxis de `.zshrc` y `.p10k.zsh` es
-  correcta y los dos JSON del preset son válidos.
-- Los archivos de tema del repo son idénticos a los vivos.
-- Pasan las 15 pruebas del restaurador. En `test_spotify.py` falla
-  `test_desktop_launcher_expands_home_and_preserves_uris`, pero también falla en
-  el commit anterior, así que no viene de este cambio.
-
-Burp abre con la clase `burp-StartBurp` y Ambxst busca el ícono comparando la
-clase con el ejecutable, el nombre o los `Keywords` del `.desktop`, no con
-`StartupWMClass`. Por eso en la barra salía sin logo. El override
-`.local/share/applications/burpsuite.desktop` agrega la clase en `Keywords` y en
-`StartupWMClass`, sin parchear Ambxst.
+La config del contenedor está en [exegol/hacking](../exegol/hacking/README.md).
