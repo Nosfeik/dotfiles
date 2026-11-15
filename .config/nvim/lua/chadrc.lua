@@ -22,6 +22,7 @@ M.base46 = {
 M.ui = {
   statusline = { theme = "minimal", separator_style = "block" },
   telescope = { style = "bordered" },
+  tabufline = { lazyload = false },
 }
 M.nvdash = { load_on_startup = true }
 M.mason = { pkgs = { "lua-language-server", "stylua" } }
