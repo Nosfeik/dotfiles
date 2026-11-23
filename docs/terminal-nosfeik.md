@@ -20,7 +20,7 @@ Antes usaba GreenBlack (`#101010`, `#a8d5bf`, `#00e69a`). Para pasar a Nosfeik c
 | NvChad | `.config/nvim/` con el tema `nosfeik` (y `green_black` y `xerux_black` de respaldo) |
 | Spotify | `.config/spicetify/Themes/`, `nosfeik.ini`, `.local/bin/spotify` y el acceso del menú |
 | WhatsApp | `.config/elecwhat/config.json` y `themes/nosfeik.css` |
-| Barra | `Pictures/Icon/Arch-launcher-nosfeik.png` como ícono del launcher |
+| Barra | `Pictures/Icon/Ghost-launcher-nosfeik.svg` (fantasma en `#60a5fa`) como ícono del launcher |
 | Exegol | `exegol/hacking/`, la misma paleta dentro del contenedor |
 
 ## NvChad
