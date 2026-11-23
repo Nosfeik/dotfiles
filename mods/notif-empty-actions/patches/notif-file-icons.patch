@@ -1,8 +1,8 @@
 diff --git a/modules/notifications/NotificationAppIcon.qml b/modules/notifications/NotificationAppIcon.qml
-index 3515379df221559247dcadcfffb9900c11f122c4..5c91c18db4c8980c3d9c0d881b04fa337423f2f5 100644
+index 75e37c619517eedda8120c269fa24ed17e1100e3..01e2a8f3803307b1b6df6260b69a10b4a376ad60 100644
 --- a/modules/notifications/NotificationAppIcon.qml
 +++ b/modules/notifications/NotificationAppIcon.qml
-@@ -23,6 +23,18 @@ Item {
+@@ -22,6 +22,18 @@ Item {
      property real smallAppIconSize: size * smallAppIconScale
      property bool usingAppIconFallback: false
  
@@ -21,25 +21,31 @@ index 3515379df221559247dcadcfffb9900c11f122c4..5c91c18db4c8980c3d9c0d881b04fa33
      implicitWidth: size
      implicitHeight: size
      property real radius: Styling.radius(-8)
-@@ -84,7 +96,7 @@ Item {
+@@ -79,7 +91,7 @@ Item {
+                 mipmap: true
                  id: appIconImage
                  anchors.fill: parent
-                 radius: root.radius
 -                source: root.appIcon ? "image://icon/" + root.appIcon : ""
 +                source: root.iconSource(root.appIcon)
+                 fillMode: Image.PreserveAspectCrop
+                 smooth: true
              }
-         }
- 
-@@ -116,7 +128,7 @@ Item {
-                 source: root.image
-                 onStatusChanged: {
-                     if (status === Image.Error && root.appIcon) {
--                        source = "image://icon/" + root.appIcon;
-+                        source = root.iconSource(root.appIcon);
-                         root.usingAppIconFallback = true;
-                     }
-                 }
-@@ -137,7 +149,7 @@ Item {
+@@ -103,12 +115,12 @@ Item {
+                         mipmap: true
+                         id: notifImage
+                         anchors.fill: parent
+-                        source: status === Image.Error && root.appIcon ? "image://icon/" + root.appIcon : root.image
++                        source: status === Image.Error && root.appIcon ? root.iconSource(root.appIcon) : root.image
+                         fillMode: Image.PreserveAspectCrop
+                         smooth: true
+                         onStatusChanged: {
+                             if (status === Image.Error && root.appIcon) {
+-                                source = "image://icon/" + root.appIcon;
++                                source = root.iconSource(root.appIcon);
+                                 root.usingAppIconFallback = true;
+                             }
+                         }
+@@ -131,7 +143,7 @@ Item {
              Image {
                  mipmap: true
                  anchors.fill: parent

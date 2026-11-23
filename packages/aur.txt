@@ -6,3 +6,4 @@ spotify
 ttf-league-gothic
 ttf-phosphor-icons
 visual-studio-code-bin
+whitesur-icon-theme

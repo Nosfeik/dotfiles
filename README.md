@@ -11,7 +11,7 @@ Esto es mi respaldo y la guía que sigo cuando reinstalo la laptop, no está pen
 | `.config/` | Hyprland, Ambxst, Kitty, GTK/Qt, NvChad, LSD, bat, Spicetify |
 | `.zshrc`, `.p10k.zsh` | Shell y prompt |
 | `.local/bin/` | `lid-power.sh`, wrapper de Spotify y `batcat` |
-| `.fonts/`, `.icons/`, `.themes/`, `Pictures/` | Hack Nerd Font, Meslo, Montserrat, iconos Kora, cursor Bibata Modern Ice, GoogleDot y Colloid (ya no los uso, los dejo de respaldo), wallpapers e ícono del launcher |
+| `.fonts/`, `.icons/`, `.themes/`, `Pictures/` | Hack Nerd Font, Meslo, Montserrat, cursor Bibata Modern Ice, iconos Kora, GoogleDot y Colloid (ya no los uso, los dejo de respaldo), wallpapers e ícono del launcher. Los iconos que uso son WhiteSur-dark y vienen del AUR (`whitesur-icon-theme`) |
 | `packages/` | Listas de pacman/AUR sacadas de esta máquina |
 | `manifests/` | Lista explícita de lo que copia el restaurador |
 | `scripts/` | Instalador, restaurador, firewall y bootstraps |
@@ -129,7 +129,7 @@ Después:
 1. Abrir Spotify una vez, iniciar sesión, cerrarlo y correr `./scripts/bootstrap-spotify.py --apply`.
 2. En Neovim: `:Lazy restore`, `:MasonInstallAll` y `:TSInstallAll`.
 3. Configurar ROG Control Center a mano (Integrated, 80 %, perfiles de arriba).
-4. Desde GNOME, `nwg-look -a` para que GSettings agarre adw-gtk3, Kora y el cursor.
+4. Desde GNOME, `nwg-look -a` para que GSettings agarre adw-gtk3, WhiteSur-dark y el cursor.
 5. Salir de GNOME y desde una TTY:
 
 ```bash
@@ -144,26 +144,24 @@ El restaurador hace backup de lo que reemplaza en `~/.local/state/dotfiles-backu
 
 ## Mods de Ambxst
 
-Tengo cinco activos, la lista con versiones y hashes está en [manifests/ambxst-mods.json](manifests/ambxst-mods.json):
+Tengo cuatro activos, la lista con versiones y hashes está en [manifests/ambxst-mods.json](manifests/ambxst-mods.json):
 
 | Mod | De dónde sale |
 |---|---|
-| Roadie 4.1.1 | [drpezzer/ambxst-mods](https://github.com/drpezzer/ambxst-mods/tree/main/packages/roadie), config en `.config/ambxst/roadie.json` |
 | Centered Battery 1.3.1 | [mods/centered-battery](mods/centered-battery) |
-| Notification Fixes 1.1.0 | [mods/notif-empty-actions](mods/notif-empty-actions), oculta las acciones vacías de las notificaciones (la de kitty) y muestra los íconos que llegan como ruta. Necesita Roadie |
+| Notification Fixes 1.2.0 | [mods/notif-empty-actions](mods/notif-empty-actions), oculta las acciones vacías de las notificaciones (la de kitty) y muestra los íconos que llegan como ruta |
 | OSD Fix 1.1.0 | [mods/osd-fix](mods/osd-fix), el OSD de volumen y brillo se cerraba solo si el cursor estaba abajo de la pantalla porque el hover cubría toda la franja, ahora solo cuenta el pill. También agrega el OSD del perfil del ventilador para Fn+F5 |
 | Pentest 1.1.0 | [Nosfeik/ambxst-pentest](https://github.com/Nosfeik/ambxst-pentest), repo aparte. Super+Shift+P lo oculta y lo muestra, el bind ya va en `binds.json` |
 
-Después de restaurar los configs y con Ambxst corriendo, los instalo en este orden porque Notification Fixes depende de Roadie:
+Después de restaurar los configs y con Ambxst corriendo, los instalo así:
 
 ```bash
-ambxst mods install https://github.com/drpezzer/ambxst-mods/tree/main/packages/roadie
 ambxst mods install ./mods/centered-battery
 ambxst mods install ./mods/notif-empty-actions
 ambxst mods install ./mods/osd-fix
 git clone https://github.com/Nosfeik/ambxst-pentest ~/Dev/ambxst-pentest
 ambxst mods install ~/Dev/ambxst-pentest
-for m in drpezzer.roadie local.centered-battery local.notif-empty-actions local.osd-fix nosfeik.pentest; do
+for m in local.centered-battery local.notif-empty-actions local.osd-fix nosfeik.pentest; do
     ambxst mods enable "$m"
 done
 ambxst reload
@@ -182,7 +180,7 @@ VPNs (`~/.vpn/`, `.ovpn`, certificados), llaves, historial, `weather.json`, `ass
 ## Docs
 
 - [Terminal y Spotify con Nosfeik](docs/terminal-nosfeik.md)
-- [Ambxst con Nosfeik](docs/ambxst-nosfeik.md) y [Roadie](docs/ambxst-roadie.md)
+- [Ambxst con Nosfeik](docs/ambxst-nosfeik.md)
 - [Lo que se instala a mano](docs/manual-installs.md)
 - [Firewall](docs/firewall.md)
 - [Perfil de Exegol](exegol/hacking/README.md)

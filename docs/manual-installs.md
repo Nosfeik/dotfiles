@@ -12,7 +12,7 @@ ambxst version
 axctl --version
 ```
 
-Después hay que actualizar Ambxst a la 1.3.14, que es la que pide Roadie.
+Después hay que actualizar Ambxst a la 1.3.15, que es contra la que están probados mis mods.
 
 ### El Lua que genera Ambxst
 

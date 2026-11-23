@@ -14,7 +14,7 @@ El popup, el tooltip y los perfiles de energía se quedan como vienen en Ambxst.
 
 ## Compatibilidad
 
-Lo probé en Ambxst **1.3.14** (`83e8462a`). El manifest está limitado a `>=1.3.14 <1.3.15` porque el patch modifica `modules/bar/BatteryIndicator.qml` y en otra versión puede no aplicar. Funciona junto con Roadie.
+Lo probé en Ambxst **1.3.14** (`83e8462a`) y **1.3.15** (`5d71e924`). El manifest está limitado a `>=1.3.14 <1.3.16` porque el patch modifica `modules/bar/BatteryIndicator.qml` y en otra versión puede no aplicar.
 
 ## Instalar
 

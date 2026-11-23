@@ -1,32 +1,23 @@
 {
-  "recordedAt": "2026-11-03",
+  "recordedAt": "2026-11-14",
   "ambxst": {
-    "version": "1.3.14",
-    "revision": "83e8462a6b03d4a7d428d5c7365e4ec03f3b63a9"
+    "version": "1.3.15",
+    "revision": "5d71e924212ce2c0203e7448e0b1e3db52608640"
   },
   "mods": [
-    {
-      "id": "drpezzer.roadie",
-      "version": "4.1.1",
-      "enabled": true,
-      "source": "https://github.com/drpezzer/ambxst-mods/tree/main/packages/roadie",
-      "revision": "70e90804200bebedc2ae8c59f330307d6431b166",
-      "manifestSha256": "109dc6017f571daa33fd6dbd7f4f57aa2f8ed36a89e93b09b446676257f3199e",
-      "configuration": ".config/ambxst/roadie.json"
-    },
     {
       "id": "local.centered-battery",
       "version": "1.3.1",
       "enabled": true,
       "source": "mods/centered-battery",
-      "manifestSha256": "db8868684fad568bed691b4dc9e8828632f0ac1dab794e1c48e8ef68361a147a"
+      "manifestSha256": "2b4fb0db542515f87d87cd61d906fee7e2d83d44eeec395985a7e473939adaf7"
     },
     {
       "id": "local.notif-empty-actions",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "enabled": true,
       "source": "mods/notif-empty-actions",
-      "manifestSha256": "58a2c4ba8bd397e580ba21cc9f48cdb8404268d9239a9dc5375dc1f72d8646a4"
+      "manifestSha256": "a70273e08fb6b1d6d559e5eb5f910c3c22918200edd0d57521ce81f7925bf783"
     },
     {
       "id": "nosfeik.pentest",

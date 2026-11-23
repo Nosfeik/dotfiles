@@ -1,6 +1,6 @@
 # Ambxst con Nosfeik
 
-Uso Ambxst 1.3.14 con [Roadie](ambxst-roadie.md) y el tema Nosfeik como preset nativo, nada de mods para los colores. Antes era GreenBlack y lo dejé en `colors/GreenBlack/` por si lo quiero regresar.
+Uso Ambxst 1.3.15 con el tema Nosfeik como preset nativo, nada de mods para los colores. Antes era GreenBlack y lo dejé en `colors/GreenBlack/` por si lo quiero regresar.
 
 El preset está en `.config/ambxst/colors/Nosfeik/{dark,light}.json`. En oscuro usa lo mismo que Kitty, Spotify y mi Obsidian: fondo `#16181d`, texto `#dce2ec` y acento `#60a5fa`. Los rojos y amarillos para errores y avisos los dejé como vienen en Catppuccin. OLED lo tengo apagado porque si no el fondo se vuelve negro puro.
 

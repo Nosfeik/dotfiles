@@ -14,7 +14,7 @@ Antes usaba GreenBlack (`#101010`, `#a8d5bf`, `#00e69a`). Para pasar a Nosfeik c
 
 | Qué | Dónde |
 |---|---|
-| Kitty | `.config/kitty/{kitty.conf,color.ini}`, Hack Nerd Font 12 y paleta ANSI azul |
+| Kitty | `.config/kitty/{kitty.conf,color.ini}`, JetBrainsMono Nerd Font 12 (`ttf-jetbrains-mono-nerd`) y paleta ANSI azul |
 | Zsh/P10k | `.zshrc` y `.p10k.zsh`: prompt, carpetas, resaltado, sugerencias y fzf |
 | LSD/Bat | `.config/lsd/` y `.config/bat/config` |
 | NvChad | `.config/nvim/` con el tema `nosfeik` (y `green_black` y `xerux_black` de respaldo) |
