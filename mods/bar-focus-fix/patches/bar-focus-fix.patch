@@ -1,0 +1,22 @@
+diff --git a/modules/bar/BarContent.qml b/modules/bar/BarContent.qml
+index 42fb5cd..cabbb4e 100644
+--- a/modules/bar/BarContent.qml
++++ b/modules/bar/BarContent.qml
+@@ -101,7 +101,7 @@ Item {
+                 root.focusedMonId = m.id;
+         }
+     }
+-    readonly property bool screenFocused: !!compositorMonitor && compositorMonitor.id === focusedMonId
++    readonly property bool screenFocused: !!compositorMonitor && String(compositorMonitor.id) === String(focusedMonId)
+     readonly property bool awayHidden: BarSlideSync.followFocus && focusedMonId >= 0 && !screenFocused
+     // Everything the deliberate slide responds to.
+     // roadie: at boot the bar is held away until the shell has entered (and
+@@ -683,7 +683,7 @@ Item {
+             root.focusedMonId = m.id;
+         const away = root.screenFullscreen
+             || ShellTransitions.barHeld
+-            || (BarSlideSync.followFocus && root.focusedMonId >= 0 && !(root.compositorMonitor && root.compositorMonitor.id === root.focusedMonId));
++            || (BarSlideSync.followFocus && root.focusedMonId >= 0 && !(root.compositorMonitor && String(root.compositorMonitor.id) === String(root.focusedMonId)));
+         root.fsTarget = root.pinned ? ((away && !root.reveal) ? 0 : 1) : (root.reveal ? 1 : 0);
+         root.fsProgress = root.fsTarget;
+         root.zoneDuration = 0;

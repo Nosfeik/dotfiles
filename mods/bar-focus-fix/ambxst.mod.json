@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Axenide/Ambxst/main/docs/mods/manifest.schema.json",
+  "manifestVersion": 1,
+  "id": "local.bar-focus-fix",
+  "name": "Bar Focus Fix",
+  "version": "1.0.0",
+  "description": "Arregla el follow focus de Roadie: axctl da el id del monitor como string y Roadie lo compara con === contra un int, así que la barra se escondía en el monitor enfocado y solo salía con hover.",
+  "author": "nosfeik",
+  "license": "UNLICENSED",
+  "compatibility": {
+    "api": 1,
+    "ambxst": ">=1.3.14 <2.0.0",
+    "testedBaseCommits": [
+      "83e8462a6b03d4a7d428d5c7365e4ec03f3b63a9"
+    ]
+  },
+  "localization": {
+    "mode": "none"
+  },
+  "dependencies": [
+    "drpezzer.roadie"
+  ],
+  "conflicts": [],
+  "commands": [],
+  "permissions": [],
+  "operations": [
+    {
+      "type": "patch",
+      "source": "patches/bar-focus-fix.patch"
+    }
+  ]
+}
