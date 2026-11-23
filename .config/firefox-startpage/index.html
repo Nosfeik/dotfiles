@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>New Tab</title>
+<link rel="icon" href="logo.png">
+<style>
+  :root {
+    --bg: #16181d; --surface: #1c1f26; --surface-hi: #232833; --border: #2b3242;
+    --fg: #dce2ec; --muted: #8792a8; --accent: #60a5fa; --accent-soft: #1e2b45;
+    --mono: "Hack Nerd Font", "Fira Code", monospace;
+    --sans: "Adwaita Sans", "Inter", "Noto Sans", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background-color: var(--bg);
+    background-image: radial-gradient(#2a3042 1.2px, transparent 1.2px);
+    background-size: 28px 28px;
+    color: var(--fg); font-family: var(--sans);
+    display: flex; align-items: center; justify-content: center;
+  }
+  main { display: flex; flex-direction: column; align-items: center; gap: 28px; width: min(760px, 92vw); }
+  .logo { width: 96px; height: 96px; border-radius: 50%; border: 3px solid var(--accent); }
+  .time { font-size: 84px; font-weight: 800; letter-spacing: -3px; line-height: 1; font-variant-numeric: tabular-nums; }
+  .date { font-family: var(--mono); color: var(--muted); font-size: 15px; margin-top: 10px; text-align: center; }
+  .prompt { font-family: var(--mono); font-size: 16px; color: var(--muted); }
+  .prompt b { color: var(--accent); font-weight: 400; }
+  .cursor { color: var(--accent); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; width: 100%; }
+  .links a {
+    display: flex; flex-direction: column; gap: 4px; padding: 14px 16px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    color: var(--fg); text-decoration: none; transition: border-color .15s, background .15s;
+  }
+  .links a:hover { border-color: var(--accent); background: var(--surface-hi); }
+  .links .k { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .links .n { font-size: 15px; font-weight: 600; }
+  @media (max-width: 640px) { .links { grid-template-columns: repeat(2, 1fr); } .time { font-size: 64px; } }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="logo.png" alt="">
+  <div>
+    <div class="time" id="time">--:--</div>
+    <div class="date" id="date"></div>
+  </div>
+  <div class="prompt"><b>nosfeik@arch:~$</b> <span class="cursor">▍</span></div>
+  <nav class="links">
+    <!-- edit freely: k = small label, n = name -->
+    <a href="https://nosfeik.com"><span class="k">blog</span><span class="n">nosfeik.com</span></a>
+    <a href="https://app.hackthebox.com"><span class="k">labs</span><span class="n">Hack The Box</span></a>
+    <a href="https://portswigger.net/web-security/all-labs"><span class="k">appsec</span><span class="n">PortSwigger</span></a>
+    <a href="https://book.hacktricks.wiki"><span class="k">notes</span><span class="n">HackTricks</span></a>
+    <a href="https://gtfobins.github.io"><span class="k">privesc</span><span class="n">GTFOBins</span></a>
+    <a href="https://github.com"><span class="k">code</span><span class="n">GitHub</span></a>
+    <a href="https://discord.gg/WzMFAPUkE7"><span class="k">community</span><span class="n">Discord</span></a>
+    <a href="https://www.youtube.com"><span class="k">media</span><span class="n">YouTube</span></a>
+  </nav>
+</main>
+<script>
+  const t = document.getElementById('time'), d = document.getElementById('date');
+  function tick() {
+    const now = new Date();
+    t.textContent = now.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: false });
+    d.textContent = now.toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'long' });
+  }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>

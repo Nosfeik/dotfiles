@@ -1,0 +1,50 @@
+/* nosfeik — internal pages (new tab, home, about:*) */
+
+@-moz-document url("about:home"), url("about:newtab"), url("about:blank"), url("about:privatebrowsing") {
+  :root, body {
+    --newtab-background-color: #16181d !important;
+    --newtab-background-color-secondary: #1c1f26 !important;
+    --newtab-text-primary-color: #dce2ec !important;
+    --newtab-text-secondary-color: #8792a8 !important;
+    --newtab-primary-action-background: #60a5fa !important;
+    --newtab-element-hover-color: #232833 !important;
+    --in-content-page-background: #16181d !important;
+    background-color: #16181d !important;
+    color: #dce2ec !important;
+  }
+  /* just the search box + shortcuts */
+  .logo-and-wordmark, .logo-and-wordmark-wrapper,
+  .customize-menu-button, .personalize-button,
+  .weatherInfoLink, .weather, .ds-outer-wrapper-breakpoint-override .ds-header,
+  .top-site-outer .tile-sponsored, .context-menu-button,
+  .shortcuts-refresh .top-site-outer .title, .wallpaper-attribution,
+  .footer, #downloads-panel-message {
+    display: none !important;
+  }
+  .search-handoff-button, .search-inner-wrapper input, .search-wrapper input {
+    background-color: #1c1f26 !important;
+    color: #dce2ec !important;
+    border: 1px solid #2b3242 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+  .search-wrapper .search-handoff-button:focus-visible,
+  .search-wrapper input:focus { border-color: #60a5fa !important; }
+  .top-site-outer .tile { background-color: #1c1f26 !important; box-shadow: none !important; }
+  .top-site-outer:hover .tile { background-color: #232833 !important; }
+}
+
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-background: #16181d !important;
+    --in-content-box-background: #1c1f26 !important;
+    --in-content-page-color: #dce2ec !important;
+    --in-content-primary-button-background: #60a5fa !important;
+    --in-content-primary-button-text-color: #16181d !important;
+    --in-content-focus-outline-color: #60a5fa !important;
+    --color-accent-primary: #60a5fa !important;
+    --link-color: #60a5fa !important;
+  }
+}
+
+::selection { background: #93c5fd; color: #16181d; }

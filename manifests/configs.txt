@@ -11,6 +11,11 @@
 .config/ambxst/config/system.json
 .config/ambxst/config/theme.json
 .config/ambxst/config/workspaces.json
+.config/firefox-startpage/autoconfig/autoconfig.js
+.config/firefox-startpage/autoconfig/mozilla.cfg
+.config/firefox-startpage/brave/startpage.json
+.config/firefox-startpage/index.html
+.config/firefox-startpage/logo.png
 .config/gtk-3.0/gtk.css
 .config/gtk-3.0/settings.ini
 .config/gtk-4.0/assets

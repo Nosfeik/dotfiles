@@ -17,6 +17,7 @@ Esto es mi respaldo y la guía que sigo cuando reinstalo la laptop, no está pen
 | `scripts/` | Instalador, restaurador, firewall y bootstraps |
 | `system/etc/` | Drop-in de logind para la tapa y config de zram |
 | `exegol/` | Mi perfil de Exegol (prompt, aliases, Burp en Wayland) |
+| `firefox/` | Tema Nosfeik para Firefox (`userChrome.css`, `userContent.css`) y mi `user.js`, se copian a mano al perfil |
 | `mods/` | Mods de Ambxst que hice: Centered Battery, Notification Fixes y OSD Fix |
 | `docs/` | Notas más a detalle de cada cosa |
 | `legacy/` | Configs viejas que ya no restauro |
@@ -185,6 +186,7 @@ VPNs (`~/.vpn/`, `.ovpn`, certificados), llaves, historial, `weather.json`, `ass
 - [Lo que se instala a mano](docs/manual-installs.md)
 - [Firewall](docs/firewall.md)
 - [Perfil de Exegol](exegol/hacking/README.md)
+- [Firefox](firefox/README.md)
 
 ## Créditos
 

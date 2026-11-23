@@ -1,0 +1,131 @@
+/* nosfeik — Firefox UI (palette: ~/.config/ambxst/colors/Nosfeik/dark.json) */
+
+:root {
+  --nf-bg: #16181d;
+  --nf-surface: #1c1f26;
+  --nf-surface-hi: #232833;
+  --nf-surface-br: #2b3242;
+  --nf-fg: #dce2ec;
+  --nf-muted: #8792a8;
+  --nf-border: #2b3242;
+  --nf-accent: #60a5fa;
+  --nf-accent-soft: #1e2b45;
+  --nf-sel: #93c5fd;
+  --nf-red: #f497b1;
+
+  /* Firefox theme variables */
+  --lwt-accent-color: var(--nf-bg) !important;
+  --lwt-text-color: var(--nf-fg) !important;
+  --toolbar-bgcolor: var(--nf-bg) !important;
+  --toolbar-color: var(--nf-fg) !important;
+  --toolbar-field-background-color: var(--nf-surface) !important;
+  --toolbar-field-focus-background-color: var(--nf-surface-hi) !important;
+  --toolbar-field-color: var(--nf-fg) !important;
+  --toolbar-field-focus-color: var(--nf-fg) !important;
+  --toolbar-field-border-color: transparent !important;
+  --toolbar-field-focus-border-color: var(--nf-accent) !important;
+  --toolbarbutton-hover-background: var(--nf-surface-hi) !important;
+  --toolbarbutton-active-background: var(--nf-surface-br) !important;
+  --tab-selected-bgcolor: var(--nf-surface-hi) !important;
+  --tab-selected-textcolor: var(--nf-fg) !important;
+  --tab-hover-background-color: var(--nf-surface) !important;
+  --focus-outline-color: var(--nf-accent) !important;
+  --urlbar-box-bgcolor: var(--nf-surface-hi) !important;
+  --urlbarView-highlight-background: var(--nf-accent-soft) !important;
+  --urlbarView-highlight-color: var(--nf-fg) !important;
+  --urlbarView-separator-color: var(--nf-border) !important;
+  --arrowpanel-background: var(--nf-surface) !important;
+  --arrowpanel-color: var(--nf-fg) !important;
+  --arrowpanel-border-color: var(--nf-border) !important;
+  --panel-separator-color: var(--nf-border) !important;
+  --sidebar-background-color: var(--nf-bg) !important;
+  --sidebar-text-color: var(--nf-fg) !important;
+  --chrome-content-separator-color: var(--nf-border) !important;
+  --button-primary-bgcolor: var(--nf-accent) !important;
+  --button-primary-color: var(--nf-bg) !important;
+  --color-accent-primary: var(--nf-accent) !important;
+  --identity-icon-color: var(--nf-muted) !important;
+}
+
+/* window + toolbars */
+#navigator-toolbox,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#sidebar-main,
+#sidebar-box {
+  background: var(--nf-bg) !important;
+  color: var(--nf-fg) !important;
+  border: none !important;
+}
+#navigator-toolbox { border-bottom: 1px solid var(--nf-border) !important; }
+#nav-bar { box-shadow: none !important; }
+
+/* tabs: flat, small accent line on the selected one */
+.tab-background {
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.tabbrowser-tab[selected] .tab-background {
+  background: var(--nf-surface-hi) !important;
+  box-shadow: inset 0 -2px 0 var(--nf-accent) !important;
+}
+.tabbrowser-tab:not([selected]) .tab-label { color: var(--nf-muted) !important; }
+.tab-close-button { opacity: 0; }
+.tabbrowser-tab:hover .tab-close-button,
+.tabbrowser-tab[selected] .tab-close-button { opacity: 0.7; }
+
+/* urlbar */
+#urlbar-background {
+  border-radius: 8px !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+#urlbar[focused] #urlbar-background { border-color: var(--nf-accent) !important; }
+#urlbar-input { font-family: "JetBrainsMono Nerd Font", monospace !important; font-size: 13px !important; }
+#urlbar-input::selection { background: var(--nf-sel) !important; color: var(--nf-bg) !important; }
+
+/* hide clutter */
+#tracking-protection-icon-container,
+#identity-permission-box,
+#star-button-box,
+#reader-mode-button,
+#translations-button,
+#pageActionSeparator,
+#firefox-view-button,
+#alltabs-button,
+#urlbar-search-mode-indicator,
+#urlbar .search-one-offs,
+.urlbarView-row[type="tip"],
+#PanelUI-menu-button .toolbarbutton-badge-stack .toolbarbutton-badge,
+#fxa-toolbar-menu-button,
+#sidebar-main [view="viewGenaiChatSidebar"] {
+  display: none !important;
+}
+
+/* menus & popups */
+/* Firefox 160 cambió los nombres: --panel-background-color / --panel-text-color */
+menupopup, panel {
+  --panel-background: var(--nf-surface) !important;
+  --panel-color: var(--nf-fg) !important;
+  --panel-background-color: var(--nf-surface) !important;
+  --panel-text-color: var(--nf-fg) !important;
+  --panel-border-color: var(--nf-border) !important;
+  --panel-separator-color: var(--nf-border) !important;
+  --panel-border-radius: 10px !important;
+  /* hover de los items del menú (☰) y los subpaneles */
+  --button-background-color-menu-hover: var(--nf-accent-soft) !important;
+  --button-text-color-menu-hover: var(--nf-fg) !important;
+  --button-background-color-menu-active: var(--nf-surface-br) !important;
+  --button-background-color-hover: var(--nf-surface-hi) !important;
+  --button-background-color-active: var(--nf-surface-br) !important;
+}
+menupopup menuitem:hover, menupopup menu:hover,
+menupopup menuitem[_moz-menuactive], menupopup menu[_moz-menuactive] {
+  background: var(--nf-accent-soft) !important;
+  color: var(--nf-fg) !important;
+}
+
+/* content area edge */
+#tabbrowser-tabbox { background: var(--nf-bg) !important; }
